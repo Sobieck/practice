@@ -1,0 +1,1 @@
+karma start C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\JavaScript\karma.conf.js

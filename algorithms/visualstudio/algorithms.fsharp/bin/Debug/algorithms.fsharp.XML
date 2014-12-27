@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>algorithms.fsharp</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:algorithms.fSharp.divideAndConquer.KaratsubaMultiplication">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:algorithms.fSharp.divideAndConquer.MergeSort">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:algorithms.fSharp.divideAndConquer.MergeSortCountInversions">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:algorithms.fSharp.utilities.MasterMethodForSameSizeRecursions">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:algorithms.fSharp.utilities.ParseTextFile">
+
+</member>
+</members>
+</doc>

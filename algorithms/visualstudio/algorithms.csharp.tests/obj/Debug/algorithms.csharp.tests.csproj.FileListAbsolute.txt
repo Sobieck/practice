@@ -1,0 +1,10 @@
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.csharp.tests.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.csharp.tests.pdb
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.csharp.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.csharp.pdb
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\obj\Debug\algorithms.csharp.tests.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\obj\Debug\algorithms.csharp.tests.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\obj\Debug\algorithms.csharp.tests.pdb
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.fsharp.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.fsharp.pdb
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp.tests\bin\Debug\algorithms.fsharp.xml

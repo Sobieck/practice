@@ -1,0 +1,13 @@
+Uncle Bob's 
+clojure
+Fourth
+prolog
+
+Others I'm interested in
+
+• C++ 
+• Python
+• Ruby-On-Rails (A lot of jobs)
+• Go 
+• oCaml - Mirage
+• Erlang

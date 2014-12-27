@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "algorithms.fsharp", "algorithms.fsharp\algorithms.fsharp.fsproj", "{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharp", "FSharp", "{E58D98FC-2558-4C1C-A6E0-903040768FC7}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "algorithms.fsharp.tests", "algorithms.fsharp.tests\algorithms.fsharp.tests.fsproj", "{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D6DDD65C-30A4-4BD9-B809-E9E4CF36125F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{5CF17DD2-91DC-428D-8D46-430CE1D0F185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms.csharp", "algorithms.csharp\algorithms.csharp.csproj", "{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms.csharp.tests", "algorithms.csharp.tests\algorithms.csharp.tests.csproj", "{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{82A0DD46-5808-4668-8645-AD74E8D31F90}"
+	ProjectSection(SolutionItems) = preProject
+		KarmaCommandPromptCommand.txt = KarmaCommandPromptCommand.txt
+		KarmaRunner.bat = KarmaRunner.bat
+		NextLanguages.txt = NextLanguages.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5DA8B525-58A3-4034-8ECF-CF4FEE2CD608}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProblemSets", "ProblemSets", "{20FA6E35-D5EC-4D41-9840-E8F8121159A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CountingArrayInversions", "CountingArrayInversions", "{DE8651FA-58C0-428D-8FC6-94C4932407E8}"
+	ProjectSection(SolutionItems) = preProject
+		problemSets\IntegerArray.txt = problemSets\IntegerArray.txt
+		problemSets\IntegerArrayShort.txt = problemSets\IntegerArrayShort.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{3BEEE6C1-1B49-4DB3-B1C8-F53D5C35CFBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms.javascript", "algorithms.javascript\algorithms.javascript.csproj", "{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA3BF6C1-A26B-4C7C-875B-B24BF4171B7D} = {E58D98FC-2558-4C1C-A6E0-903040768FC7}
+		{2890FF9B-3C17-4970-9C1E-93E84CB8ADC4} = {E58D98FC-2558-4C1C-A6E0-903040768FC7}
+		{D6DDD65C-30A4-4BD9-B809-E9E4CF36125F} = {E58D98FC-2558-4C1C-A6E0-903040768FC7}
+		{370FF9E2-0B05-4BBB-8AB2-9B48402FDCFB} = {5CF17DD2-91DC-428D-8D46-430CE1D0F185}
+		{0F6A33F3-9186-4ACB-BBE3-5D49883DADBC} = {5CF17DD2-91DC-428D-8D46-430CE1D0F185}
+		{20FA6E35-D5EC-4D41-9840-E8F8121159A5} = {82A0DD46-5808-4668-8645-AD74E8D31F90}
+		{DE8651FA-58C0-428D-8FC6-94C4932407E8} = {20FA6E35-D5EC-4D41-9840-E8F8121159A5}
+		{CD7DAF3A-5F41-4A27-9EEA-7A606F22A27B} = {3BEEE6C1-1B49-4DB3-B1C8-F53D5C35CFBC}
+	EndGlobalSection
+EndGlobal

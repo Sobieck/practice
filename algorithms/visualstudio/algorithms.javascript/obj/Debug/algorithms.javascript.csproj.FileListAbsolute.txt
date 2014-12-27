@@ -1,0 +1,5 @@
+C:\Users\Thomas\Documents\GitHub\practice\algorithms\visualstudio\algorithms.javascript\bin\Debug\algorithms.javascript.dll
+C:\Users\Thomas\Documents\GitHub\practice\algorithms\visualstudio\algorithms.javascript\bin\Debug\algorithms.javascript.pdb
+C:\Users\Thomas\Documents\GitHub\practice\algorithms\visualstudio\algorithms.javascript\obj\Debug\algorithms.javascript.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\practice\algorithms\visualstudio\algorithms.javascript\obj\Debug\algorithms.javascript.dll
+C:\Users\Thomas\Documents\GitHub\practice\algorithms\visualstudio\algorithms.javascript\obj\Debug\algorithms.javascript.pdb

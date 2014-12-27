@@ -1,0 +1,8 @@
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\bin\Debug\algorithms.NonVisualStudio.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\bin\Debug\algorithms.NonVisualStudio.pdb
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\bin\Debug\Clojure.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\obj\Debug\algorithms.NonVisualStudio.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\obj\Debug\algorithms.NonVisualStudio.dll
+C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.nonvisualstudio\obj\Debug\algorithms.NonVisualStudio.pdb
