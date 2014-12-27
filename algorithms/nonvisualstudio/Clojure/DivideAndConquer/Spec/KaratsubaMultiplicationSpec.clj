@@ -1,11 +1,11 @@
 ;In PowerShell
 ;C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\packages\Clojure.1.6.0.1\lib\net40\Clojure.Main.exe
-;(load-file "C:/Users/Thomas/Documents/GitHub/algorithms.practice/algorithms.practice/algorithms.nonvisualstudio/Clojure/DivideAndConquer/Spec/KaratsubaMultiplicationSpec.clj")
+;(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Spec/KaratsubaMultiplicationSpec.clj")
 
 
 (ns algorithms.clojure.divideAndConquer.karatsubaMultiplication.spec)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/algorithms.practice/algorithms.practice/algorithms.nonvisualstudio/Clojure/DivideAndConquer/Implementation/KaratsubaMultiplication.clj")
+(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Implementation/KaratsubaMultiplication.clj")
 (use 'algorithms.clojure.divideAndConquer.karatsubaMultiplication)
 (use 'clojure.test)
 

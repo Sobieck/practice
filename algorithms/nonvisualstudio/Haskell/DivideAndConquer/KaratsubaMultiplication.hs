@@ -1,5 +1,5 @@
 -- ghci
--- :load C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\Haskell\DivideAndConquer\KaratsubaMultiplication.hs
+-- :load C:\Users\Thomas\Documents\GitHub\practice\algorithms\nonvisualstudio\Haskell\DivideAndConquer\KaratsubaMultiplication.hs
 -- :r
 -- :set +s for times
 
