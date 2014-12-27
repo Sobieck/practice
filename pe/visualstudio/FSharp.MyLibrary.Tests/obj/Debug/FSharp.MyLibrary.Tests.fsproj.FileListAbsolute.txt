@@ -1,0 +1,8 @@
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.MyLibrary.Tests.dll.config
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.MyLibrary.Tests.XML
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.MyLibrary.Tests.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.MyLibrary.Tests.pdb
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.Core.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\bin\Debug\FSharp.Core.xml
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\obj\Debug\FSharp.MyLibrary.Tests.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary.Tests\obj\Debug\FSharp.MyLibrary.Tests.pdb

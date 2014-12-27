@@ -1,0 +1,7 @@
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\bin\Debug\FSharp.MyLibrary.XML
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\bin\Debug\FSharp.MyLibrary.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\bin\Debug\FSharp.MyLibrary.pdb
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\bin\Debug\FSharp.Core.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\bin\Debug\FSharp.Core.xml
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\obj\Debug\FSharp.MyLibrary.dll
+C:\Users\Thomas\Documents\GitHub\fsharp.practice\PE\FSharp.MyLibrary\obj\Debug\FSharp.MyLibrary.pdb
