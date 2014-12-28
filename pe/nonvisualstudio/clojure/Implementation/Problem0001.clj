@@ -1,6 +1,6 @@
 (ns pe.clojure.implementation.problem0001)
 
-(use 'clojure.core.reducers)
+(require '[clojure.core.reducers :as r])
 
 (defn isMultiple [number multipleOf]
   (= 0 (mod number multipleOf)))
@@ -22,32 +22,18 @@
     (generateList zeroUpToWhatNumber))))
 
 
-;;Parallel
+;; Parallel - using reducers. pmap was a disaster. The problem size for filtering is too small for pmap.
+;; This is a disaster as well.
 
-(defn returnZeroIfNotMultipleOf3Or5 [number]
-  (cond
-   (isMultipleOf3Or5 number) number
-   :else 0))
+(defn createVectorFromLazyList [listOfThings]
+  (into
+   []
+   listOfThings))
 
-
-(defn sumOfMultiplesOfFiveAndThreeParallel [zeroUpToWhatNumber]
+(defn sumOfMultiplesOfFiveAndThreeWithReducer [zeroUpToWhatNumber]
   (reduce
    +
-   (pmap
-    returnZeroIfNotMultipleOf3Or5
-    (generateList zeroUpToWhatNumber))))
-
-
-;; Benchmark - NonParallel - 5 times
-
-;; 10000    :    5 -    9 msecs
-;; 100000   :   70 -   76 msecs
-;; 1000000  :  776 -  815 msecs
-;; 10000000 : 7966 - 8200 msecs
-
-;; Benchmark - Parallel - 5 times
-
-;; 10000    : 434 - 520 msec
-;; 100000   :
-;; 1000000  :
-;; 10000000 :
+   (r/filter
+    isMultipleOf3Or5
+    (createVectorFromLazyList
+     (generateList zeroUpToWhatNumber)))))

@@ -1,4 +1,4 @@
-;;CLR VERSION
+;;JVM VERSION
 
 (ns algorithms.clojure.divideAndConquer.karatsubaMultiplication)
 
@@ -7,7 +7,7 @@
 
 (defn whereToDivideNumber [n]
   (roundDown
-   (Math/Pow 10
+   (Math/pow 10   ;; pow instead of Pow
              (roundDown (/
                    (count (str n))
                    2)))))

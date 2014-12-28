@@ -1,11 +1,14 @@
 ;In PowerShell
 ;C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\packages\Clojure.1.6.0.1\lib\net40\Clojure.Main.exe
 ;(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Spec/KaratsubaMultiplicationSpec.clj")
-
+;JVC Ctrl-enter to eval in editor
 
 (ns algorithms.clojure.divideAndConquer.karatsubaMultiplication.spec)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Implementation/KaratsubaMultiplication.clj")
+;;(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Implementation/KaratsubaMultiplication.clj")
+(load-file "C:/Users/Thomas/Documents/GitHub/practice/algorithms/nonvisualstudio/Clojure/DivideAndConquer/Implementation/KaratsubaMultiplicationJVM.clj")
+
+
 (use 'algorithms.clojure.divideAndConquer.karatsubaMultiplication)
 (use 'clojure.test)
 
@@ -47,6 +50,6 @@
     (is (= 12 (multiplyKatatsuba 12 1)))
     (is (= 7006652 (multiplyKatatsuba 5678 1234)))
     (is (= 500 (multiplyKatatsuba 10 50)))
-    (is (= 2398052144256972738312111343740159860488704 (multiplyKatatsuba 1548564532135665645648 1548564554135665641248)))))
+    (is (= 23980521442569727383121113437401598604887041 (multiplyKatatsuba 1548564532135665645648 1548564554135665641248)))))
 
 (run-tests)
