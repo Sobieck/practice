@@ -15,7 +15,8 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             { pattern: 'utilities/**/*.js', include: true },
-            { pattern: 'algorithms/visualstudio/algorithms.javascript/**/*.js', include: true}
+            { pattern: 'algorithms/visualstudio/algorithms.javascript/**/*.js', include: true },
+            { pattern: 'PE/visualstudio/PE.JavaScript/**/*.js', include: true }
         ],
 
         // list of files to exclude

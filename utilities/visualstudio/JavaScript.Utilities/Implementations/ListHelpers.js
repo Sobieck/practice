@@ -31,6 +31,16 @@
                 expect(areSame).toBeTruthy();
             };
 
+            listHelpers.prototype.sum = function(list) {
+                var sum = 0;
+
+                for (var i = 0; i < list.length; i++) {
+                    sum += list[i];
+                };
+
+                return sum;
+            };
+
             return listHelpers;
         })();
         helpers.listHelpers = listHelpers;

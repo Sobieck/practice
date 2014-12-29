@@ -24,6 +24,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.MyLibraries", "..\..
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.MyLibraries.Tests", "..\..\utilities\visualstudio\FSharp.MyLibraries.Tests\FSharp.MyLibraries.Tests.fsproj", "{632F51CC-8C9C-4044-BCC2-BA0D21089E8A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{C8E31758-6FA2-467D-9F01-E50A68ADA1A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE.JavaScript", "PE.JavaScript\PE.JavaScript.csproj", "{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript.Utilities", "..\..\utilities\visualstudio\JavaScript.Utilities\JavaScript.Utilities.csproj", "{500F233D-2FC6-4057-B51F-4D6CF99E52B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +60,14 @@ Global
 		{632F51CC-8C9C-4044-BCC2-BA0D21089E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{632F51CC-8C9C-4044-BCC2-BA0D21089E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{632F51CC-8C9C-4044-BCC2-BA0D21089E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500F233D-2FC6-4057-B51F-4D6CF99E52B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500F233D-2FC6-4057-B51F-4D6CF99E52B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500F233D-2FC6-4057-B51F-4D6CF99E52B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500F233D-2FC6-4057-B51F-4D6CF99E52B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +79,7 @@ Global
 		{69861E42-4D5A-44E7-850F-75B9ABEF642F} = {34EBB454-34EC-48A4-8965-A58AC87085A1}
 		{BD2D0070-8A3A-404F-94F9-502E007C6364} = {4FC1C617-D91C-4AF2-8206-DAE7C371E1D9}
 		{632F51CC-8C9C-4044-BCC2-BA0D21089E8A} = {4FC1C617-D91C-4AF2-8206-DAE7C371E1D9}
+		{D4B771AD-86AB-4AD0-AC2B-657462A1BF3C} = {C8E31758-6FA2-467D-9F01-E50A68ADA1A2}
+		{500F233D-2FC6-4057-B51F-4D6CF99E52B3} = {C8E31758-6FA2-467D-9F01-E50A68ADA1A2}
 	EndGlobalSection
 EndGlobal
