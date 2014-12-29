@@ -1,6 +1,7 @@
 ﻿var javascriptPE;
 (function(javascriptPE) {
-    (function(spec) {
+    (function (spec) {
+
         (function(problem0001) {
             describe('problem0001', function() {
                 var problem0001;
@@ -43,5 +44,6 @@
 
             });
         })(spec.problem0001 || (spec.problem0001 = {}));
+
     })(javascriptPE.spec || (javascriptPE.spec = {}));
 })(javascriptPE || (javascriptPE = {}));

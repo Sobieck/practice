@@ -44,7 +44,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Implementation\Problem0001.js" />
+    <Content Include="Implementation\Problem0002.js" />
     <Content Include="Spec\Problem0001.Spec.js" />
+    <Content Include="Spec\Problem0002.Spec.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

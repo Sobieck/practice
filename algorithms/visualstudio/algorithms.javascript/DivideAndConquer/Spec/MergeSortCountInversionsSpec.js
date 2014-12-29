@@ -78,7 +78,7 @@
 
                             var expected = list1.concat(list2).sort(function(a, b) { return a - b; });
 
-                            listHelper.allElementsAreTheSameAssert(result.list, expected);
+                            expect(listHelper.areAllElementsAreTheSame(result.list, expected)).toBeTruthy();
 
                             expect(result.numberOfInversions).toBe(numberOfInversionsExpected);
                         };

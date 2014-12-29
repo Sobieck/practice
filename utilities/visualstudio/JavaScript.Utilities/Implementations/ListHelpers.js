@@ -16,8 +16,8 @@
                 return array;
             };
 
-            listHelpers.prototype.allElementsAreTheSameAssert = function(list1, list2) {
-                var areSame = true;
+            listHelpers.prototype.areAllElementsAreTheSame = function(list1, list2) {
+                var areSame = list1.length === list2.length;
                 var index = 0;
 
                 while (areSame && list1.length > index) {
@@ -28,7 +28,12 @@
                     }
                 };
 
-                expect(areSame).toBeTruthy();
+                return areSame;
+            };
+
+            //wrapper around areAllElementAreTheSame coupled with the unit test framework.
+            listHelpers.prototype.allElementsAreTheSameAssert = function (list1, list2) {
+                expect(this.areAllElementsAreTheSame(list1, list2)).toBeTruthy();
             };
 
             listHelpers.prototype.sum = function(list) {

@@ -34,7 +34,17 @@
                     });
                 });
 
-                describe('allElementsAreTheSameAssert', function () {
+                describe('areAllElementsAreTheSame', function () {
+                    it('should work.', function () {
+                        expect(listHelper.areAllElementsAreTheSame([1, 2, 3], [1, 2, 3])).toBeTruthy();
+                    });
+
+                    it('should throw an error with mismatched lengths.', function () {
+                        expect(listHelper.areAllElementsAreTheSame([1, 2, 3], [1, 2, 3, 4])).toBeFalsy();
+                    });
+                });
+                
+                describe('allElementsAreTheSameAssert', function() {
                     it('should work.', function () {
                         listHelper.allElementsAreTheSameAssert([1, 2, 3], [1, 2, 3]);
                     });
