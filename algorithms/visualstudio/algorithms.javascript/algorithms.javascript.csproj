@@ -49,11 +49,6 @@
     <Content Include="DivideAndConquer\Spec\KaratsubaMultiplicationSpec.js" />
     <Content Include="DivideAndConquer\Spec\MergeSortCountInversionsSpec.js" />
     <Content Include="DivideAndConquer\Spec\MergeSortSpec.js" />
-    <Content Include="karma.conf.js" />
-    <Content Include="Libraries\Helpers\ListHelpers.js" />
-    <Content Include="Libraries\Helpers\MathHelpers.js" />
-    <Content Include="Libraries\Helpers\Spec\ListHelpersSpec.js" />
-    <Content Include="Libraries\Helpers\Spec\MathHelpersSpec.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,1 @@
+karma start C:\Users\Thomas\Documents\GitHub\practice\karma.conf.js

@@ -145,11 +145,6 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FSharp.MyLibrary\FSharp.MyLibraries.fsproj">
-      <Name>FSharp.MyLibraries</Name>
-      <Project>{bd2d0070-8a3a-404f-94f9-502e007c6364}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\PE.FSharp\PE.FSharp.fsproj">
       <Name>PE.FSharp</Name>
       <Project>{1378fce3-2f78-4ced-8ee0-9520cee6cfae}</Project>

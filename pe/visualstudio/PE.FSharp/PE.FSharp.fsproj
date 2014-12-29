@@ -86,7 +86,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <ProjectReference Include="..\FSharp.MyLibrary\FSharp.MyLibraries.fsproj">
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\utilities\visualstudio\FSharp.MyLibrary\FSharp.MyLibraries.fsproj">
       <Name>FSharp.MyLibraries</Name>
       <Project>{bd2d0070-8a3a-404f-94f9-502e007c6364}</Project>
       <Private>True</Private>

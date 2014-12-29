@@ -22,8 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms.csharp.tests", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{82A0DD46-5808-4668-8645-AD74E8D31F90}"
 	ProjectSection(SolutionItems) = preProject
-		KarmaCommandPromptCommand.txt = KarmaCommandPromptCommand.txt
-		KarmaRunner.bat = KarmaRunner.bat
 		NextLanguages.txt = NextLanguages.txt
 	EndProjectSection
 EndProject
