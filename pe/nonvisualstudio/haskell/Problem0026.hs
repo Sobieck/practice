@@ -1,6 +1,6 @@
--- ghci 
--- :load C:\Users\Thomas\Documents\GitHub\haskell.practice\PE\Problem0026.hs 
--- :r 
+-- ghci
+-- :load C:\Users\Thomas\Documents\GitHub\haskell.practice\PE\Problem0026.hs
+-- :r
 -- :set +s for times
 
 
@@ -12,28 +12,28 @@
 module Problem0026 where
 	import Data.List
 	import Data.Ord
-	
+
 	reciprocalCycleLength n | even n = 0
-							| n `mod` 5 == 0 = 0
-							| n == 1 = 0
-							| otherwise = lengthOfCycle
+							            | n `mod` 5 == 0 = 0
+							            | n == 1 = 0
+							            | otherwise = lengthOfCycle
 		where
 			lengthOfCycle = (length $ takeWhile (\elem -> isLengthOfCycle elem == False) [1..]) + 1
-			isLengthOfCycle p = (10^p) `mod` n == 1  
-				  
-	findLongestReciprocalCycleInList list = 
+			isLengthOfCycle p = (10^p) `mod` n == 1
+
+	findLongestReciprocalCycleInList list =
 		maximumBy (comparing snd)
 		$ zip list
 		$ map reciprocalCycleLength list
-		
+
 	answer = findLongestReciprocalCycleInList [2..999]
-	
+
 	findLongestReciprocalCycleInListTests = and
 		[
 			findLongestReciprocalCycleInList [2..10] == (7,6),
 			findLongestReciprocalCycleInList [2..21] == (19,18)
 		]
-	
+
 	reciprocalCycleLengthTests = and
 		[
 			reciprocalCycleLength 4 == 0,
@@ -49,7 +49,7 @@ module Problem0026 where
 			reciprocalCycleLength 21 == 6,
 			reciprocalCycleLength 9801 == 198
 		]
-	
+
 	--tests
 	tests = and
 		[
