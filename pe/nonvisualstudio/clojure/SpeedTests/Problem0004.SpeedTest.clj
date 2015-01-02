@@ -10,5 +10,5 @@
 ;(time (maxPalendromProduceSync 100 999)) 235 - 248msec
 ;(time (maxPalendromProduceParallel 100 999)) 86 - 95msec
 
-;(time (maxPalendromProduceParallel 1000 9999)) 6889 - 6928 msec
 ;(time (maxPalendromProduceSync 1000 9999)) 26220 -26224
+;(time (maxPalendromProduceParallel 1000 9999)) 6889 - 6928 msec
