@@ -45,8 +45,10 @@
   <ItemGroup>
     <Content Include="Implementation\Problem0001.js" />
     <Content Include="Implementation\Problem0002.js" />
+    <Content Include="Implementation\Problem0028.js" />
     <Content Include="Implementation\Problem0003.js" />
     <Content Include="Spec\Problem0001.Spec.js" />
+    <Content Include="Spec\Problem0028.Spec.js" />
     <Content Include="Spec\Problem0003.Spec.js" />
     <Content Include="Spec\Problem0002.Spec.js" />
   </ItemGroup>
