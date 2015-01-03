@@ -41,10 +41,17 @@
   <ItemGroup>
     <Compile Include="Problem0001.cs" />
     <Compile Include="Problem0002.cs" />
+    <Compile Include="Problem0005.cs" />
     <Compile Include="Problem0004.cs" />
     <Compile Include="Problem0003.cs" />
     <Compile Include="Problem0028.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\utilities\visualstudio\FSharp.MyLibrary\FSharp.MyLibraries.fsproj">
+      <Project>{bd2d0070-8a3a-404f-94f9-502e007c6364}</Project>
+      <Name>FSharp.MyLibraries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
