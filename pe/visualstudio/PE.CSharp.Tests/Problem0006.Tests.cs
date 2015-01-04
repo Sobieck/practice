@@ -14,7 +14,7 @@ namespace PE.CSharp.Tests
         }
 
         [TestMethod]
-        public void Problem0006_SumOfSquares_2_Should_Return_5S()
+        public void Problem0006_SumOfSquares_2_Should_Return_5()
         {
             Assert.AreEqual(5, _problem0006.SumOfSquares(2));
         }
