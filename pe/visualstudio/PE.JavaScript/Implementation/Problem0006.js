@@ -29,10 +29,7 @@
             };
 
             problem0006.prototype.differenceBetweenSquareOfSumsAndSumOfSquares = function(xPositiveInts) {
-                var squareOfSums = this.squareOfSums(xPositiveInts);
-                var sumOfSquares = this.sumOfSquares(xPositiveInts);
-
-                return squareOfSums - sumOfSquares;
+                return this.squareOfSums(xPositiveInts) - this.sumOfSquares(xPositiveInts);
             };
 
 
