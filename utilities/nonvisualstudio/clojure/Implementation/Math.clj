@@ -1,3 +1,7 @@
+;To Use
+;(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
+;(use 'utilities.math)
+
 (ns utilities.math)
 
 (defn gcd [largerNumber smallerNumber]
