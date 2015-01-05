@@ -1,6 +1,6 @@
 ;To Use
 ;(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
-;(use 'utilities.sequences)
+;(use '[utilities.sequences :as util.seq])
 
 (ns utilities.sequences)
 

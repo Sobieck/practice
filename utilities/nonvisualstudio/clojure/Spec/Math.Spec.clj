@@ -15,6 +15,12 @@
 
   (testing "lcm"
     (is (= 650 (lcm 65 50)))
-    (is (= 20 (lcm 10 4)))))
+    (is (= 20 (lcm 10 4))))
 
+  (testing "bigIntPow"
+    (is (= 100000000000000000000N (bigIntPow 100 10)))
+    (is (= 3125 (bigIntPow 5 5)))
+    (is (= 4 (bigIntPow 2 2)))
+    (is (= 16 (bigIntPow 4 2)))
+  ))
 (run-tests)

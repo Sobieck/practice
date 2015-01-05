@@ -1,6 +1,6 @@
 ;To Use
 ;(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
-;(use 'utilities.math)
+;(use '[utilities.math :as util.math])
 
 (ns utilities.math)
 
@@ -15,4 +15,9 @@
 (defn lcm [largerNumber smallerNumber]
   (/ (* largerNumber smallerNumber)
      (gcd largerNumber smallerNumber)))
+
+(defn bigIntPow [n exponent]
+  (reduce *
+          (take exponent
+                (repeat (bigint n)))))
 
