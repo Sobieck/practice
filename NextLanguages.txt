@@ -9,4 +9,5 @@ Others I'm interested in
 • Ruby-On-Rails (A lot of jobs)
 • Go 
 • oCaml - Mirage
-• Erlang
+• Erlang 
+• Elixir - Erlang variant http://try.erlangonxen.org/zerg
