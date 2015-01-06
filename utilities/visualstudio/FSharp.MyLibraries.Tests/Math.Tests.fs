@@ -19,14 +19,6 @@ module MathLibrary =
             Assert.AreEqual((91L,60L,109L), euclidsFormula 10L 3L)
 
         [<TestMethod>]
-        member x.MathLibrary_initInfiniteL_head_Should_Return_1L() =
-            Assert.AreEqual(0L, Seq.head initInfiniteL)
-
-        [<TestMethod>]
-        member x.MathLibrary_initInfiniteL_10001Index_Should_Return_10001L() =
-            Assert.AreEqual(10001L, Seq.nth 10001 initInfiniteL)
-
-        [<TestMethod>]
         member x.MathLibrary_gcd_259_111_Should_Return_37() =
             Assert.AreEqual(37L, gcd (259L, 111L))
 

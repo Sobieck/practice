@@ -55,3 +55,12 @@ module ListLibraryFunctions =
             | x::xs, y::ys -> removeItemsFromList xs removeItems (List.append answerSpace [x])
         
         removeItemsFromList list removeItems []
+
+    //http://stackoverflow.com/a/6294130/2740086
+    let initInfiniteL = 
+        seq {
+            let i = ref 0L
+            while true do 
+                yield !i
+                i := !i + 1L
+            }

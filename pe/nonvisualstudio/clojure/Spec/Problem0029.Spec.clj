@@ -1,3 +1,4 @@
+; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
 ;(load-file "C:/Users/Thomas/Documents/GitHub/practice/pe/nonvisualstudio/clojure/Spec/Problem0029.Spec.clj")
 
 (ns pe.clojure.implementation.problem0029.spec)
@@ -20,4 +21,3 @@
 
 
 (run-tests)
-

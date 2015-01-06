@@ -39,14 +39,7 @@ module Math =
     let infiniteBigIntFibonaccis = 
         Seq.append (Seq.ofList [BigInteger(1)]) (Seq.unfold (fun (a,b) -> Some(a+b, (b, a+b))) (BigInteger(0),BigInteger(1)))
     
-    //http://stackoverflow.com/a/6294130/2740086
-    let initInfiniteL = 
-        seq {
-            let i = ref 0L
-            while true do 
-                yield !i
-                i := !i + 1L
-            }
+
 
     //http://blog.hoomla.se/post/The-sieve-of-Atkin-in-F.aspx
     // Generates a list of all primes below limit

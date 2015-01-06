@@ -88,3 +88,12 @@ module ListExtensionFunctions =
         member x.``ListExtensionFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list. All at the beginning.``() =
             Assert.AreEqual([11..100], removeItemsFromListThatAreInList2Sorted [1..100] [1..10])
 
+
+        [<TestMethod>]
+        member x.``ListExtensionFunctions initInfiniteL should return 0L.``() =
+            Assert.AreEqual(0L, Seq.head initInfiniteL)
+
+        [<TestMethod>]
+        member x.``ListExtensionFunctions initInfiniteL 10001th item should be 10001L.``() =
+            Assert.AreEqual(10001L, Seq.nth 10001 initInfiniteL)
+
