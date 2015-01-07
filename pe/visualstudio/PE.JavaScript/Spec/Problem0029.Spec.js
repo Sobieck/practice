@@ -21,6 +21,7 @@
                         distinctPowersBetween2AndAssert(8, 4);
                     });
 
+                    //takes .373 seconds.
                     //it('should return 9183 with an input of 100.', function () {
                     //    distinctPowersBetween2AndAssert(9183, 100);
                     //}); 

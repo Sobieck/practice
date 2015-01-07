@@ -8,9 +8,9 @@
                 
             }
 
-            problem0029.prototype.distinctPowersBetween2And = function(maxNumber) {
-                //using buckets library
-                var allMultiplesSet = new buckets.Set();
+            problem0029.prototype.distinctPowersBetween2And = function (maxNumber) {
+
+                var allMultiplesSet = new Set();
 
                 for (var i = 2; i < maxNumber + 1; i++) {
 
@@ -18,11 +18,16 @@
                     var numberToExponentiate = bigInt(i);
 
                     for (var j = 2; j < maxNumber + 1; j++) {
-                        allMultiplesSet.add(numberToExponentiate.pow(j));
+
+                        var exponentiatedNumber = numberToExponentiate.pow(j);
+
+                        //sets don't differenciate between objects.
+                        var stringifiedNumber = exponentiatedNumber.toString();
+                        allMultiplesSet.add(stringifiedNumber);
                     }  
                 }
 
-                return allMultiplesSet.size();
+                return allMultiplesSet.size;
             };
 
             return problem0029;
