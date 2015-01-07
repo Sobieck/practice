@@ -3,7 +3,7 @@
 //npm update karma
 //npm update karma-ie-launcher
 
-module.exports = function (config) { 
+module.exports = function (config) {
     config.set({
 
         // base path, that will be used to resolve files and exclude
@@ -15,6 +15,8 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'http://peterolson.github.com/BigInteger.js/BigInteger.min.js',
+            //for sets and other datatypes.
+            'https://rawgithub.com/mauriciosantos/buckets/master/buckets-minified.js',
             { pattern: 'utilities/**/*.js', include: true },
             { pattern: 'algorithms/visualstudio/algorithms.javascript/**/*.js', include: true },
             { pattern: 'PE/visualstudio/PE.JavaScript/**/*.js', include: true }

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,7 @@
     <Compile Include="Problem0005.cs" />
     <Compile Include="Problem0004.cs" />
     <Compile Include="Problem0003.cs" />
+    <Compile Include="Problem0029.cs" />
     <Compile Include="Problem0028.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
