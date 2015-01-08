@@ -1,7 +1,6 @@
 # IN POWERSHELL
 # iex.bat - REPL
 # elixir c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\elixir\Spec\Problem0001.Spec.ex
-# http://learnelixir.com/blog/2014/10/06/basic-testing-with-elixir/
 
 Code.require_file "../Implementation/Problem0001.ex", __DIR__
 

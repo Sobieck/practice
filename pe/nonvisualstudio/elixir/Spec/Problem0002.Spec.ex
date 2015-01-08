@@ -1,7 +1,6 @@
 # IN POWERSHELL
 # iex.bat - REPL
 # elixir c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\elixir\Spec\Problem0002.Spec.ex
-# http://learnelixir.com/blog/2014/10/06/basic-testing-with-elixir/
 
 Code.require_file "../Implementation/Problem0002.ex", __DIR__
 
@@ -22,8 +21,8 @@ defmodule Problem0002Tests do
     assert Problem0002.filterEvens([1, 3, 5, 7, 9]) == []
   end
 
-  test "filterEvens [1..10] should return [2, 4, 6, 8, 10]." do
-    assert Problem0002.filterEvens([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == [2, 4, 6, 8, 10]
+  test "filterEvens 1..10 should return [2, 4, 6, 8, 10]." do
+    assert Problem0002.filterEvens(1..10) == [2, 4, 6, 8, 10]
   end
 
   test "sumOfEvenFibsLessThan 10 should return 10." do
