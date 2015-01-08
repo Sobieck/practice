@@ -4,6 +4,7 @@ defmodule Math do
   end
 
   defp generatePrimesPrivate([], result), do: result
+  
   defp generatePrimesPrivate(potentialPrimes, result) do
     generatePrimesPrivate(
       filterNonPrimes(potentialPrimes, List.first(potentialPrimes)),
