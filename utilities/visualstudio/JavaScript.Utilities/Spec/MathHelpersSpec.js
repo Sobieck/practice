@@ -5,8 +5,10 @@
 
             describe('mathHelpers', function () {
                 var mathHelpers;
+                var listHelpers;
 
                 beforeEach(function () {
+                    listHelpers = new libraries.helpers.listHelpers();
                     mathHelpers = new libraries.helpers.mathHelpers();
                 });
 
@@ -58,7 +60,31 @@
 
                     function lcmAssert(expected, largerNumber, smallerNumber) {
                         expect(mathHelpers.lcm(largerNumber, smallerNumber)).toBe(expected);
-                    }
+                    };
+                });
+
+                describe('generatePrimes', function() {
+                    it('should return [2,3,5,7,11,13] when the input is 14.', function() {
+                        generatePrimesAssert([2, 3, 5, 7, 11, 13], 14);
+                    });
+
+                    it('should return [2,3,5,7,11] when the input is 11.', function () {
+                        generatePrimesAssert([2, 3, 5, 7, 11], 11);
+                    });
+
+                    it('should return 168 primes when the input is 1000.', function () {
+                        expect(mathHelpers.generatePrimes(1000).length).toBe(168);
+                    });
+
+                    //noticable lag when this many primes are generated.
+                    //it('should return 1,229 primes when the input is 10000.', function () {
+                    //    expect(mathHelpers.generatePrimes(10000).length).toBe(1229);
+                    //});
+
+                    function generatePrimesAssert(expected, primesUpTo) {
+                        var result = mathHelpers.generatePrimes(primesUpTo);
+                        listHelpers.allElementsAreTheSameAssert(expected, result);
+                    };
                 });
             });
         })(helpers.spec || (helpers.spec = {}));
