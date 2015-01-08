@@ -45,6 +45,7 @@
   <ItemGroup>
     <Content Include="Implementation\Problem0001.js" />
     <Content Include="Implementation\Problem0002.js" />
+    <Content Include="Implementation\Problem0007.js" />
     <Content Include="Implementation\Problem0006.js" />
     <Content Include="Implementation\Problem0005.js" />
     <Content Include="Implementation\Problem0004.js" />
@@ -52,6 +53,7 @@
     <Content Include="Implementation\Problem0028.js" />
     <Content Include="Implementation\Problem0003.js" />
     <Content Include="Spec\Problem0001.Spec.js" />
+    <Content Include="Spec\Problem0007.Spec.js" />
     <Content Include="Spec\Problem0006.Spec.js" />
     <Content Include="Spec\Problem0005.Spec.js" />
     <Content Include="Spec\Problem0004.Spec.js" />
