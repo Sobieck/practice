@@ -22,10 +22,12 @@
   (loop [currentString string
          result 0]
     (cond
-      (= currentString "") result
+      (= currentString "") 
+        result
       (> (multiplyDigitsOfPotion howLong currentString) result)
         (recur (subs currentString 1) (multiplyDigitsOfPotion howLong currentString))
-      :else (recur (subs currentString 1) result))))
+      :else 
+        (recur (subs currentString 1) result))))
 
 (defn maxOfMultiplesOfTxtFile [howLong path]
   (maxOfMultiplesOfString
