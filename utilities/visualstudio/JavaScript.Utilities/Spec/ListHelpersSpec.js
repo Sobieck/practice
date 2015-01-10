@@ -34,6 +34,24 @@
                     });
                 });
 
+                describe('product', function () {
+                    it('should return 0 for an empty list.', function () {
+                        productAssert(1, []);
+                    });
+
+                    it('should return 2 for [2].', function () {
+                        productAssert(2, [2]);
+                    });
+
+                    it('should return 10000 for [10, 10, 10, 10].', function () {
+                        productAssert(10000, [10, 10, 10, 10]);
+                    });
+
+                    function productAssert(expected, input) {
+                        expect(listHelper.product(input)).toBe(expected);
+                    };
+                });
+
                 describe('areAllElementsAreTheSame', function () {
                     it('should work.', function () {
                         expect(listHelper.areAllElementsAreTheSame([1, 2, 3], [1, 2, 3])).toBeTruthy();

@@ -46,6 +46,16 @@
                 return sum;
             };
 
+            listHelpers.prototype.product = function(list) {
+                var product = 1;
+
+                for (var i = 0; i < list.length; i++) {
+                    product *= list[i];
+                };
+
+                return product;
+            };
+
             return listHelpers;
         })();
         helpers.listHelpers = listHelpers;
