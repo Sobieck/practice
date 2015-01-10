@@ -10,8 +10,8 @@
 (deftest problem0008Tests
 
   (testing "importProblemSet"
-    (is (= "12345678901234567890" (importProblemSet "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Fake1.txt")))
-    (is (= "1234567890" (importProblemSet "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Fake2.txt"))))
+    (is (= "12345678901234567890" (importProblemSet "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Test1.txt")))
+    (is (= "1234567890" (importProblemSet "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Test2.txt"))))
 
   (testing "multiplyDigitsOfString"
     (is (= 1 (multiplyDigitsOfString "11111")))
@@ -29,8 +29,8 @@
     (is (= 81 (maxOfMultiplesOfString 2 "9123499"))))
 
   (testing "maxOfMultiplesOfTxtFile"
-    (is (= 504 (maxOfMultiplesOfTxtFile 3 "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Fake1.txt")))
-    (is (= 72 (maxOfMultiplesOfTxtFile 2 "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Fake1.txt")))
+    (is (= 504 (maxOfMultiplesOfTxtFile 3 "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Test1.txt")))
+    (is (= 72 (maxOfMultiplesOfTxtFile 2 "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008Test1.txt")))
     (is (= 23514624000 (maxOfMultiplesOfTxtFile 13 "C:/Users/Thomas/Documents/GitHub/practice/pe/problemsets/problem0008.txt")))))
 
 (run-tests)
