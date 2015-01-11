@@ -20,4 +20,3 @@
   (reduce *
           (take exponent
                 (repeat (bigint n)))))
-

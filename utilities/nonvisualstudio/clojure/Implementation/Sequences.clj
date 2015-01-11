@@ -10,3 +10,5 @@
 (defn firstInts [x]
   (range 1 (+ 1 x)))
 
+(defn product [seqToMultiply]
+  (reduce * seqToMultiply))

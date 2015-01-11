@@ -16,6 +16,10 @@
 
   (testing "firstInts"
     (is (= [1 2] (firstInts 2)))
-    (is (= [1 2 3 4 5 6 7 8 9 10] (firstInts 10)))))
+    (is (= [1 2 3 4 5 6 7 8 9 10] (firstInts 10))))
+
+  (testing "product"
+    (is (= 1000 (product [10 10 10]))
+    (is (= 600000 (product [6 100 1000]))))))
 
 (run-tests)
