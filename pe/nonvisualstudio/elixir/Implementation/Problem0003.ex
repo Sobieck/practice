@@ -1,10 +1,10 @@
 defmodule Problem0003 do
 
+  def largestPrimeFactor(numberToFactor), do: primeFactors(numberToFactor) |> Enum.max
+
   def primeFactors(numberToFactor) do
     primeFactorsRecur(2, numberToFactor, HashSet.new)
   end
-
-  def largestPrimeFactor(numberToFactor), do: primeFactors(numberToFactor) |> Enum.max
 
   defp primeFactorsRecur(factorBy, currentNumberToFactor, primeFactors) do
     cond do
