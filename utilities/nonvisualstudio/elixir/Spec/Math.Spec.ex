@@ -25,4 +25,28 @@ defmodule MathTests do
     assert Math.generatePrimes(10_000) |> Enum.count == 1229
   end
 
+  test "gcd(990,210) should return 30." do
+    assert Math.gcd(990, 210) === 30
+  end
+
+  test "gcd(210,990) should return 30." do
+    assert Math.gcd(210, 990) === 30
+  end
+
+  test "gcd(952,624) should return 8." do
+    assert Math.gcd(952, 624) === 8
+  end
+
+  test "gcd(624,952) should return 8." do
+    assert Math.gcd(624, 952) === 8
+  end
+
+  test "lcm(65,50) should return 650." do
+    assert Math.lcm(65,50) === 650
+  end
+
+  test "lcm(10,4) should return 20." do
+    assert Math.lcm(10,4) === 20
+  end
+
 end

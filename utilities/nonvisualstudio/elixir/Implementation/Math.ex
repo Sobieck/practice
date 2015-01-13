@@ -1,12 +1,29 @@
+# To use:
+# Code.require_file "../../../../Utilities/nonvisualstudio/elixir/Implementation/Math.ex", __DIR__
+
 defmodule Math do
   def generatePrimes(maxInclusive) do
-    generatePrimesPrivate(2..maxInclusive |> Enum.take(maxInclusive), [])
+    _generatePrimes(2..maxInclusive |> Enum.take(maxInclusive), [])
   end
 
-  defp generatePrimesPrivate([], result), do: result
-  
-  defp generatePrimesPrivate(potentialPrimes, result) do
-    generatePrimesPrivate(
+  def gcd(left, right) do
+    leftRemRight = rem(left, right)
+    cond do
+      leftRemRight == 0 ->
+        right
+      true ->
+        gcd(right, leftRemRight)
+    end
+  end
+
+  def lcm(left, right) do
+    div((left * right), gcd(left,right))
+  end
+
+
+  defp _generatePrimes([], result), do: result
+  defp _generatePrimes(potentialPrimes, result) do
+    _generatePrimes(
       filterNonPrimes(potentialPrimes, List.first(potentialPrimes)),
       addPrimeToResult(result, List.first(potentialPrimes)))
   end
