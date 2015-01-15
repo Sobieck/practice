@@ -1,3 +1,6 @@
+# To use:
+# Code.require_file "../../../../Utilities/nonvisualstudio/elixir/Implementation/Seq.ex", __DIR__
+
 defmodule Seq do
 
   # from Programming Elixir

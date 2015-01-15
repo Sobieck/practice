@@ -12,4 +12,8 @@ defmodule Problem0001 do
     listOfMultiplesOf5And3FromOneTo(maxExclusive)
     |> Enum.sum
   end
+
+  def run(n) do
+    IO.puts inspect :timer.tc(Problem0001, :sumOfMultiplesOf5And3From1To, [n])
+  end
 end
