@@ -1,0 +1,20 @@
+# elixir -r c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\elixir\Implementation\Problem0004.Concurrent.ex -e "Problem0004Concurrent.run(1000,9999)"
+# same strategy is needed as with Clojure. Make sure the processes are doing significant work.
+
+# not parallel
+# 2000 is 2msec
+# 10 99             2 -16msec
+# 100 999         74 - 87msec
+# 1000 9999   8105 - 8397msec
+
+#parallel - Top Level Concurrent.
+# 10 99            2 - 16msec
+# 100 999         15 - 31msec
+# 1000 9999   2520 - 2590msec
+# 10000 99999 ran once maxes 16GB ram offloads to disk. Ram is the limiting factor then CPU goes to 11% from 100%
+
+#All concurrent is Slower
+
+# 100 999   293msec
+# 1000 9999  To Many Processes
+# the overhead is overwelming the processors

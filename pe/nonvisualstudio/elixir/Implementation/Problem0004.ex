@@ -17,4 +17,7 @@ defmodule Problem0004 do
     |> Enum.max
   end
 
+  def run(startNumber,endNumber) do
+    IO.puts inspect :timer.tc(Problem0004, :maxPalendromProduct, [startNumber,endNumber])
+  end
 end
