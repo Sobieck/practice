@@ -20,6 +20,12 @@ defmodule Math do
     div((left * right), gcd(left,right))
   end
 
+  def pow(n, exponent) do
+    Stream.cycle([n])
+    |> Enum.take(exponent)
+    |> Enum.reduce(fn(elem, acc) -> elem * acc end)
+  end
+
 
   defp _generatePrimes([], result), do: result
   defp _generatePrimes(potentialPrimes, result) do

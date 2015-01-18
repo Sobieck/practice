@@ -49,4 +49,12 @@ defmodule MathTests do
     assert Math.lcm(10,4) === 20
   end
 
+  test "pow 100 10 should return 100_000_000_000_000_000_000." do
+    assert Math.pow(100,10) === 100_000_000_000_000_000_000
+  end
+
+  test "pow 5 5 should return 3_125." do
+    assert Math.pow(5,5) === 3_125
+  end
+
 end

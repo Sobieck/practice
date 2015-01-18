@@ -7,24 +7,24 @@
 (use '[clojure.set :as cl.set])
 
 
-(defn TwoToXInts [x]
-  (->> (firstInts x)
+(defn twoToXInts [x]
+  (->> (util.seq/firstInts x)
        rest))
 
 (defn exponentiateNumberFromTwoToX [number toX]
-  (->> (TwoToXInts toX)
-       (map (fn[exponent] (bigIntPow number exponent)))
+  (->> (twoToXInts toX)
+       (map (fn[exponent] (util.math/bigIntPow number exponent)))
        set))
 
 (defn distinctPowersBetween2And [toX]
-  (->> (TwoToXInts toX)
+  (->> (twoToXInts toX)
        (map (fn[number] (exponentiateNumberFromTwoToX number toX)))
        (reduce cl.set/union)
        count))
 
 
 (defn distinctPowersBetween2AndParallel [toX]
-  (->> (TwoToXInts toX)
+  (->> (twoToXInts toX)
        (pmap (fn[number] (exponentiateNumberFromTwoToX number toX)))
        (reduce cl.set/union)
        count))
