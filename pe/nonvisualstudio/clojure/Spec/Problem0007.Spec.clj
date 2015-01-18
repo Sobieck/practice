@@ -8,9 +8,6 @@
 (use 'clojure.test)
 
 (deftest problem0007
-  (testing "lazyPrimes"
-    (is (= [2 3 5 7 11] (take 5 (lazyPrimes 2)))
-    (is (= [2 3 5 7 11 13] (take 6 (lazyPrimes 2))))))
   (testing "nthPrime"
     (is (= 2 (nthPrime 1)))
     (is (= 3 (nthPrime 2)))

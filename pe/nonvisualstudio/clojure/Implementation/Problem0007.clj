@@ -1,14 +1,9 @@
 (ns pe.clojure.implementation.problem0007)
 
-
-(defn lazyPrimes [startNumber]
-  (cons startNumber
-    (lazy-seq
-      (lazyPrimes
-        (.nextProbablePrime
-          (BigInteger/valueOf startNumber))))))
+(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Primes.clj")
+(use '[utilities.primes :as util.primes])
 
 (defn nthPrime [nthPrime]
   (nth
-    (lazyPrimes 2)
+    (util.primes/lazyPrimes 2)
     (- nthPrime 1)))
