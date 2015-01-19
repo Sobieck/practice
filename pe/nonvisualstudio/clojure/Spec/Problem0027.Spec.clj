@@ -21,8 +21,8 @@
     (is (= (numberOfConsecutivePrimesProducedByQuadraticFormula [1 40]) [0 [1 40]])))
 
   (testing "generateListOfBs"
-    (is (= (generateListOfBs 15) [-13 -11 -7 -5 -3 -2 -1 0 1 2 3 5 7 11 13]))
-    (is (= (generateListOfBs 4) [-3 -2 -1 0 1 2 3])))
+    (is (= (generateListOfBs 15) [-13 -11 -7 -5 -3 -2 -1 1 2 3 5 7 11 13]))
+    (is (= (generateListOfBs 4) [-3 -2 -1 1 2 3])))
 
   (testing "maxConPrimesGeneratedGivenB"
     (is (= (maxConPrimesGeneratedGivenB -2 3) [3 [-2 -2]]))
@@ -30,7 +30,7 @@
 
   (testing "quadraticFormulaThatProducesTheMostPrimes"
     (is (= (quadraticFormulaThatProducesTheMostPrimes 4) [4 [-3 -3]]))
-    (is (= (quadraticFormulaThatProducesTheMostPrimes 1000) [71 [-61 971]])))
-)
+    (is (= (quadraticFormulaThatProducesTheMostPrimes 10) [8 [-7 -7]]))
+    (is (= (quadraticFormulaThatProducesTheMostPrimes 1000) [71 [-61 971]]))))
 
 (run-tests)

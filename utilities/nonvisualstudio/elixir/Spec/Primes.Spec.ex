@@ -37,8 +37,12 @@ defmodule PrimesTests do
     assert Primes.isProbablePrime(2, 128) == true
   end
 
-  test "isProbablePrime 1 should return true." do
-    assert Primes.isProbablePrime(1, 128) == true
+  test "isProbablePrime 1 should return false." do
+    assert Primes.isProbablePrime(1, 128) == false
+  end
+
+  test "isProbablePrime -1 should return false." do
+    assert Primes.isProbablePrime(-1, 128) == false
   end
 
   test "isProbablePrime 3 should return true." do
@@ -50,6 +54,10 @@ defmodule PrimesTests do
   end
 
   test "isProbablePrime -6 should return false." do
+    assert Primes.isProbablePrime(-6, 128) == false
+  end
+
+  test "isProbablePrime -9 should return false." do
     assert Primes.isProbablePrime(-9, 128) == false
   end
 
@@ -85,5 +93,15 @@ defmodule PrimesTests do
   test "isProbablePrime Math.pow(2,127) - 3 should return false." do
     fakeLucasPrime = Math.pow(2,127) - 3
     assert Primes.isProbablePrime(fakeLucasPrime, 128) == false
+  end
+
+  test "isProbablePrime Math.pow(2, 148) + 1 / 17 should return true." do
+    ferrierPrime = div((Math.pow(2, 148) + 1), 17)
+    assert Primes.isProbablePrime(ferrierPrime, 128) == true
+  end
+
+  test "isProbablePrime Math.pow(2, 148) + 1 / 17 + 2 should return false." do
+    ferrierPrime = div((Math.pow(2, 148) + 1), 17) + 2
+    assert Primes.isProbablePrime(ferrierPrime, 128) == false
   end
 end

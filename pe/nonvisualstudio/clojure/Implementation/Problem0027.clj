@@ -27,7 +27,7 @@
       (->>
         (map - primes)
         reverse)]
-      (concat negativePrimes [0] primes)))
+      (concat negativePrimes primes)))
 
 (defn maxConPrimesGeneratedGivenB [b maxExclusive]
   (loop
