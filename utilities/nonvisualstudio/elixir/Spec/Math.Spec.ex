@@ -9,22 +9,6 @@ ExUnit.start
 defmodule MathTests do
   use ExUnit.Case, async: true
 
-  test "generatePrimes 14 should return [2,3,5,7,11,13]." do
-    assert Math.generatePrimes(14) == [2,3,5,7,11,13]
-  end
-
-  test "generatePrimes 11 should return [2,3,5,7,11]." do
-    assert Math.generatePrimes(11) == [2,3,5,7,11]
-  end
-
-  test "generatePrimes 1000 should return a list of length 168." do
-    assert Math.generatePrimes(1000) |> Enum.count == 168
-  end
-
-  test "generatePrimes 10000 should return a list of length 1229." do
-    assert Math.generatePrimes(10_000) |> Enum.count == 1229
-  end
-
   test "gcd(990,210) should return 30." do
     assert Math.gcd(990, 210) === 30
   end
@@ -55,6 +39,18 @@ defmodule MathTests do
 
   test "pow 5 5 should return 3_125." do
     assert Math.pow(5,5) === 3_125
+  end
+
+  test "powMod 4 13 497 should return 445." do
+    assert Math.powMod(4,13,497) === 445
+  end
+
+  test "powMod 46_565 240_437_235 961_748_941 should return 533_506_838." do
+    assert Math.powMod(46_565, 240_437_235, 961_748_941) === 533_506_838
+  end
+
+  test "powMod 46_565 0 961_748_941 should return 1." do
+    assert Math.powMod(46_565, 0, 961_748_941) === 1
   end
 
 end

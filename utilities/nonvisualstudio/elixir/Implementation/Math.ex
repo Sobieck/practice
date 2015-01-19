@@ -2,9 +2,7 @@
 # Code.require_file "../../../../Utilities/nonvisualstudio/elixir/Implementation/Math.ex", __DIR__
 
 defmodule Math do
-  def generatePrimes(maxInclusive) do
-    _generatePrimes(2..maxInclusive |> Enum.take(maxInclusive), [])
-  end
+  use Bitwise
 
   def gcd(left, right) do
     leftRemRight = rem(left, right)
@@ -26,15 +24,22 @@ defmodule Math do
     |> Enum.reduce(fn(elem, acc) -> elem * acc end)
   end
 
-
-  defp _generatePrimes([], result), do: result
-  defp _generatePrimes(potentialPrimes, result) do
-    _generatePrimes(
-      filterNonPrimes(potentialPrimes, List.first(potentialPrimes)),
-      addPrimeToResult(result, List.first(potentialPrimes)))
+  #http://en.wikipedia.org/wiki/Modular_exponentiation
+  def powMod(base, exponent, modulus) do
+    _powMod(rem(base, modulus), exponent, modulus, 1)
   end
 
-  defp addPrimeToResult(result, prime), do: List.insert_at(result, -1, prime)
+  defp _powMod(_, 0, _, result), do: result
+  defp _powMod(base, exponent, modulus, result) do
+    nextResult = _nextResult(base,exponent, modulus, result)
+    nextExponent = exponent >>> 1
+    nextBase = rem(base * base, modulus)
 
-  defp filterNonPrimes(potentialPrimes, currentPrime), do: Enum.filter(potentialPrimes, fn(elem) -> rem(elem, currentPrime) != 0 end)
+    _powMod(nextBase, nextExponent, modulus, nextResult)
+  end
+
+  defp _nextResult(base, exponent, modulus, currentResult) when rem(exponent, 2) === 1 do
+    rem(currentResult * base, modulus)
+  end
+  defp _nextResult(_, _, _, currentResult), do: currentResult
 end
