@@ -1,7 +1,8 @@
--- ghci c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Spec\Problem0001.Spec.hs c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Implementation\Problem0001.hs
--- :r
--- :q
--- :set +s for times
+{-
+ghci c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Spec\Problem0001.Spec.hs
+ c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Implementation\Problem0001.hs
+-}
+-- :r :q :set +s for times
 
 module Problem0001Tests where
 

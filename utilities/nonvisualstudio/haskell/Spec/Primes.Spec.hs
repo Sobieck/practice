@@ -1,7 +1,8 @@
--- ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Spec\Primes.Spec.hs c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Primes.hs
--- :r - reload
--- :q - quit
--- :set +s for times
+{-
+ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Spec\Primes.Spec.hs
+ c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Primes.hs
+-}
+-- :r :q :set +s
 
 module PrimesTests where
 

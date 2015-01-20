@@ -1,4 +1,4 @@
--- to use
+-- to use - in ghci call use the following path
 -- c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Primes.hs
 -- import Primes
 
@@ -22,3 +22,6 @@ module Primes where
     where
       f (x:xt) ys = x : (mergeInfinite xt ys)
       g p         = [ n * p | n <- [p, p + 2 ..]]
+
+  isProbablePrime :: Int -> Int -> Bool
+  isProbablePrime potentialPrime accuracy = False

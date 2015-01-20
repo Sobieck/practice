@@ -31,7 +31,7 @@ defmodule Math do
 
   defp _powMod(_, 0, _, result), do: result
   defp _powMod(base, exponent, modulus, result) do
-    nextResult = _nextResult(base,exponent, modulus, result)
+    nextResult = _nextResult(base, exponent, modulus, result)
     nextExponent = exponent >>> 1
     nextBase = rem(base * base, modulus)
 
