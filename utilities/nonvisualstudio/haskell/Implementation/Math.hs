@@ -6,7 +6,7 @@ module Math where
 
   import Data.Bits
 
-  powMod :: Int -> Int -> Int -> Int
+  powMod :: Integer -> Integer -> Integer -> Integer
   powMod base theExponent modulus = powModRecur (base `mod` modulus) theExponent 1
     where
       powModRecur _ 0 result = result
