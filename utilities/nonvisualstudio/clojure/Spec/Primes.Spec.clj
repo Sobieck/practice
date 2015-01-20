@@ -17,8 +17,6 @@
     (is (isPrime 999331))
     (is (isPrime 961748941))
     (is (false? (isPrime 961748931)))
-    (is (false? (isPrime 999333))))
-
-)
+    (is (false? (isPrime 999333)))))
 
 (run-tests)

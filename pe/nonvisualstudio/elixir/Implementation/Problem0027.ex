@@ -40,6 +40,10 @@ defmodule Problem0027 do
     a * b
   end
 
+  def run(maxExclusive) do
+    IO.puts inspect :timer.tc(Problem0027, :productOfQuadraticFormulaThatProducesTheMostPrimes, [maxExclusive])
+  end
+
   defp _numberOfConsecutivePrimesProducedByQuadraticFormula(primesTuple) do
     if generatesAPrime(primesTuple) do
       newNumberOfPrimes = elem(primesTuple, 0) + 1
