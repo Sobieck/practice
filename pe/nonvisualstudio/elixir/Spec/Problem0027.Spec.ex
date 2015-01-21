@@ -41,12 +41,12 @@ defmodule Problem0027Tests do
     assert Problem0027.numberOfConsecutivePrimesProducedByQuadraticFormula({-3, -3}) == {4, {-3, -3}}
   end
 
-  test "generateListOfBs 15 should return [-13, -11, -7, -5, -3, -2, -1, 1, 2, 3, 5, 7, 11, 13]." do
-    assert Problem0027.generateListOfBs(15) == [-13, -11, -7, -5, -3, -2, -1, 1, 2, 3, 5, 7, 11, 13]
+  test "generateListOfBs 15 should return [-13, -11, -7, -5, -3, -2, 2, 3, 5, 7, 11, 13]." do
+    assert Problem0027.generateListOfBs(15) == [-13, -11, -7, -5, -3, -2, 2, 3, 5, 7, 11, 13]
   end
 
-  test "generateListOfBs 4 should return [-3, -2, -1, 1, 2, 3]." do
-    assert Problem0027.generateListOfBs(4) == [-3, -2, -1, 1, 2, 3]
+  test "generateListOfBs 4 should return [-3, -2, 2, 3]." do
+    assert Problem0027.generateListOfBs(4) == [-3, -2, 2, 3]
   end
 
   test "maxConPrimesGeneratedGivenB(-2,3) should return {3, {-2,-2}}." do

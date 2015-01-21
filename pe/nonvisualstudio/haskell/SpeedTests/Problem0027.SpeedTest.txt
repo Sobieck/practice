@@ -1,0 +1,7 @@
+
+
+before parallelization run once.. or so.
+
+productOfQuadraticFormulaThatProducesTheMostPrimes 150  = .20 sec
+productOfQuadraticFormulaThatProducesTheMostPrimes 1000 = 20 sec
+productOfQuadraticFormulaThatProducesTheMostPrimes 1500 = 79 sec run once

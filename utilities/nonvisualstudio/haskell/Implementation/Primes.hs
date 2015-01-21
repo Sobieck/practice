@@ -1,8 +1,12 @@
--- to use - in ghci call use the following path
+
 {-
+to use - in ghci call use the following path
+
 c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Primes.hs
- c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs  -}
--- import Primes
+ c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
+
+ import Primes
+-}
 
 module Primes where
 

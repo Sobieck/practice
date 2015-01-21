@@ -10,7 +10,7 @@ defmodule Problem0027 do
   def numberOfConsecutivePrimesProducedByQuadraticFormula({a, b}), do: _numberOfConsecutivePrimesProducedByQuadraticFormula({0,{a,b}})
 
   def generateListOfBs(maxExclusive) do
-    positiveBs = [1] ++ Primes.generatePrimes(maxExclusive - 1)
+    positiveBs = Primes.generatePrimes(maxExclusive - 1)
     negativeBs = (Enum.map(positiveBs, &(-1 * &1)) |> Enum.reverse)
 
     negativeBs ++ positiveBs
