@@ -10,7 +10,7 @@ defmodule Primes do
 
   # based on http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
   def isProbablePrime(n, accuracy) when n < 0,          do: isProbablePrime(abs(n), accuracy)
-  def isProbablePrime(1, _),                            do: false      
+  def isProbablePrime(1, _),                            do: false
   def isProbablePrime(n, _)        when n < 4,          do: true
   def isProbablePrime(n, _)        when rem(n,2) === 0, do: false
 
