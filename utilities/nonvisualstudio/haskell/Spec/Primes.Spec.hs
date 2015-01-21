@@ -35,13 +35,18 @@ module PrimesTests where
       TestCase $ assertEqual "isProbablePrime 961748931 should return False." False (isProbablePrime 961748931 128),
       TestCase $ assertEqual "isProbablePrime 221 should return False." False (isProbablePrime 221 128),
       TestCase $ assertEqual "isProbablePrime 3561 should return False." False (isProbablePrime 3561 128),
+      TestCase $ assertEqual "isProbablePrime ((2 ^ 127) - 3) should return False." False (isProbablePrime ((2 ^ 127) - 3) 128),
+      TestCase $ assertEqual "isProbablePrime ((div ((2 ^ 148) + 1) 17) + 2) should return False." False (isProbablePrime ((div ((2 ^ 148) + 1) 17) + 2) 128),
 
       TestCase $ assertEqual "isProbablePrime 3571 should return True." True (isProbablePrime 3571 128),
       TestCase $ assertEqual "isProbablePrime 2 should return True." True (isProbablePrime 2 128),
       TestCase $ assertEqual "isProbablePrime 3 should return True." True (isProbablePrime 3 128),
       TestCase $ assertEqual "isProbablePrime -3 should return True." True (isProbablePrime (-3) 128),
       TestCase $ assertEqual "isProbablePrime 961748941 should return True." True (isProbablePrime 961748941 128),
-      TestCase $ assertEqual "isProbablePrime 49979687 should return True." True (isProbablePrime 49979687 128) 
+      TestCase $ assertEqual "isProbablePrime 49979687 should return True." True (isProbablePrime 49979687 128),
+      TestCase $ assertEqual "isProbablePrime ((2 ^ 127) - 1) should return True." True (isProbablePrime ((2 ^ 127) - 1) 128),
+      TestCase $ assertEqual "isProbablePrime div ((2 ^ 148) + 1) 17 should return True." True (isProbablePrime (div ((2 ^ 148) + 1) 17) 128)
+
     ]
 
   testCases = TestList
