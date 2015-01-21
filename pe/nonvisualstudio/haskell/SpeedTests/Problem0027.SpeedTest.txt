@@ -5,3 +5,9 @@ before parallelization run once.. or so.
 productOfQuadraticFormulaThatProducesTheMostPrimes 150  = .20 sec
 productOfQuadraticFormulaThatProducesTheMostPrimes 1000 = 20 sec
 productOfQuadraticFormulaThatProducesTheMostPrimes 1500 = 79 sec run once
+
+
+-- must not be doing concurrency correctly. 
+quadraticFormulaThatProducesTheMostPrimesConcurrent 150 = .22 sec
+quadraticFormulaThatProducesTheMostPrimesConcurrent 1000 = 20.56 sec
+quadraticFormulaThatProducesTheMostPrimesConcurrent 1500 = 79 sec.

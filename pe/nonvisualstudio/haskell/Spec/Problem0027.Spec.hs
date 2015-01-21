@@ -3,7 +3,7 @@ ghci c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Spec\P
  c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Implementation\Problem0027.hs
  c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Primes.hs
  c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
-
+ c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Seq.hs
 -}
 -- :r :q :set +s for times
 
@@ -36,7 +36,10 @@ module Problem0027Tests where
       TestCase $ assertEqual "quadraticFormulaThatProducesTheMostPrimes 10 should return (8, ((-7), (-7)))." (8, ((-7), (-7))) (quadraticFormulaThatProducesTheMostPrimes 10),
 
       TestCase $ assertEqual "productOfQuadraticFormulaThatProducesTheMostPrimes 10 should return 49." 49 (productOfQuadraticFormulaThatProducesTheMostPrimes 10),
-      TestCase $ assertEqual "productOfQuadraticFormulaThatProducesTheMostPrimes 6 should return 25." 25 (productOfQuadraticFormulaThatProducesTheMostPrimes 6)
+      TestCase $ assertEqual "productOfQuadraticFormulaThatProducesTheMostPrimes 6 should return 25." 25 (productOfQuadraticFormulaThatProducesTheMostPrimes 6),
+
+      TestCase $ assertEqual "quadraticFormulaThatProducesTheMostPrimesConcurrent 6 should return (5, (5, 5))." (5, (5, 5)) (quadraticFormulaThatProducesTheMostPrimesConcurrent 6),
+      TestCase $ assertEqual "quadraticFormulaThatProducesTheMostPrimesConcurrent 10 should return (8, ((-7), (-7)))." (8, ((-7), (-7))) (quadraticFormulaThatProducesTheMostPrimesConcurrent 10)
     ]
 
   tests = runTestTT testCases

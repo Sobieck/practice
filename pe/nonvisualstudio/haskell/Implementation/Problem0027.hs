@@ -1,6 +1,7 @@
 module Problem0027 where
 
   import Primes
+  import Seq
 
   generatesAPrime :: (Integer, (Integer, Integer)) -> Bool
   generatesAPrime (n, (a,b)) = isProbablePrime ((n * n) + (n * a) + b) 128
@@ -34,3 +35,11 @@ module Problem0027 where
   productOfQuadraticFormulaThatProducesTheMostPrimes maxExclusive = a * b
     where
       (a, b) = snd $ quadraticFormulaThatProducesTheMostPrimes maxExclusive
+
+  -- concurrent
+  quadraticFormulaThatProducesTheMostPrimesConcurrent :: Integer -> (Integer, (Integer, Integer))
+  quadraticFormulaThatProducesTheMostPrimesConcurrent maxExclusive =
+    maximum
+    $ pMap (\el -> maxConPrimesGeneratedGivenB el maxExclusive) bs
+    where
+      bs = generateListOfBs maxExclusive
