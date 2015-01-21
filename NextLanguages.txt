@@ -10,4 +10,3 @@ Others I'm interested in
 • Go 
 • oCaml - Mirage
 • Erlang 
-• Elixir - Erlang variant http://try.erlangonxen.org/zerg
