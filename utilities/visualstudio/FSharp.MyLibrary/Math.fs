@@ -40,40 +40,6 @@ module Math =
         Seq.append (Seq.ofList [BigInteger(1)]) (Seq.unfold (fun (a,b) -> Some(a+b, (b, a+b))) (BigInteger(0),BigInteger(1)))
     
 
-
-    //http://blog.hoomla.se/post/The-sieve-of-Atkin-in-F.aspx
-    // Generates a list of all primes below limit
-    let primes limit =
-        // initialize the sieve
-        let sieve = Array.create (limit + 1) false
-        // put in candidate primes: 
-        // integers which have an odd number of
-        // representations by certain quadratic forms
-        let inline invCand n pred =
-            if n < limit && pred then sieve.[n] <- not sieve.[n] 
-        let sqrtLimit = int (sqrt (float limit))
-        for x = 1 to sqrtLimit do
-            for y = 1 to sqrtLimit do
-                let xPow2 = x * x
-                let yPow2 = y * y
-                let n = 4 * xPow2 + yPow2 in invCand n (let m = n % 12 in m = 1 || m = 5)
-                let n = 3 * xPow2 + yPow2 in invCand n (n % 12 = 7)
-                let n = 3 * xPow2 - yPow2 in invCand n (x > y && n % 12 = 11)
-        // eliminate composites by sieving
-        let rec eliminate n =
-            if n <= sqrtLimit 
-            then if sieve.[n]
-                 then let nPow2 = n * n
-                      for k in nPow2 .. nPow2 .. limit do
-                          Array.set sieve k false
-                 eliminate (n + 2)
-        eliminate 5
-        // Generate list from the sieve (backwards)
-        let rec generateList acc n =
-            if n >= 5 then generateList (if sieve.[n] then n :: acc else acc) (n - 1)
-            else acc
-        2 :: 3 :: (generateList [] limit)
-
     let factorialInt (n: int) =
         List.fold (fun acc elem -> acc * elem) 1 [1..n]
 
@@ -82,3 +48,33 @@ module Math =
         let nBigInt     = BigInteger(n)
 
         List.fold (fun acc elem -> acc * elem) oneBigInt [oneBigInt..nBigInt]
+
+    let randomBigInt (greaterThan: BigInteger) (lessThan: BigInteger) =
+        let largestInt  = BigInteger(System.Int32.MaxValue)
+        let sizeOfRange = lessThan - greaterThan
+        let randomGen   = new System.Random()
+
+        let randomInt (greaterThanInt: int) (lessThanInt: int) = 
+            let randomNumber = randomGen.Next((int)greaterThanInt + 1, lessThanInt)
+            BigInteger(randomNumber)
+
+        let tightRangeBig sizeOfRange = 
+            let adjustment = randomInt 0 sizeOfRange
+            greaterThan + adjustment
+        
+        let rec randomBig (lessThanBig: BigInteger) =
+            let withinRange (potential : BigInteger) = potential > greaterThan && potential < lessThan
+        
+            let maxBytes = lessThanBig.ToByteArray()
+            randomGen.NextBytes(maxBytes)
+
+            let potentialMatch = BigInteger(maxBytes) |> BigInteger.Abs 
+
+            match potentialMatch with
+            | _ when withinRange potentialMatch -> potentialMatch
+            | _ -> randomBig lessThanBig
+
+        match lessThan with
+        | _ when lessThan < largestInt      -> randomInt (int greaterThan) (int lessThan)
+        | _ when sizeOfRange < largestInt   -> tightRangeBig (int sizeOfRange)   
+        | _ -> randomBig lessThan

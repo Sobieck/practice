@@ -3,7 +3,7 @@
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open FSharp.MyLibraries.ListLibraryFunctions
 
-module ListExtensionFunctions = 
+module ListLibraryFunctions = 
   
     let testSpaceRow0 = [0;0;0;0;1]
     let testSpaceRow1 = [1;1;2;2;3]
@@ -12,18 +12,18 @@ module ListExtensionFunctions =
     let testSpaceRow4 = [3;9;9;9;8]
 
     [<TestClass>]
-    type ListExtensionFunctionsTests() = 
+    type ListLibraryFunctionsTests() = 
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions productOf [1;2;3;4] should equal 24.``() =
+        member x.``ListLibraryFunctions productOf [1;2;3;4] should equal 24.``() =
             Assert.AreEqual(24, productOf [1;2;3;4])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions productOf [1;2;3;4;9] should equal 216.``() =
+        member x.``ListLibraryFunctions productOf [1;2;3;4;9] should equal 216.``() =
             Assert.AreEqual(216, productOf [1;2;3;4;9])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions zip4 should return correct tuple.``() =
+        member x.``ListLibraryFunctions zip4 should return correct tuple.``() =
             Assert.AreEqual(
                 [
                     (0,1,1,2);
@@ -36,7 +36,7 @@ module ListExtensionFunctions =
             )
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions zip4 should return correct tuple with only 3 items.``() =
+        member x.``ListLibraryFunctions zip4 should return correct tuple with only 3 items.``() =
             Assert.AreEqual(
                 [
                     (0,1,1,2);
@@ -47,7 +47,7 @@ module ListExtensionFunctions =
             )
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions zip4 should return correct tuple with only 1 items.``() =
+        member x.``ListLibraryFunctions zip4 should return correct tuple with only 1 items.``() =
             Assert.AreEqual(
                 [
                     (0,1,1,2)
@@ -57,43 +57,43 @@ module ListExtensionFunctions =
 
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions dropLastItem should drop last item.``() =
+        member x.``ListLibraryFunctions dropLastItem should drop last item.``() =
             Assert.AreEqual([1..80], dropLastItem [1..81])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions dropLast2Items should drop last item.``() =
+        member x.``ListLibraryFunctions dropLast2Items should drop last item.``() =
             Assert.AreEqual([1..79], dropLast2Items [1..81])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions unionOfSortedRemoveDuplicates should add two lists that are the same together in order without duplicates.``() =
+        member x.``ListLibraryFunctions unionOfSortedRemoveDuplicates should add two lists that are the same together in order without duplicates.``() =
             Assert.AreEqual([1..10], unionOfSortedRemoveDuplicates [1..10] [1..10])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions unionOfSortedRemoveDuplicates should add two lists that have some overlap together in order without duplicates.``() =
+        member x.``ListLibraryFunctions unionOfSortedRemoveDuplicates should add two lists that have some overlap together in order without duplicates.``() =
             Assert.AreEqual([1..81], unionOfSortedRemoveDuplicates [1..13] [11..81])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions unionOfSortedRemoveDuplicates should add two lists together in order without duplicates.``() =
+        member x.``ListLibraryFunctions unionOfSortedRemoveDuplicates should add two lists together in order without duplicates.``() =
             Assert.AreEqual([1..81], unionOfSortedRemoveDuplicates [1..10] [11..81])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list.``() =
+        member x.``ListLibraryFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list.``() =
             Assert.AreEqual(List.append [1..10][92..100], removeItemsFromListThatAreInList2Sorted [1..100] [11..91])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list. Nothing in second list overlaps``() =
+        member x.``ListLibraryFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list. Nothing in second list overlaps``() =
             Assert.AreEqual([1..100], removeItemsFromListThatAreInList2Sorted [1..100] [111..911])
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list. All at the beginning.``() =
+        member x.``ListLibraryFunctions removeItemsFromList1ThatAreInList2Sorted should remove items that are in the second list. All at the beginning.``() =
             Assert.AreEqual([11..100], removeItemsFromListThatAreInList2Sorted [1..100] [1..10])
 
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions initInfiniteL should return 0L.``() =
+        member x.``ListLibraryFunctions initInfiniteL should return 0L.``() =
             Assert.AreEqual(0L, Seq.head initInfiniteL)
 
         [<TestMethod>]
-        member x.``ListExtensionFunctions initInfiniteL 10001th item should be 10001L.``() =
+        member x.``ListLibraryFunctions initInfiniteL 10001th item should be 10001L.``() =
             Assert.AreEqual(10001L, Seq.nth 10001 initInfiniteL)
 

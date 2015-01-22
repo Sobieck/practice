@@ -7,8 +7,8 @@ namespace PE.CSharp
     {
         public int NthPrime(int nth)
         {
-            return Math
-                .primes(nth * 100)
+            return Primes
+                .listOfPrimes(nth * 100)
                 .ElementAt(nth - 1);
         }
     }

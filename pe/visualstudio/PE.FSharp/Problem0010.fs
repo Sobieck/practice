@@ -3,13 +3,13 @@
 open Microsoft.FSharp.Core 
 open System
 open Microsoft.FSharp.Core.Operators 
-open FSharp.MyLibraries.Math
+open FSharp.MyLibraries.Primes
 
 
 module SumOfPrimes =
 
     let sumOfPrimesBelow n = 
-        primes n
+        listOfPrimes n
         |> List.map int64 
         |> List.sum
 

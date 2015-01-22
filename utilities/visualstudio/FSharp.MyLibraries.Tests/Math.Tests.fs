@@ -41,14 +41,6 @@ module MathLibrary =
             Assert.AreEqual(300L, lcm(12L, 50L))
 
         [<TestMethod>]
-        member x.MathLibrary_primes_10_ReturnListOfLength10() =
-            Assert.AreEqual(4, List.length (primes 10))
-
-        [<TestMethod>]
-        member x.MathLibrary_primes_3rdNumber_Should_Be_7() =
-            Assert.AreEqual(7, List.nth (primes 10) 3)
-
-        [<TestMethod>]
         member x.``MathLibrary factors should factor 6 correctly.``() =
             Assert.AreEqual([1;2;3;6], factors 6)        
             
@@ -85,3 +77,61 @@ module MathLibrary =
         [<TestMethod>]
         member x.``MathLibrary infiniteBigIntFibonaccis 11th Item returns 89.``() =
             Assert.AreEqual(BigInteger(89), Seq.nth 10 infiniteBigIntFibonaccis)
+
+        [<TestMethod>]
+        member x.``MathLibrary generate 11th Item returns 89.``() =
+            Assert.AreEqual(BigInteger(89), Seq.nth 10 infiniteBigIntFibonaccis)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 1 20 should return something less than 20 but greater than 1.``() =
+            let inputGreat = BigInteger(1)            
+            let inputLess = BigInteger(20)
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.IsTrue(result > inputGreat)
+            Assert.IsTrue(result < inputLess)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 18 20 should return 19.``() =
+            let inputGreat = BigInteger(18)            
+            let inputLess = BigInteger(20)
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.AreEqual(BigInteger(19), result)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 1 2,147,483,647 should return something less than 2,147,483,647 but greater than 1.``() =
+            let inputGreat = BigInteger(1)            
+            let inputLess = BigInteger(2147483647)
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.IsTrue(result > inputGreat)
+            Assert.IsTrue(result < inputLess)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 21474811236468 21474811236470 should return 21474811236469.``() =
+            let inputGreat = BigInteger.Parse("21474811236468")            
+            let inputLess = BigInteger.Parse("21474811236470")
+            
+            let expected = BigInteger.Parse("21474811236469")
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.AreEqual(expected, result)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 21213564546897 212135645468970 should return something between those numbers.``() =
+            let inputGreat = BigInteger.Parse("21213564546897")            
+            let inputLess = BigInteger.Parse("212135645468970")
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.IsTrue(result > inputGreat)
+            Assert.IsTrue(result < inputLess)
+
+        [<TestMethod>]
+        member x.``MathLibrary randomBigInt 1 212135645468970 should return something between those numbers.``() =
+            let inputGreat = BigInteger.Parse("1")            
+            let inputLess = BigInteger.Parse("212135645468970")
+            let result = randomBigInt inputGreat inputLess
+            
+            Assert.IsTrue(result > inputGreat)
+            Assert.IsTrue(result < inputLess)

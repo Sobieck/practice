@@ -53,6 +53,7 @@
     <Compile Include="ListLibraryFunctions.fs" />
     <Compile Include="PENumberParser.fs" />
     <Content Include="app.config" />
+    <Compile Include="Primes.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
