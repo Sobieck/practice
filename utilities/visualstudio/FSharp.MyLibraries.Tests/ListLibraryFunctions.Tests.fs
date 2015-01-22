@@ -2,6 +2,7 @@
 
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open FSharp.MyLibraries.ListLibraryFunctions
+open System.Numerics
 
 module ListLibraryFunctions = 
   
@@ -96,4 +97,19 @@ module ListLibraryFunctions =
         [<TestMethod>]
         member x.``ListLibraryFunctions initInfiniteL 10001th item should be 10001L.``() =
             Assert.AreEqual(10001L, Seq.nth 10001 initInfiniteL)
+
+        [<TestMethod>]
+        member x.``ListLibraryFunctions initInfiniteBigInt should return BigInteger(0).``() =
+            Assert.AreEqual(BigInteger(0), Seq.head initInfiniteBigInt)
+
+        [<TestMethod>]
+        member x.``ListLibraryFunctions initInfiniteBigInt 10001th item should be BigInteger(10001).``() =
+            Assert.AreEqual(BigInteger(10001), Seq.nth 10001 initInfiniteBigInt)
+
+        [<TestMethod>]
+        member x.``ListLibraryFunctions convertListToBigIntegers [1;2;3] should return BigInts.``() =
+            let expected = [BigInteger(1);BigInteger(2);BigInteger(3)]
+            let actual = convertListToBigIntegers [1..3]
+
+            Assert.AreEqual(expected, actual)
 

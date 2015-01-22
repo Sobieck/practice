@@ -1,5 +1,7 @@
 ﻿namespace FSharp.MyLibraries
 
+open System.Numerics
+
 module ListLibraryFunctions =
 
     let dropLastItem list = 
@@ -64,3 +66,17 @@ module ListLibraryFunctions =
                 yield !i
                 i := !i + 1L
             }
+
+    let initInfiniteBigInt = 
+        seq {
+            let i = ref (BigInteger(0))
+            while true do 
+                yield !i
+                i := !i + BigInteger(1)
+            }
+
+    let convertListToBigIntegers (list: List<int>) =
+        let bigInt (x: int) = BigInteger(x)
+        
+        list 
+        |> List.map (fun elem -> bigInt elem)

@@ -2,6 +2,7 @@
 
 open System.Numerics
 open FSharp.MyLibraries.Math
+open FSharp.MyLibraries.ListLibraryFunctions
 
 module Primes =
 
@@ -49,11 +50,9 @@ module Primes =
         whatExponentRecursion n (0I, n)
 
     let isProbablePrime (potentialPrime: BigInteger) (accuracy: int) =
-        let bigInt (x:int) = BigInteger(x) 
         let absValueOfPP = BigInteger.Abs potentialPrime 
 
         let rec isProbablePrimeRecur i =
-            
             let potentialMinus1 = absValueOfPP - 1I 
             let random = randomBigInt 1I (absValueOfPP - 2I)
             let (exp, odd) = whatExpondentOf2CreatesAnOddNumber potentialMinus1
@@ -77,7 +76,9 @@ module Primes =
         match absValueOfPP with
         | absValueOfPP when absValueOfPP.Equals 2I -> true
         | absValueOfPP when absValueOfPP.IsEven  -> false
-        | absValueOfPP when absValueOfPP < 3572I -> List.exists (fun elem -> (BigInteger.Abs elem).Equals absValueOfPP) (List.map (fun elem -> bigInt(elem)) <| listOfPrimes 3572)
+        | absValueOfPP when absValueOfPP < 3572I -> listOfPrimes 3572 
+                                                    |> convertListToBigIntegers
+                                                    |> List.exists (fun elem -> (BigInteger.Abs elem).Equals absValueOfPP)
         | _ -> isProbablePrimeRecur 1
 
     
