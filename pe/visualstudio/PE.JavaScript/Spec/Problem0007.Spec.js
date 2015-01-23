@@ -6,12 +6,12 @@
 
             describe('problem0007', function () {
                 var problem0007;
-                var mathHelpers;
+                var primeHelpers;
 
                 beforeEach(function () {
-                    mathHelpers = new libraries.helpers.mathHelpers();
+                    primeHelpers = new libraries.helpers.primeHelpers();
 
-                    problem0007 = new javascriptPE.implementation.problem0007(mathHelpers);
+                    problem0007 = new javascriptPE.implementation.problem0007(primeHelpers);
                 });
 
                 describe('nthPrime', function() {

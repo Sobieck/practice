@@ -51,6 +51,7 @@
     <Content Include="Implementation\Problem0006.js" />
     <Content Include="Implementation\Problem0005.js" />
     <Content Include="Implementation\Problem0004.js" />
+    <Content Include="Implementation\Problem0027.js" />
     <Content Include="Implementation\Problem0029.js" />
     <Content Include="Implementation\Problem0028.js" />
     <Content Include="Implementation\Problem0003.js" />
@@ -61,6 +62,7 @@
     <Content Include="Spec\Problem0006.Spec.js" />
     <Content Include="Spec\Problem0005.Spec.js" />
     <Content Include="Spec\Problem0004.Spec.js" />
+    <Content Include="Spec\Problem0027.Spec.js" />
     <Content Include="Spec\Problem0029.Spec.js" />
     <Content Include="Spec\Problem0028.Spec.js" />
     <Content Include="Spec\Problem0003.Spec.js" />

@@ -30,6 +30,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript.Utilities", "..\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{7E3E7467-5726-4712-840A-6399A127E9A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{63109B02-0487-4F57-ACE5-98917EAC715A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\KarmaCommandPromptCommand.txt = ..\..\KarmaCommandPromptCommand.txt
+		..\..\KarmaRunner.bat = ..\..\KarmaRunner.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

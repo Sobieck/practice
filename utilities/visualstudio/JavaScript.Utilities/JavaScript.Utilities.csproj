@@ -44,8 +44,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Implementations\ListHelpers.js" />
+    <Content Include="Implementations\PrimeHelpers.js" />
     <Content Include="Implementations\MathHelpers.js" />
     <Content Include="Spec\ListHelpersSpec.js" />
+    <Content Include="Spec\PrimeHelpersSpec.js" />
     <Content Include="Spec\MathHelpersSpec.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
