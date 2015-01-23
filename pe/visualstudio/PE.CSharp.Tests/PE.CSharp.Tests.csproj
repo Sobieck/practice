@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Numerics" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -57,6 +58,7 @@
     <Compile Include="Problem0006.Tests.cs" />
     <Compile Include="Problem0005.Tests.cs" />
     <Compile Include="Problem0004.Tests.cs" />
+    <Compile Include="Problem0027.Tests.cs" />
     <Compile Include="Problem0029.Tests.cs" />
     <Compile Include="Problem0028.Tests.cs" />
     <Compile Include="Problem0003.Tests.cs" />
