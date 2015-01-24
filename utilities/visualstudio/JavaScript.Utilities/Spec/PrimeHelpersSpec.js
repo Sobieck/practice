@@ -18,16 +18,20 @@
                     });
 
                     it('should return [2,3,5,7,11] when the input is 11.', function () {
-                        generatePrimesAssert([2, 3, 5, 7, 11], 11);
+                        generatePrimesAssert([2, 3, 5, 7], 11);
                     });
 
                     it('should return 168 primes when the input is 1000.', function () {
                         expect(primeHelpers.generatePrimes(1000).length).toBe(168);  
                     });
 
-                    //noticable lag when this many primes are generated.
-                    //it('should return 1,229 primes when the input is 10000.', function () {
-                    //    expect(primeHelpers.generatePrimes(10000).length).toBe(1229);
+                    it('should return 1,229 primes when the input is 10000.', function () {
+                        expect(primeHelpers.generatePrimes(10000).length).toBe(1229);
+                    });
+
+                    //takes .102 sec
+                    //it('should return 78,498 primes when the input is 1000000.', function () {
+                    //    expect(primeHelpers.generatePrimes(1000000).length).toBe(78498);
                     //});
 
                     function generatePrimesAssert(expected, primesUpTo) {

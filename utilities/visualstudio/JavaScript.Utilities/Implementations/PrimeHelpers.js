@@ -9,24 +9,30 @@
             primeHelpers.prototype.generatePrimes = function (primesUpTo) {
                 //http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-                var potentialPrimes = this.listHelper.generateSequentialArray(2, primesUpTo - 1);
+                //Much faster implementation from SO
+                //http://stackoverflow.com/a/15471749/2740086
+                // SPLICE IS BAD FOR SPEED!
 
-                var primesArray = [];
+                var potentialPrimes = [], primesArray = [], upperLimit = Math.sqrt(primesUpTo);
+
+                for (var i = 0; i < primesUpTo; i++) {
+                    potentialPrimes[i] = true;
+                };
+
+                for (var j = 2; j <= upperLimit; j++) {
+                    if (potentialPrimes[j]) {
+                        for (var k = j * j; k < primesUpTo; k += j) {
+                            potentialPrimes[k] = false;
+                        };
+                    };
+                };
+
+                for (var l = 2; l < potentialPrimes.length; l++) {
+                    if (potentialPrimes[l]) {
+                        primesArray.push(l);
+                    };
+                };
                 
-                while (potentialPrimes.length) {
-                    // Add First Item To Primes Array and delete it from the potential primes. 
-                    primesArray.push(potentialPrimes.shift());
-
-                    //Filter out all numbers that can be divided by the last prime.
-                    potentialPrimes = potentialPrimes.filter(
-
-                        function (item) {
-                            var lastPrime = primesArray[primesArray.length - 1];
-
-                            return item % lastPrime != 0;
-                        });
-                }
-
                 return primesArray;
             };
 
