@@ -20,7 +20,6 @@ module Problem0007Tests where
       TestCase $ assertEqual "nthPrime 4 should return 7." 7 (nthPrime 4),
       TestCase $ assertEqual "nthPrime 5 should return 11." 11 (nthPrime 5),
       TestCase $ assertEqual "nthPrime 6 should return 13." 13 (nthPrime 6)
-
     ]
 
   tests = runTestTT testCases
