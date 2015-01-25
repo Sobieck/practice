@@ -2,10 +2,11 @@
 # Code.require_file "../../../../Utilities/nonvisualstudio/elixir/Implementation/Primes.ex", __DIR__
 
 Code.require_file "../../../../Utilities/nonvisualstudio/elixir/Implementation/Math.ex", __DIR__
+Code.require_file "../../../../algorithms/nonvisualstudio/elixir/primes/Implementation/SieveOfEratosthenes.ex", __DIR__
 
 defmodule Primes do
-  def generatePrimes(maxInclusive) do
-    _generatePrimes(2..maxInclusive |> Enum.take(maxInclusive), [])
+  def generatePrimes(limit) do
+    SieveOfEratosthenes.eratosthenes(limit)
   end
 
   # based on http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
@@ -18,7 +19,6 @@ defmodule Primes do
     _isProbablePrime(n, accuracy, 0)
   end
 
-  #FOR PRIMALITY TESTING
   def whatExpondentOf2CreatesAnOddNumber(n), do: _whatExpondentOf2CreatesAnOddNumber(n, [0,n])
 
   defp _isProbablePrime(_, accuracy, i) when accuracy === i, do: true
@@ -59,20 +59,4 @@ defmodule Primes do
 
     _whatExpondentOf2CreatesAnOddNumber(newN, [newExponent, newN])
   end
-
-  #END FOR PRIMALITY TESTING
-
-  #FOR GENERATE PRIMES
-  defp _generatePrimes([], result), do: result
-  defp _generatePrimes(potentialPrimes, result) do
-    filteredPrimes = _filterNonPrimes(potentialPrimes, List.first(potentialPrimes))
-    nextResult = _addPrimeToResult(result, List.first(potentialPrimes))
-
-    _generatePrimes(filteredPrimes, nextResult)
-  end
-
-  defp _addPrimeToResult(result, prime), do: List.insert_at(result, -1, prime)
-
-  defp _filterNonPrimes(potentialPrimes, currentPrime), do: Enum.filter(potentialPrimes, fn(elem) -> rem(elem, currentPrime) != 0 end)
-  #END FOR GENERATE PRIMES
 end

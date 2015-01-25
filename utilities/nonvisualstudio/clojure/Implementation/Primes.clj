@@ -4,7 +4,6 @@
 
 (ns utilities.primes)
 
-
 (defn lazyPrimes [startNumber]
   (cons startNumber
     (lazy-seq

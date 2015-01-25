@@ -17,12 +17,24 @@ defmodule PrimesTests do
     assert Primes.generatePrimes(11) == [2,3,5,7,11]
   end
 
+  test "generatePrimes 10 should return [2,3,5,7]." do
+    assert Primes.generatePrimes(10) == [2,3,5,7]
+  end
+
   test "generatePrimes 1000 should return a list of length 168." do
     assert Primes.generatePrimes(1000) |> Enum.count == 168
   end
 
   test "generatePrimes 10000 should return a list of length 1229." do
     assert Primes.generatePrimes(10_000) |> Enum.count == 1229
+  end
+
+  test "generatePrimes 100000 should return a list of length 9_592." do
+    assert Primes.generatePrimes(100_000) |> Enum.count == 9_592
+  end
+
+  test "generatePrimes 1000000 should return a list of length 9_592." do
+    assert Primes.generatePrimes(1_000_000) |> Enum.count == 78_498
   end
 
   test "whatExpondentOf2CreatesAnOddNumber 220 should return [2,55]." do

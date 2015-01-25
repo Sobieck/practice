@@ -27,11 +27,11 @@
                     it('should return 7 when input is 4.', function () {
                         nthPrimeAssert(7, 4);
                     });
-
-                    //4 seconds.
-                    //it('should return 104743 when input is 10001.', function() {
-                    //    nthPrimeAssert(104743, 10001);
-                    //});
+                    
+                    //Was 4 seconds until optimization in the sieve.
+                    it('should return 104743 when input is 10001.', function() {
+                        nthPrimeAssert(104743, 10001);
+                    });
 
                     function nthPrimeAssert(expected, input) {
                         expect(problem0007.nthPrime(input)).toBe(expected);

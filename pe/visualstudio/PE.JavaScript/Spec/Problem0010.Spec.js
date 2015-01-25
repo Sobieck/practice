@@ -20,7 +20,7 @@
                         expect(problem0010.sumOfPrimesBelow(10)).toBe(17);
                     });
 
-                    it('should return 59 for input of 19.', function () {
+                    it('should return 58 for input of 19.', function () {
                         expect(problem0010.sumOfPrimesBelow(19)).toBe(58);
                     });
 

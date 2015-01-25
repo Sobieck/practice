@@ -52,6 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Problem0001.Tests.cs" />
+    <Compile Include="Problem0010.Tests.cs" />
     <Compile Include="Problem0009.Tests.cs" />
     <Compile Include="Problem0008.Tests.cs" />
     <Compile Include="Problem0007.Tests.cs" />
