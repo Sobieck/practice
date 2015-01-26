@@ -1,3 +1,29 @@
+FOR Current Version
+elixir -r c:\Users\Thomas\Documents\GitHub\practice\algorithms\nonvisualstudio\elixir\primes\Implementation\SieveOfEratosthenes.ex -e "SieveOfEratosthenes.run(10000)"
+V3 Run 5 times
+Limit 10000
+32000
+31000
+31000
+33000
+31000
+
+V3 Run 5 times
+Limit 100000
+352000
+333000
+355000
+352000
+353000
+
+V3 Run 5 times
+Limit 1000000
+4897000
+4965000
+4977000
+4947000
+4928000
+
 FOR V2
 elixir -r c:\Users\Thomas\Documents\GitHub\practice\algorithms\nonvisualstudio\elixir\primes\Implementation\SieveOfEratosthenes.ex -e "SieveOfEratosthenes.run(1000)"
 

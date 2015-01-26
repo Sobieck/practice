@@ -9,6 +9,19 @@ module Problem11Tests =
     [<TestClass>]
     type Problem0011() = 
 
+        let testSpace1Path = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test1.txt"
+        let testSpace2Path = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test2.txt"
+        let questionSpacePath = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011.txt"
+
+//        [<TestMethod>]
+//        member x.``Problem0011 importProblemSpace testSpace1Path should return testSpace1.``() = 
+//            Assert.AreEqual(testSpace1, importProblemSpace testSpace1Path)
+//
+//        [<TestMethod>]
+//        member x.``Problem0011 importProblemSpace testSpace2Path should return testSpace2.``() = 
+//            let result = importProblemSpace testSpace2Path
+//            Assert.AreEqual(testSpace2, result)
+
         [<TestMethod>]
         member x.``Problem0011 maxOfHorizontalMaxProducts should find the largest product of the test space 1 on the horizontal lines. In this case: 5832.``() =
             Assert.AreEqual(5832, maxOfHorizontalMaxProducts testSpace1)

@@ -19,7 +19,7 @@ defmodule SieveOfEratosthenes do
   end
 
   defp sieveMultipleOf(n, limit, notPrimeSet) do
-    _sieveMultipleOf(n, limit, notPrimeSet, n + n)
+    _sieveMultipleOf(n, limit, notPrimeSet, n * n)
   end
 
   defp _sieveMultipleOf(_, limit, notPrimeSet, notPrime) when notPrime > limit, do: notPrimeSet

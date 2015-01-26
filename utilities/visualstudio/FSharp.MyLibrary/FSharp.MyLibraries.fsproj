@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Math.fs" />
     <Compile Include="ListLibraryFunctions.fs" />
-    <Compile Include="PENumberParser.fs" />
+    <Compile Include="NumberParser.fs" />
     <Content Include="app.config" />
     <Compile Include="Primes.fs" />
   </ItemGroup>

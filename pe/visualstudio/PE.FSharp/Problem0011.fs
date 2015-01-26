@@ -3,8 +3,16 @@
 open Microsoft.FSharp.Core 
 open Microsoft.FSharp.Core.Operators 
 open FSharp.MyLibraries.ListLibraryFunctions
+open System.IO
 
 module Problem0011 =
+
+    let importProblemSpace path = 
+        File.ReadAllLines(path)
+        |> Seq.map(fun elem -> elem.Trim())
+        |> Seq.map(fun elem -> int elem)
+        
+        
 
     let maxOfListOf4WideTuples listOfTuples = 
         let multiply4WideTuple (a,b,c,d) = 
