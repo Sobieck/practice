@@ -4,15 +4,14 @@ open Microsoft.FSharp.Core
 open Microsoft.FSharp.Core.Operators 
 open FSharp.MyLibraries.ListLibraryFunctions
 open System.IO
+open FSharp.MyLibraries.NumberParser
 
 module Problem0011 =
 
     let importProblemSpace path = 
         File.ReadAllLines(path)
-        |> Seq.map(fun elem -> elem.Trim())
-        |> Seq.map(fun elem -> int elem)
-        
-        
+        |> Seq.map(fun elem -> parseSpaceDelimitedString elem)
+        |> Seq.toList
 
     let maxOfListOf4WideTuples listOfTuples = 
         let multiply4WideTuple (a,b,c,d) = 
@@ -21,7 +20,9 @@ module Problem0011 =
         List.map multiply4WideTuple listOfTuples
         |> List.max
 
-    let maxOfHorizontalMaxProducts listOfLists = 
+    let maxOfHorizontalMaxProducts path = 
+        let listOfLists = importProblemSpace path
+
         let maxProductOf4ElementsIn list =
             let rec productOf4ElementsIn (list: int list) =
                 match list with
@@ -39,43 +40,56 @@ module Problem0011 =
         horizontalMaxProducts listOfLists
         |> List.max 
 
-    let constructVerticalTuples listOfLists =
+    let constructVerticalTuples path =
+        let listOfLists = importProblemSpace path
+        
         let rec constructVerticalTuplesListOfLists lists =
             match lists with
-            | lists when List.length lists > 3  -> zip4 ((List.head lists), (List.nth lists 1), (List.nth lists 2), (List.nth lists 3)) :: constructVerticalTuplesListOfLists (List.tail lists)
+            | lists when List.length lists > 3  -> zip4Vertical lists
             | _                                 -> []
+
+        and zip4Vertical lists = 
+            let listItem1 = List.head lists
+            let listItem2 = List.nth lists 1
+            let listItem3 = List.nth lists 2
+            let listItem4 = List.nth lists 3
+            zip4 (listItem1, listItem2, listItem3, listItem4) :: constructVerticalTuplesListOfLists (List.tail lists)
 
         constructVerticalTuplesListOfLists listOfLists
         |> List.concat
 
+    let rec constructDiagonalListOfListOfTuples lists =
+        match lists with
+        | lists when List.length lists > 3 ->  
+            let list0 = List.head lists
+            let list1 = List.tail <| List.nth lists 1
+            let list2 = List.tail <| (List.tail <| List.nth lists 2)
+            let list3 = List.tail <| (List.tail <| (List.tail <| List.nth lists 3))
 
-    let constructDiagonalTuples listOfLists =
-        let rec constructDiagonalListOfListOfTuples lists =
-            match lists with
-            | lists when List.length lists > 3 ->  
-                let list0 = List.head lists
-                let list1 = List.tail <| List.nth lists 1
-                let list2 = List.tail <| (List.tail <| List.nth lists 2)
-                let list3 = List.tail <| (List.tail <| (List.tail <| List.nth lists 3))
+            zip4 (list0, list1, list2, list3) :: constructDiagonalListOfListOfTuples (List.tail lists)
+        | _ -> []
 
-                zip4 (list0, list1, list2, list3) :: constructDiagonalListOfListOfTuples (List.tail lists)
-            | _ -> []
+    let constructDiagonalTuples path =
+        let listOfLists = importProblemSpace path
                     
         constructDiagonalListOfListOfTuples listOfLists
         |> List.concat
 
-    let constructDiagonalTuplesLToR listOfLists =
-        List.rev listOfLists
-        |> constructDiagonalTuples
+    let constructDiagonalTuplesLToR path =
+        let listOfLists = importProblemSpace path
 
-    let maxOfAllVerticalAndDiagonalTuples listOfLists = 
+        List.rev listOfLists
+        |> constructDiagonalListOfListOfTuples
+        |> List.concat
+
+    let maxOfAllVerticalAndDiagonalTuples path = 
         [   
-            maxOfListOf4WideTuples (constructDiagonalTuplesLToR listOfLists);
-            maxOfListOf4WideTuples (constructDiagonalTuples listOfLists);
-            maxOfListOf4WideTuples (constructVerticalTuples listOfLists);
+            maxOfListOf4WideTuples (constructDiagonalTuplesLToR path);
+            maxOfListOf4WideTuples (constructDiagonalTuples path);
+            maxOfListOf4WideTuples (constructVerticalTuples path);
         ]
         |> List.max  
         
-    let maxOfAllSetsOfFour listOfLists= 
-        [maxOfAllVerticalAndDiagonalTuples listOfLists; maxOfHorizontalMaxProducts listOfLists]
+    let maxOfAllSetsOfFour path = 
+        [maxOfAllVerticalAndDiagonalTuples path; maxOfHorizontalMaxProducts path]
         |> List.max  

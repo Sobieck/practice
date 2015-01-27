@@ -17,7 +17,8 @@ module.exports = function (config) {
             'http://peterolson.github.com/BigInteger.js/BigInteger.min.js',
             { pattern: 'utilities/**/*.js', include: true },
             { pattern: 'algorithms/visualstudio/algorithms.javascript/**/*.js', include: true },
-            { pattern: 'PE/visualstudio/PE.JavaScript/**/*.js', include: true }
+            { pattern: 'pe/visualstudio/PE.JavaScript/**/*.js', include: true },
+            { pattern: 'pe/problemsets/js/*.js'}
         ],
 
         // list of files to exclude

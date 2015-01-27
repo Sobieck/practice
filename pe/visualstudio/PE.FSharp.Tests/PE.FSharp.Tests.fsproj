@@ -93,7 +93,6 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="Problem0011ProblemSpaces.fs" />
     <Compile Include="Problem0011.Tests.fs">
       <SubType>
       </SubType>

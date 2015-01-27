@@ -17,11 +17,12 @@ module Problem0027 =
         isProbablePrime ((n * n) + (n * a) + b) 128
     
     let numberOfConsecutivePrimesProducedByQuadraticFormula inputTuple = 
-        let maxGreaterThan0 = lazy 
-            initInfiniteBigInt
-            |> Seq.takeWhile(fun n -> generatesAPrime (n, inputTuple))  
-            |> Seq.last
-            |> fun elem -> (elem + 1I, inputTuple)
+        let maxGreaterThan0 = 
+            lazy 
+                initInfiniteBigInt
+                |> Seq.takeWhile(fun n -> generatesAPrime (n, inputTuple))  
+                |> Seq.last
+                |> fun elem -> (elem + 1I, inputTuple)
 
         match inputTuple with
         | _ when generatesAPrime (0I, inputTuple) -> maxGreaterThan0.Value 

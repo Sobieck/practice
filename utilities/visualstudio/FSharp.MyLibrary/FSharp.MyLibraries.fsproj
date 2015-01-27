@@ -54,6 +54,7 @@
     <Compile Include="NumberParser.fs" />
     <Content Include="app.config" />
     <Compile Include="Primes.fs" />
+    <Compile Include="ParseToJs.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
