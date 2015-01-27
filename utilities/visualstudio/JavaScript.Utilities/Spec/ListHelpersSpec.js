@@ -67,6 +67,20 @@
                         listHelper.allElementsAreTheSameAssert([1, 2, 3], [1, 2, 3]);
                     });
                 });
+
+                describe('max', function () {
+                    it('should return 1230 when input is [1, 2, 102, 301, 989, 1230].', function () {
+                        maxAssert(1230, [1, 2, 102, 301, 989, 1230]);
+                    });
+
+                    it('should return 12000 when input is [12000, 2, 102, 301, 989, 1230].', function () {
+                        maxAssert(12000, [12000, 2, 102, 301, 989, 1230]);
+                    });
+
+                    function maxAssert(expected, input) {
+                        expect(listHelper.max(input)).toBe(expected);
+                    };
+                });
             });
         })(helpers.spec || (helpers.spec = {}));
     })(libraries.helpers || (libraries.helpers = {}));

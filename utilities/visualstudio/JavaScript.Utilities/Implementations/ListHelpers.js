@@ -56,6 +56,11 @@
                 return product;
             };
 
+            listHelpers.prototype.max = function(list) {
+                //http://stackoverflow.com/a/6102340/2740086
+                return Math.max.apply(Math, list);
+            };
+
             return listHelpers;
         })();
         helpers.listHelpers = listHelpers;
