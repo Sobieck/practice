@@ -1,6 +1,5 @@
 {-
-ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Spec\Math.Spec.hs
-     c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
+ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Spec\Math.Spec.hs c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
 -}
 -- :r - reload
 -- :q - quit
@@ -8,8 +7,10 @@ ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell
 
 module MathTests where
 
+  import Test.QuickCheck
   import Test.HUnit
   import System.IO
+
 
   import Math
 
@@ -21,9 +22,23 @@ module MathTests where
       TestCase $ assertEqual "powMod 45621 419039293 301230039 should return 6285651." 6285651 (powMod 45621 419039293 301230039)
     ]
 
+
+
   testCases = TestList
     [
       powModTests
     ]
 
+  qc_powMod_exponentOne :: Integer -> Integer -> Property
+  qc_powMod_exponentOne base modulus =
+    modulus > 0 ==>
+      powMod base 1 modulus == base `mod` modulus
+
+  qc_powMod :: Integer -> Integer -> Integer -> Property
+  qc_powMod base theExponent modulus =
+    modulus > 0 && theExponent > 1 ==>
+      powMod base theExponent modulus == base ^ theExponent `mod` modulus
+
   tests = runTestTT testCases
+    >> quickCheck qc_powMod_exponentOne
+    >> quickCheck qc_powMod

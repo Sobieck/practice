@@ -4,20 +4,31 @@
 -- :set +s for times
 
 module QuickCheckLearnings where
-	import Data.Char
-	import Test.QuickCheck
 
-	take5 = take 5 . filter (`elem` ['a'..'e'])
+  import Test.QuickCheck
+  import Test.HUnit
 
-	--https://www.haskell.org/haskellwiki/Introduction_to_QuickCheck2
+  --http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf
+  --https://github.com/MirkoBonadei/journey-towards-property-based-testing
 
-	firstQuickCheckTests = quickCheck ((\s -> s == s) :: [Char] -> Bool)
+  qc_RevUnit :: Integer -> Bool
+  qc_RevUnit x =  reverse [x] == [x]
 
-	secondQuickCheckTests = quickCheck ((\s -> (reverse.reverse) s == s) :: [Char] -> Bool)
+  qc_RevApp :: [Int] -> [Int] -> Bool
+  qc_RevApp xs ys = reverse (xs++ys) == reverse ys ++ reverse xs
 
-	thirdQuickCheckTests = quickCheck (\s -> length (take5 s) <= 5)
+  qc_RevRev :: [Int] -> Bool
+  qc_RevRev xs = reverse (reverse xs) == xs
 
+  --qc_BadRevApp :: [Int] -> [Int] -> Bool
+  --qc_BadRevApp xs ys = reverse (xs++ys) == reverse xs ++ reverse ys
 
-	tests = firstQuickCheckTests
-			>> secondQuickCheckTests
-			>> thirdQuickCheckTests
+  qc_MaxLe :: Int -> Int -> Property
+  qc_MaxLe x y = x <= y ==> max x y == y
+
+  tests =
+    quickCheck qc_RevUnit
+    >> quickCheck qc_RevApp
+    >> quickCheck qc_RevRev
+    >> quickCheck qc_MaxLe
+    -- >> quickCheck qc_BadRevApp

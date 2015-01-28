@@ -14,5 +14,5 @@ module Math where
         where
           nextResult | currentExp `mod` 2 == 1 = (currentResult * currentBase) `mod` modulus
                      | otherwise               = currentResult
-          nextExp   = currentExp `shiftR` 1
+          nextExp   = shiftR currentExp 1
           nextBase  = (currentBase * currentBase) `mod` modulus
