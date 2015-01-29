@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -59,6 +58,97 @@ namespace PE.CSharp.Tests
             {
                 Assert.IsTrue(expected[i].SequenceEqual(result[i]));
             }
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfHorizontals_Test1_Should_Return_5832()
+        {
+            MaxProductOfHorizontalsAssert(5832, _test1);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfHorizontals_Test2_Should_Return_6561()
+        {
+            MaxProductOfHorizontalsAssert(6561, _test2);
+        }
+
+        private void MaxProductOfHorizontalsAssert(int expected ,List<List<int>> testData)
+        {
+            Assert.AreEqual(expected, _problem0011.MaxProductOfHorizontals(testData));
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfVerticles_Test1_Should_Return_1080()
+        {
+            MaxProductOfVerticlesAssert(1080, _test1);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfVerticles_Test2_Should_Return_6561()
+        {
+            MaxProductOfVerticlesAssert(6561, _test2);
+        }
+
+        private void MaxProductOfVerticlesAssert(int expected, List<List<int>> testData)
+        {
+            Assert.AreEqual(expected, _problem0011.MaxProductOfVerticles(testData));
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfForwardDiagonals_Test1_Should_Return_648()
+        {
+            MaxProductOfForwardDiagonalsAssert(648, _test1);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfForwardDiagonals_Test2_Should_Return_1944()
+        {
+            MaxProductOfForwardDiagonalsAssert(1944, _test2);
+        }
+
+        private void MaxProductOfForwardDiagonalsAssert(int expected, List<List<int>> testData)
+        {
+            Assert.AreEqual(expected, _problem0011.MaxProductOfForwardDiagonals(testData));
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfBackwardDiagonals_Test1_Should_Return_224()
+        {
+            MaxProductOfBackwardDiagonalsAssert(224, _test1);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOfBackwardDiagonals_Test2_Should_Return_648()
+        {
+            MaxProductOfBackwardDiagonalsAssert(648, _test2);
+        }
+
+        private void MaxProductOfBackwardDiagonalsAssert(int expected, List<List<int>> testData)
+        {
+            Assert.AreEqual(expected, _problem0011.MaxProductOfBackwardDiagonals(testData));
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOf4ConnectedNumbers_Test1Path_Should_Return_5832()
+        {
+            MaxProductOf4ConnectedNumbersAssert(5832, TestSpace1Path);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOf4ConnectedNumbers_Test2Path_Should_Return_6561()
+        {
+            MaxProductOf4ConnectedNumbersAssert(6561, TestSpace2Path);
+        }
+
+        [TestMethod]
+        public void Problem0011_MaxProductOf4ConnectedNumbers_ProblemSpace_Should_Return_70600674()
+        {
+            MaxProductOf4ConnectedNumbersAssert(70600674, QuestionSpacePath);
+        }
+
+        private void MaxProductOf4ConnectedNumbersAssert(int expected, string inputPath)
+        {
+            Assert.AreEqual(expected, _problem0011.MaxProductOf4ConnectedNumbers(inputPath));
         }
     }
 }
