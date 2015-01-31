@@ -4,6 +4,9 @@
 
 (ns utilities.math)
 
+(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
+(use '[utilities.sequences :as util.seq])
+
 (defn gcd [largerNumber smallerNumber]
   (loop [large largerNumber
          small smallerNumber]
@@ -17,6 +20,13 @@
      (gcd largerNumber smallerNumber)))
 
 (defn bigIntPow [n exponent]
-  (reduce *
-          (take exponent
-                (repeat (bigint n)))))
+  (reduce
+    *
+    (take
+      exponent
+      (repeat (bigint n)))))
+
+(defn factorial [n]
+  (reduce
+    *
+    (util.seq/firstInts n)))

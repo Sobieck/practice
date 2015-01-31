@@ -12,15 +12,19 @@
   (testing "gcd"
     (is (= 30 (gcd 990 210)))
     (is (= 8 (gcd 952 624))))
-
   (testing "lcm"
     (is (= 650 (lcm 65 50)))
     (is (= 20 (lcm 10 4))))
-
   (testing "bigIntPow"
     (is (= 100000000000000000000N (bigIntPow 100 10)))
     (is (= 3125 (bigIntPow 5 5)))
     (is (= 4 (bigIntPow 2 2)))
-    (is (= 16 (bigIntPow 4 2)))
-  ))
+    (is (= 16 (bigIntPow 4 2))))
+  (testing "factorial"
+    (is (= 1 (factorial 0)))
+    (is (= 2 (factorial 2)))
+    (is (= 3628800 (factorial 10)))
+    (is (= 1307674368000 (factorial 15)))
+    (is (= 2432902008176640000 (factorial 20))))
+  )
 (run-tests)
