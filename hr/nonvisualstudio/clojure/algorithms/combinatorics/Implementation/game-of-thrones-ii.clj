@@ -1,3 +1,5 @@
+;http://stackoverflow.com/questions/13789092/length-of-the-first-line-in-an-utf-8-file-with-bom
+
 (ns hr.clojure.algorithms.warmup.implementation.game-of-thrones-ii)
 
 (load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
