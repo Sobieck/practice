@@ -1,13 +1,17 @@
 ; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
 ;(load-file "c:/Users/Thomas/Documents/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/combinatorics/Spec/game-of-thrones-ii.Spec.clj")
-;answer for game-of-thrones-ii.txt is 565288459
+;answer for c:/Users/Thomas/Documents/GitHub/practice/hr/problemsets/game-of-thrones-ii.txt is 565288459
 
 (ns hr.clojure.algorithms.warmup.implementation.game-of-thrones-ii.spec)
 
 (load-file "c:/Users/Thomas/Documents/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/combinatorics/Implementation/game-of-thrones-ii.clj")
 (use 'hr.clojure.algorithms.warmup.implementation.game-of-thrones-ii)
 (use 'clojure.test)
+(use '[clojure.java.io :as jio])
 
+(defn openAndApply [function path]
+  (with-open [r (jio/reader path)]
+    (doall (function (line-seq r)))))
 
 (deftest game-of-thrones-ii
   (testing "numberOfPalendromialPermutations"
@@ -24,5 +28,8 @@
     (is (= 8 (productOfFactorials [2 2 2])))
     (is (= 7257600 (productOfFactorials [10 2])))
     )
+  (testing "numberOfPalendromialPermutationsOfLargeString"
+    (is (= 1 (openAndApply numberOfPalendromialPermutationsOfLargeString "c:/Users/Thomas/Documents/GitHub/practice/hr/problemsets/game-of-thrones-ii.txt")))
     )
+)
 (run-tests)

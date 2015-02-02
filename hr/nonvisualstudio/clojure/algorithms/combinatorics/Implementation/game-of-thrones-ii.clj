@@ -6,6 +6,7 @@
 (load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
 (use '[utilities.math :as util.math])
 (use '[utilities.sequences :as util.seq])
+(import '[java.io BufferedReader StringReader])
 
 (defn halfOfFrequencies [string]
   (->>
@@ -27,6 +28,10 @@
     (/
       factOfSum
       (productOfFactorials halfFreq))))
+
+(defn numberOfPalendromialPermutationsOfLargeString [reader]
+  (halfOfFrequencies (first reader)))
+
 
 ;IO FOR WEBSITE
 ;(println (numberOfPalendromialPermutations (read-line)))
