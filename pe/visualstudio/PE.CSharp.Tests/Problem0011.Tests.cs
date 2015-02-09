@@ -8,9 +8,9 @@ namespace PE.CSharp.Tests
     public class Problem0011Tests
     {
         private static Problem0011 _problem0011;
-        private const string TestSpace1Path = @"c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test1.txt";
-        private const string TestSpace2Path = @"c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test2.txt";
-        private const string QuestionSpacePath = @"c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011.txt";
+        private const string TestSpace1Path = @"..\..\..\..\..\..\practice\pe\problemsets\problem0011test1.txt";
+        private const string TestSpace2Path = @"..\..\..\..\..\..\practice\pe\problemsets\problem0011test2.txt";
+        private const string QuestionSpacePath = @"..\..\..\..\..\..\practice\pe\problemsets\problem0011.txt";
         private static List<List<int>> _test1;
         private static List<List<int>> _test2;
 

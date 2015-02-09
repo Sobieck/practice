@@ -72,7 +72,7 @@ namespace PE.CSharp
             return Product(high, len) / oddFactNdiv4;
         }
 
-        private static BigInteger Product(int m, int len)
+        public static BigInteger Product(int m, int len)
         {
             if (len == 1) return m;
             if (len == 2) return m * (m - 2);

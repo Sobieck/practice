@@ -34,12 +34,12 @@ module Problem0022Tests =
 
         [<TestMethod>]
         member x.``Problem0022 parseAndAlphabetizeNames testNames returns correctList.``() =
-            Assert.AreEqual(["ABA";"BAB";"DRAT";"ZA"], parseAndAlphabetizeNames "C:\\Users\\Thomas\\Documents\\GitHub\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_test.txt")
+            Assert.AreEqual(["ABA";"BAB";"DRAT";"ZA"], parseAndAlphabetizeNames "..\\..\\..\\..\\..\\..\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_test.txt")
 
         [<TestMethod>]
         member x.``Problem0022 scoreListSum testNames returns 251.``() =
-            Assert.AreEqual(251, scoreListSum "C:\\Users\\Thomas\\Documents\\GitHub\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_test.txt")
+            Assert.AreEqual(251, scoreListSum "..\\..\\..\\..\\..\\..\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_test.txt")
 
         [<TestMethod>]
         member x.``Problem0022 answer.``() =
-            Assert.AreEqual(871198282, scoreListSum "C:\\Users\\Thomas\\Documents\\GitHub\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_names.txt")
+            Assert.AreEqual(871198282, scoreListSum "..\\..\\..\\..\\..\\..\\practice\\pe\\nonvisualstudio\\haskell\\problemSpaces\\p022_names.txt")

@@ -8,9 +8,9 @@ module Problem11Tests =
     [<TestClass>]
     type Problem0011() = 
 
-        let testSpace1Path = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test1.txt"
-        let testSpace2Path = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011test2.txt"
-        let questionSpacePath = "c:\Users\Thomas\Documents\GitHub\practice\pe\problemsets\problem0011.txt"
+        let testSpace1Path = "..\..\..\..\..\..\practice\pe\problemsets\problem0011test1.txt"
+        let testSpace2Path = "..\..\..\..\..\..\practice\pe\problemsets\problem0011test2.txt"
+        let questionSpacePath = "..\..\..\..\..\..\practice\pe\problemsets\problem0011.txt"
 
         [<TestMethod>]
         member x.``Problem0011 importProblemSpace testSpace1Path should return testSpace1.``() = 
