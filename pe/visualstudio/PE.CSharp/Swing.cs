@@ -2,58 +2,68 @@
 
 namespace PE.CSharp
 {
-    //https://github.com/PeterLuschny/Fast-Factorial-Functions/blob/6870e3c280793e05b89484d33456bdaa723b8d26/SilverFactorial64/Sharith/Factorial/FactorialSwing.cs
-    public class Swing
+    public class OddFactorialInputs
     {
-        //public string Name
+        public BigInteger OddFactNdiv4 { get; set; }
+        public BigInteger OddFactNdiv2 { get; set; }
+        public BigInteger Result { get; set; }
+        public int N { get; set; }
+    }
+
+    public static class Swing
+    {
+        private const int SMALLSWING = 33;
+        private const int SMALLFACT = 17;
+
+        //public static BigInteger Factorial(int n)
         //{
-        //    get { return "Swing               "; }
-        //}
-
-        private static BigInteger oddFactNdiv4;
-        private static BigInteger oddFactNdiv2;
-        private const int SmallSwing = 33;
-        private const int SmallFact = 17;
-
-        //public XInt Factorial(int n)
-        //{
-        //    if (n < 0)
-        //    {
-        //        throw new ArithmeticException(
-        //        "Factorial: n has to be >= 0, but was " + n);
-        //    }
-
-            //oddFactNdiv4 = oddFactNdiv2 = XInt.One;
+        //    oddFactNdiv4 = oddFactNdiv2 = BigInteger.One;
 
         //    return OddFactorial(n) << (n - XMath.BitCount(n));
         //}
 
-        public static BigInteger OddFactorial(int n)
+        public static OddFactorialInputs OddFactorial(OddFactorialInputs oddFactorialInputs)
         {
             BigInteger oddFact;
+            var n = oddFactorialInputs.N;
+            var oddFactNdiv4 = oddFactorialInputs.OddFactNdiv4;
+            var oddFactNdiv2 = oddFactorialInputs.OddFactNdiv2;
 
-            if (n < SmallFact)
+            if (n < SMALLFACT)
             {
                 oddFact = smallOddFactorial[n];
             }
             else
             {
-                var sqrOddFact = OddFactorial(n / 2);
+                var sqrOddFact = OddFactorial(new OddFactorialInputs
+                {
+                    N = n, 
+                    OddFactNdiv2 = oddFactNdiv2, 
+                    OddFactNdiv4 = oddFactNdiv4, 
+                    Result = oddFactorialInputs.Result
+                }).Result;
 
                 var ndiv4 = n / 4;
-                var oddFactNd4 = ndiv4 < SmallFact ? smallOddFactorial[ndiv4] : oddFactNdiv4;
+                var oddFactNd4 = ndiv4 < SMALLFACT ? smallOddFactorial[ndiv4] : oddFactNdiv4;
 
                 oddFact = BigInteger.Pow(sqrOddFact, 2) * OddSwing(n, oddFactNd4);
             }
 
             oddFactNdiv4 = oddFactNdiv2;
             oddFactNdiv2 = oddFact;
-            return oddFact;
+            
+            return new OddFactorialInputs
+            {
+                N = n,
+                OddFactNdiv2 = oddFactNdiv2,
+                OddFactNdiv4 = oddFactNdiv4,
+                Result = oddFact
+            };
         }
 
-        public static BigInteger OddSwing(int n, BigInteger oddFactNdiv4)
+        private static BigInteger OddSwing(int n, BigInteger oddFactNdiv4)
         {
-            if (n < SmallSwing) return SmallOddSwing[n];
+            if (n < SMALLSWING) return smallOddSwing[n];
 
             var len = (n - 1) / 4;
             if ((n % 4) != 2) len++;
@@ -62,7 +72,7 @@ namespace PE.CSharp
             return Product(high, len) / oddFactNdiv4;
         }
 
-        public static BigInteger Product(BigInteger m, BigInteger len)
+        private static BigInteger Product(int m, int len)
         {
             if (len == 1) return m;
             if (len == 2) return m * (m - 2);
@@ -71,7 +81,7 @@ namespace PE.CSharp
             return Product(m - hlen * 2, len - hlen) * Product(m, hlen);
         }
 
-        private static readonly BigInteger[] SmallOddSwing = {
+        private static BigInteger[] smallOddSwing = {
             1,1,1,3,3,15,5,35,35,315,63,693,231,3003,429,6435,6435,109395,
             12155,230945,46189,969969,88179,2028117,676039,16900975,1300075,
             35102025,5014575,145422675,9694845,300540195,300540195 };
@@ -81,4 +91,6 @@ namespace PE.CSharp
             42567525,638512875,638512875 };
 
     } // endOfFactorialSwing
+
+
 }

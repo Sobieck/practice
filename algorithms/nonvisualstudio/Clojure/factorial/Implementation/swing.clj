@@ -23,8 +23,9 @@
       (not= 2 (mod n 4)) (+' len 1)
       len)))
 
-(defn oddSwing [n oddFactNDiv4]
-  (let [len  (lenCompute n)
+(defn oddSwing [nR oddFactNDiv4]
+  (let [n    (int nR)
+        len  (lenCompute n)
         high (-' n (bit-and 1 (+' n 1)))]
     (if
       (< n (count smallOddSwing))(nth smallOddSwing n)
@@ -33,9 +34,22 @@
           (product high len)
           oddFactNDiv4)))))
 
-(def smallOddFact
+(def smallFact
   [ 1 1 1 3 3 15 45 315 315 2835 14175 155925 467775 6081075
     42567525 638512875 638512875])
 
-(defn oddFactorial [n]
-  638512875)
+(defn oddFactorial [n oddFactNdiv4 oddFactNdiv2 result]
+  (if
+    (< n (count smallFact)) (nth smallFact n)
+    (let [sqrOddFact (oddFactorial (/ n 2) oddFactNdiv4 oddFactNdiv2 result)
+          nDiv4 (int (/ n 4))
+          oddFactNd4
+            (if
+              (< nDiv4 (count smallFact)) (nth smallFact nDiv4)
+              oddFactNdiv4)
+          oddFact
+              (*'
+                (oddSwing n oddFactNd4)
+                (*' sqrOddFact sqrOddFact))]
+              [n oddFactNdiv2 oddFact oddFact])
+    ))
