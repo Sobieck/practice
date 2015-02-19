@@ -6,41 +6,41 @@ namespace PE.CSharp.Tests
     [TestClass]
     public class SwingTest
     {
-        //[TestMethod]
-        //public void OddFactorial_101_Should_Return_LargeNumber()
-        //{
-        //    Assert.AreEqual(BigInteger.Parse("59486093459136452788534412481027596717135710671214569999578230229900499145944043791786161640506134263712410922218382358551025390625"), Swing.OddFactorial(new OddFactorialInputs
-        //    {
-        //        N = 101,
-        //        OddFactNdiv2 = 1,
-        //        OddFactNdiv4 = 1,
-        //        Result = 0
-        //    }).Result);
-        //}
+        [TestMethod]
+        public void OddFactorial_101_Should_Return_LargeNumber()
+        {
+            Assert.AreEqual(BigInteger.Parse("59486093459136452788534412481027596717135710671214569999578230229900499145944043791786161640506134263712410922218382358551025390625"), Swing.OddFactorial(new OddFactorialInputs
+            {
+                N = 101,
+                OddFactNdiv2 = 1,
+                OddFactNdiv4 = 1,
+                Result = 0
+            }).Result);
+        }
 
-        //[TestMethod]
-        //public void OddFactorial_51_Should_Return_LargeNumber()
-        //{
-        //    Assert.AreEqual(BigInteger.Parse("11021361624496124990629958634750829638898464111328125"), Swing.OddFactorial(new OddFactorialInputs
-        //    {
-        //        N = 51,
-        //        OddFactNdiv2 = 1,
-        //        OddFactNdiv4 = 1,
-        //        Result = 0
-        //    }).Result);
-        //}
+        [TestMethod]
+        public void OddFactorial_51_Should_Return_LargeNumber()
+        {
+            Assert.AreEqual(BigInteger.Parse("11021361624496124990629958634750829638898464111328125"), Swing.OddFactorial(new OddFactorialInputs
+            {
+                N = 51,
+                OddFactNdiv2 = 1,
+                OddFactNdiv4 = 1,
+                Result = 0
+            }).Result);
+        }
 
-        //[TestMethod]
-        //public void OddFactorial_12_Should_Return_LargeNumber()
-        //{
-        //    Assert.AreEqual(BigInteger.Parse("467775"), Swing.OddFactorial(new OddFactorialInputs
-        //    {
-        //        N = 12,
-        //        OddFactNdiv2 = 1,
-        //        OddFactNdiv4 = 1,
-        //        Result = 0
-        //    }).Result);
-        //}
+        [TestMethod]
+        public void OddFactorial_12_Should_Return_LargeNumber()
+        {
+            Assert.AreEqual(BigInteger.Parse("467775"), Swing.OddFactorial(new OddFactorialInputs
+            {
+                N = 12,
+                OddFactNdiv2 = 1,
+                OddFactNdiv4 = 1,
+                Result = 0
+            }).Result);
+        }
 
         [TestMethod]
         public void OddFactorial_2001_Should_Return_LargeNumber()

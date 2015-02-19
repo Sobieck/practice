@@ -71,12 +71,14 @@
     <Compile Include="ListLibraryFunctions.Tests.fs" />
     <Compile Include="Math.Tests.fs" />
     <Compile Include="Primes.Tests.fs" />
-    <Compile Include="ParseToJs.Tests.Tests.fs">
-      <SubType>
-      </SubType>
-    </Compile>
+    <Compile Include="PoBox.Tests.fs" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FsCheck">
+      <HintPath>..\packages\FsCheck.1.0.4\lib\net45\FsCheck.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -85,8 +87,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FSharp.MyLibrary\FSharp.MyLibraries.fsproj">
       <Name>FSharp.MyLibraries</Name>
       <Project>{bd2d0070-8a3a-404f-94f9-502e007c6364}</Project>

@@ -55,6 +55,7 @@
     <Content Include="app.config" />
     <Compile Include="Primes.fs" />
     <Compile Include="ParseToJs.fs" />
+    <Compile Include="PoBox.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
