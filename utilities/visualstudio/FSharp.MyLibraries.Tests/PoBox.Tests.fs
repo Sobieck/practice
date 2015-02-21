@@ -24,12 +24,10 @@ module PoBox =
         let letter4 = nextLetter os
         let letter5 = nextLetter xs
         [letter1; letter2; letter3; letter4; letter5] 
-        |> List.fold (fun acc c -> String.concat acc ) ""
+        
 
     [<TestClass>]
-    type ParseToJsTests() = 
-
-        
+    type ParseToJsTests() =        
 
         [<TestMethod>]
         member x.``PoBox anything with no pobox should return false.``() =
@@ -38,3 +36,8 @@ module PoBox =
         [<TestMethod>]
         member x.``PoBox should return true when it is passed pobox.``() =
             Assert.IsTrue(HasPoBox "POBOX")
+   
+        [<TestMethod>]
+        member x.``QuickCheckTest``() = 
+            let concat = List.concat nextWord
+            Assert.AreEqual([], nextWord)
