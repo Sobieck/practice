@@ -10,6 +10,8 @@ module QuickCheckLearnings where
 
   --http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf
   --https://github.com/MirkoBonadei/journey-towards-property-based-testing
+  --http://fsharpforfunandprofit.com/posts/property-based-testing-2/
+  --http://fsharpforfunandprofit.com/posts/property-based-testing/
 
   qc_RevUnit :: Integer -> Bool
   qc_RevUnit x =  reverse [x] == [x]
