@@ -73,7 +73,7 @@
     <Compile Include="ListLibraryFunctions.Tests.fs" />
     <Compile Include="Math.Tests.fs" />
     <Compile Include="Primes.Tests.fs" />
-    <Compile Include="PoBox.Tests.fs" />
+    <Compile Include="NewContains.Tests.fs" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
