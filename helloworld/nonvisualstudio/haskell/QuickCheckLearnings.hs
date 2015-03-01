@@ -8,10 +8,12 @@ module QuickCheckLearnings where
   import Test.QuickCheck
   import Test.HUnit
 
-  --http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf
+  --http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf - read
   --https://github.com/MirkoBonadei/journey-towards-property-based-testing
-  --http://fsharpforfunandprofit.com/posts/property-based-testing-2/
-  --http://fsharpforfunandprofit.com/posts/property-based-testing/
+  --http://fsharpforfunandprofit.com/posts/property-based-testing-2/  - read
+  --http://fsharpforfunandprofit.com/posts/property-based-testing/  - read
+  --http://research.microsoft.com/en-us/projects/pex/patterns.pdf
+  --http://www.natpryce.com/articles/000795.html
 
   qc_RevUnit :: Integer -> Bool
   qc_RevUnit x =  reverse [x] == [x]

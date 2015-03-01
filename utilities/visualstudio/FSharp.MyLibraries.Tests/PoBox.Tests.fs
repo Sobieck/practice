@@ -5,39 +5,39 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 open FSharp.MyLibraries.PoBox
 
 open FsCheck
+open FsUnit
 
 module PoBox = 
 
-    let ps = ["p"]
+    let zs = ["z"]
     let os = ["o"]
-    let bs = ["b"]
-    let xs = ["x"]
+    let es = ["e"]
 
     let nextLetter list = 
-        gen { let! i = Gen.choose (0, List.length list-1)
-            return (List.nth list i)}
+        Arb.fromGen (Gen.elements list)
     
-    let nextWord =
-        let letter1 = nextLetter ps
-        let letter2 = nextLetter os
-        let letter3 = nextLetter bs
-        let letter4 = nextLetter os
-        let letter5 = nextLetter xs
-        [letter1; letter2; letter3; letter4; letter5] 
+    let add x y = x * y
         
+    let algo x = 
+        let result1 = x |> add 1 |> add 1
+        let result2 = x |> add 3
+        1 = 2
+
+    type Properties =
+        static member ``reverse of reverse is original`` (xs:list<int>) = List.rev(List.rev xs) = xs
+        static member ``reverse is original`` (xs:list<int>) = List.rev xs = xs
 
     [<TestClass>]
     type ParseToJsTests() =        
 
         [<TestMethod>]
         member x.``PoBox anything with no pobox should return false.``() =
-            Assert.IsFalse(HasPoBox "HELLO MY NAME IS THOMAS")
+            1 |> should equal 1
 
         [<TestMethod>]
         member x.``PoBox should return true when it is passed pobox.``() =
-            Assert.IsTrue(HasPoBox "POBOX")
+            1 |> should not' (equal 2)
    
         [<TestMethod>]
         member x.``QuickCheckTest``() = 
-            let concat = List.concat nextWord
-            Assert.AreEqual([], nextWord)
+            Check.QuickThrowOnFailureAll<Properties>()
