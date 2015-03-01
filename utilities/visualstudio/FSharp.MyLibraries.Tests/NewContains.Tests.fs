@@ -10,14 +10,25 @@ open FsUnit
 module NewContains = 
 
     let zs = "zZ"
-    let os = "oO"
-    let es = "eE"
+    let os = "oO0Ò"
+    let es = "eEê"
 
-    let nextLetter (list : string) = 
-        Gen.elements list    
-
+    //http://stackoverflow.com/a/28798955/2740086
+    type OddlySpelledWords =
+        static member CustomString() =
+            ["zZ"; "oO0Ò"; "eEê"]
+            |> Seq.cast<char seq>
+            |> Seq.map Gen.elements
+            |> Seq.toList
+            |> Gen.sequence
+            |> Gen.map (List.map string)
+            |> Gen.map (String.concat "")
+            |> Arb.fromGen
+        
     type NewContainsProperties = 
-        static member ``randomString should most likely not contain the offending word.`` (string : string) = contains string [zs;os;es] = false
+        static member ``randomString should most likely not contain the offending word.`` string = contains string [zs;os;es] = false
+        static member ``randomString should return true.`` (string: string) = contains string [zs;os;es] = false
+
 
     [<TestClass>]
     type NewContainsTests() =        
@@ -33,7 +44,7 @@ module NewContains =
         [<TestMethod>]
         member x.``NewContains quickCheck properties.``() =
             Check.QuickThrowOnFailureAll<NewContainsProperties>()
-
+        
         [<TestMethod>]
         member x.``Fake stuff``() = 
             usingGenerateOddlySpelledWord |> should equal "zoe"
