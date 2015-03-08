@@ -12,7 +12,7 @@ module NewContains =
 
     let zs = "zZ"
     let os = "oO"
-    let es = "e"
+    let es = "eE"
 
     type CustomString<'a> = 
         CustomString of string * 'a with
@@ -52,6 +52,10 @@ module NewContains =
         [<TestMethod>]
         member x.``NewContains should return true when it is passed ZOe.``() =
             contains "ZOe" ["zZ";"oO";"e"] |> should equal true
+
+        [<TestMethod>]
+        member x.``NewContains should return true when it is passed zoE.``() =
+            contains "zoE" ["zZ";"oO";"eE"] |> should equal true
    
         [<TestMethod>]
         member x.``fsCheck NewContains random string will most likely not contain offending string.``() =
