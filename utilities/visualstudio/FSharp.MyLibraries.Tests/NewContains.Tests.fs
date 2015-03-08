@@ -6,29 +6,33 @@ open FSharp.MyLibraries.NewContains
 
 open FsCheck
 open FsUnit
+open FsCheck.NUnit
 
 module NewContains = 
 
     let zs = "zZ"
-    let os = "oO0Ò"
-    let es = "eEê"
+    let os = "oO"
+    let es = "e"
+
+    type CustomString<'a> = 
+        CustomString of string * 'a with
+            override x.ToString() = match x with CustomString (_,a) -> sprintf "%A" a
+            member x.Display = x.ToString()
 
     //http://stackoverflow.com/a/28798955/2740086
     type OddlySpelledWords =
         static member CustomString() =
-            ["zZ"; "oO0Ò"; "eEê"]
+            [zs; os; es]
             |> Seq.cast<char seq>
             |> Seq.map Gen.elements
             |> Seq.toList
             |> Gen.sequence
             |> Gen.map (List.map string)
             |> Gen.map (String.concat "")
-            |> Arb.fromGen
-        
+            |> Arb.fromGen    
+    
     type NewContainsProperties = 
         static member ``randomString should most likely not contain the offending word.`` string = contains string [zs;os;es] = false
-        static member ``randomString should return true.`` (string: string) = contains string [zs;os;es] = false
-
 
     [<TestClass>]
     type NewContainsTests() =        
@@ -40,12 +44,21 @@ module NewContains =
         [<TestMethod>]
         member x.``NewContains should return true when it is passed zoe.``() =
             contains "zoe" ["z";"o";"e"] |> should equal true
+
+        [<TestMethod>]
+        member x.``NewContains should return true when it is passed Zoe.``() =
+            contains "Zoe" ["zZ";"o";"e"] |> should equal true
+
+        [<TestMethod>]
+        member x.``NewContains should return true when it is passed ZOe.``() =
+            contains "ZOe" ["zZ";"oO";"e"] |> should equal true
    
         [<TestMethod>]
-        member x.``NewContains quickCheck properties.``() =
+        member x.``fsCheck NewContains random string will most likely not contain offending string.``() =
             Check.QuickThrowOnFailureAll<NewContainsProperties>()
-        
-        [<TestMethod>]
-        member x.``Fake stuff``() = 
-            usingGenerateOddlySpelledWord |> should equal "zoe"
 
+        [<TestMethod>]
+        member x.``fsCheck NewContains quickCheck random string from my generator should return true.``() = 
+            Arb.register<OddlySpelledWords>() |> ignore
+            let shouldReturnTrue (CustomString (_,y)) = contains y [zs;os;es] = true
+            Check.QuickThrowOnFailure(shouldReturnTrue)
