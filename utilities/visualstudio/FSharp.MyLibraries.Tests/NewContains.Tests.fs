@@ -66,3 +66,4 @@ module NewContains =
             Arb.register<OddlySpelledWords>() |> ignore
             let shouldReturnTrue (CustomString (_,y)) = contains y [zs;os;es] = true
             Check.QuickThrowOnFailure(shouldReturnTrue)
+            
