@@ -10,7 +10,7 @@ open FsCheck.NUnit
 
 module NewContains = 
 
-    let zs = "zZ"
+    let zs = "zZẐẑẒẓẔẕ"
     let os = "oO"
     let es = "eE"
 
