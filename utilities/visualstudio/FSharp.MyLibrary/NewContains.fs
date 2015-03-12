@@ -2,19 +2,27 @@
 
 module NewContains = 
 
+    let isLetterProhibited char (stringOfProhibitedChars : string) =
+        char.ToString()
+        |> stringOfProhibitedChars.Contains
+
     let containsAlgo (string: string) listOfProhibitedChars = 
-        
         let rec containsRecur (currentListOfChars: List<char>) currentIndexOfProhibitedChars =
+            
             let lengthOfProhibitedChars = List.length listOfProhibitedChars
             
             match currentIndexOfProhibitedChars with
             | _ when lengthOfProhibitedChars = currentIndexOfProhibitedChars -> true
-            | _ -> doCharsMatch currentListOfChars currentIndexOfProhibitedChars listOfProhibitedChars
-            
-        and doCharsMatch listOfChars index listOfProhibitedChars =            
-            match listOfChars with
-            | _ when List.nth listOfProhibitedChars index = List.head listOfChars -> containsRecur (List.tail listOfChars) (index + 1) 
-            | _ -> containsRecur (List.tail listOfChars) 0
+            | _ when List.isEmpty currentListOfChars = true -> false
+            | _ -> isNextLetterProhibited currentListOfChars currentIndexOfProhibitedChars
+        
+        and isNextLetterProhibited listOfChars index = 
+            let isProhibited = isLetterProhibited (List.head listOfChars) (List.nth listOfProhibitedChars index)
+            let newListOfChars = List.tail listOfChars
+
+            match isProhibited with
+            | true -> containsRecur newListOfChars (index + 1) 
+            | false -> containsRecur newListOfChars 0
            
         let charList = Array.toList <| string.ToCharArray() 
         containsRecur charList 0

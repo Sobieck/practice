@@ -11,8 +11,8 @@ open FsCheck.NUnit
 module NewContains = 
 
     let zs = "zZẐẑẒẓẔẕ"
-    let os = "oO"
-    let es = "eE"
+    let os = "oO0ÒÓÕÔÖØǑǒǪǬǭǫ"
+    let es = "eEĒēĔĕĖėĘęĚě"
 
     type CustomString<'a> = 
         CustomString of string * 'a with
@@ -36,6 +36,14 @@ module NewContains =
 
     [<TestClass>]
     type NewContainsTests() =        
+
+        [<TestMethod>]
+        member x.``NewContains isLetterProhibited 'a' "bxcvsdf" should return false``() = 
+            isLetterProhibited 'a' "bxcvdf" |> should equal false
+
+        [<TestMethod>]
+        member x.``NewContains isLetterProhibited 'c' "bxcvsdf" should return true``() = 
+            isLetterProhibited 'c' "bxcvdf" |> should equal true
 
         [<TestMethod>]
         member x.``NewContains anything with no zoe should return false.``() =
@@ -64,6 +72,6 @@ module NewContains =
         [<TestMethod>]
         member x.``fsCheck NewContains quickCheck random string from my generator should return true.``() = 
             Arb.register<OddlySpelledWords>() |> ignore
-            let shouldReturnTrue (CustomString (_,y)) = contains y [zs;os;es] = true
+            let shouldReturnTrue (CustomString (_,y)) = contains y [zs;os;es;] = true
             Check.QuickThrowOnFailure(shouldReturnTrue)
             
