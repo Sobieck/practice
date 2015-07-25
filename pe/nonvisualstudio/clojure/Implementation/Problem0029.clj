@@ -1,7 +1,7 @@
 (ns pe.clojure.implementation.problem0029)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
+(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
+(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
 (use '[utilities.sequences :as util.seq])
 (use '[utilities.math :as util.math])
 (use '[clojure.set :as cl.set])

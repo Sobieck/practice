@@ -1,10 +1,10 @@
 ;To Use
-;(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
+;(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
 ;(use '[utilities.math :as util.math])
 
 (ns utilities.math)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
+(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Sequences.clj")
 (use '[utilities.sequences :as util.seq])
 
 (defn gcd [largerNumber smallerNumber]

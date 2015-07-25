@@ -1,9 +1,9 @@
 ; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
-;(load-file "c:/Users/Thomas/Documents/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/warmup/Spec/game-of-thrones-i.Spec.clj")
+;(load-file "c:/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/warmup/Spec/game-of-thrones-i.Spec.clj")
 
 (ns hr.clojure.algorithms.warmup.implementation.game-of-thrones-i.spec)
 
-(load-file "c:/Users/Thomas/Documents/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/warmup/Implementation/game-of-thrones-i.clj")
+(load-file "c:/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/warmup/Implementation/game-of-thrones-i.clj")
 (use 'hr.clojure.algorithms.warmup.implementation.game-of-thrones-i)
 (use 'clojure.test)
 

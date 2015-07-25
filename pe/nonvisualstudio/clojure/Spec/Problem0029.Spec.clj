@@ -1,9 +1,9 @@
 ; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
-;(load-file "C:/Users/Thomas/Documents/GitHub/practice/pe/nonvisualstudio/clojure/Spec/Problem0029.Spec.clj")
+;(load-file "C:/GitHub/practice/pe/nonvisualstudio/clojure/Spec/Problem0029.Spec.clj")
 
 (ns pe.clojure.implementation.problem0029.spec)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/pe/nonvisualstudio/clojure/Implementation/Problem0029.clj")
+(load-file "C:/GitHub/practice/pe/nonvisualstudio/clojure/Implementation/Problem0029.clj")
 (use 'pe.clojure.implementation.problem0029)
 (use 'clojure.test)
 

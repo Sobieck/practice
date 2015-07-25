@@ -18,4 +18,3 @@
     (is (= 669171001 (sumOfSpiralDiagonals 1001)))))
 
 (run-tests)
-

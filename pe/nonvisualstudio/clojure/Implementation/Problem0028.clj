@@ -22,4 +22,3 @@
        (- i 2)
        (+ sumSoFar
           (sumOfBoxLevel i))))))
-
