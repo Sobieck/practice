@@ -12,7 +12,8 @@
 
 (defn sumStrings
   [string]
-  (->> (splitAtSpace string)
+  (->>
+    (splitAtSpace string)
     (map castToBigInt)
     (reduce +)))
 

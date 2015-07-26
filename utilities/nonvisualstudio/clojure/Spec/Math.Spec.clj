@@ -1,8 +1,8 @@
-;(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Spec/Math.Spec.clj")
+;(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Spec/Math.Spec.clj")
 
 (ns utilities.math.spec)
 
-(load-file "C:/Users/Thomas/Documents/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
+(load-file "C:/GitHub/practice/utilities/nonvisualstudio/clojure/Implementation/Math.clj")
 (use 'utilities.math)
 (use 'clojure.test)
 
@@ -26,5 +26,9 @@
     (is (= 3628800 (factorial 10)))
     (is (= 1307674368000 (factorial 15)))
     (is (= 2432902008176640000 (factorial 20))))
+
+  (testing "abs"
+    (is (= 1 (abs 1))
+    (is (= 100 (abs -100)))))
   )
 (run-tests)
