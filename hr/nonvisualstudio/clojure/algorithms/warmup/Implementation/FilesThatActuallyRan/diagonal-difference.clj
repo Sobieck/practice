@@ -13,7 +13,7 @@
   [seqToSum]
   (reduce + seqToSum))
 
-;;io algo
+;;meat of the algo
 
 (defn get-diagonal-numbers
   [vectorOfVectors]
