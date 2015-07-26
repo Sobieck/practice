@@ -1,4 +1,3 @@
-; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
 ;(load-file "c:/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/warmup/Spec/game-of-thrones-i.Spec.clj")
 
 (ns hr.clojure.algorithms.warmup.implementation.game-of-thrones-i.spec)
