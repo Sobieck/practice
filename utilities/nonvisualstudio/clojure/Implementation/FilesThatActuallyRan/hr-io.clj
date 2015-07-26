@@ -1,8 +1,52 @@
-(ns hr.clojure.algorithms.warmup.implementation.hr-io)
-(ns utilities.hr-io)
-
 (use '[clojure.string :only (split triml)])
 
+;;library functions
+
+(defn abs
+  [n]
+  (if
+    (>= n 0)
+    n
+    (* -1 n)))
+
+(defn sum
+  [seqToSum]
+  (reduce + seqToSum))
+
+;;io algo
+
+(defn get-diagonal-numbers
+  [vectorOfVectors]
+  (loop
+    [result []
+     input vectorOfVectors]
+     (if
+       (= [] input)
+       result
+       (recur
+         (conj
+           result
+           (first
+             (first input)))
+         (rest
+           (map rest input))))))
+
+(defn sum-diagonal
+  [vectorOfVectors]
+  (->>
+    (get-diagonal-numbers vectorOfVectors)
+    sum))
+
+(defn abs-difference-of-diagonal-numbers
+  [vectorOfVectors]
+  (abs
+    (-
+      (sum-diagonal vectorOfVectors)
+      (sum-diagonal
+        (reverse vectorOfVectors)))))
+
+
+;;io
 (defn split-at-space
   [string]
   (split string #" "))
@@ -44,4 +88,4 @@
 ;IO for when there is an arbitrary number of lines.
 (let [sizeOfArray (read-string (read-line))
       inputArray (create-vector-of-numbers-from-io sizeOfArray [])]
-      (print inputArray))
+      (print (abs-difference-of-diagonal-numbers inputArray)))
