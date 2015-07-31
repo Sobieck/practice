@@ -50,3 +50,11 @@
 ;(let [a (read-line)
 ;      b (read-line)]
 ;          (print (str (sumStrings b))))
+
+;;IO for multiple lines to print
+;(let [sizeOfStaircase (read-string (read-line))
+;      dataToPrint (create-staircase sizeOfStaircase)]
+;      (doall
+;        (map
+;          #(println %)
+;          dataToPrint)))
