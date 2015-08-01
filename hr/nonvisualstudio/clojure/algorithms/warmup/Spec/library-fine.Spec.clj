@@ -25,6 +25,7 @@
     (is (= [-1 -1 -1] (date-differences today oneYearAgo)))
     (is (= [0 3 -1] (date-differences today threeMonthsInTheFuture)))
     (is (= [0 0 2] (date-differences today twoDaysInTheFuture))))
+    (is (= [-1 7 9] (date-differences [1 1 2015] [10 8 2014])))
   (testing "how-overdue"
     (is (= [0 0 0] (how-overdue today today)))
     (is (= [0 0 0] (how-overdue today oneYearAgo)))
@@ -33,7 +34,8 @@
     (is (= [0 0 2] (how-overdue today twoDaysInTheFuture)))
     (is (= [0 0 3] (how-overdue today threeDaysInTheFuture)))
     (is (= [0 3 0] (how-overdue today threeMonthsInTheFuture)))
-    (is (= [15 0 0] (how-overdue today fifteenYearsInTheFuture))))
+    (is (= [15 0 0] (how-overdue today fifteenYearsInTheFuture)))
+    (is (= [0 0 0] (how-overdue [1 1 2015] [10 8 2014]))))
   (testing "fine-amount"
     (is (= 30 (fine-amount today twoDaysInTheFuture)))
     (is (= 45 (fine-amount today threeDaysInTheFuture)))
@@ -43,6 +45,7 @@
     (is (= 0 (fine-amount today today)))
     (is (= 0 (fine-amount today oneDayAgo)))
     (is (= 0 (fine-amount today oneYearAgo)))
-    (is (= 0 (fine-amount today oneMonthAgo)))))
+    (is (= 0 (fine-amount today oneMonthAgo)))
+    (is (= [0 0 0] (how-overdue [1 1 2015] [10 8 2014])))))
 
 (run-tests)
