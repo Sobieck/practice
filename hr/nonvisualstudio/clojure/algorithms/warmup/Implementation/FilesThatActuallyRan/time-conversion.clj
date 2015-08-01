@@ -1,5 +1,3 @@
-(ns hr.clojure.algorithms.warmup.implementation.time-conversion)
-
 (use '[clojure.string :only (split)])
 
 (defn is-am
@@ -72,3 +70,7 @@
             (first parsedTime)
             (last parsedTime)))
         flatten))))
+
+(let
+  [standardTime (read-line)]
+  (print (convert-to-military-time standardTime)))

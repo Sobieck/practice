@@ -22,12 +22,17 @@
     (is (= ["4658" "543"] (split-string-in-half "4658543"))))
   (testing "parse-time"
     (is (= ["07" "05" "45" "PM"] (parse-time "07:05:45PM"))))
+  (testing "format-hour"
+    (is (= "01" (format-hour "01" "AM")))
+    (is (= "00" (format-hour "12" "AM")))
+    (is (= "13" (format-hour "01" "PM")))
+    (is (= "23" (format-hour "11" "PM")))
+    (is (= "12" (format-hour "12" "PM"))))
   (testing "convert-to-military-time"
     (is (= "00:00:00" (convert-to-military-time "12:00:00AM")))
     (is (= "00:02:54" (convert-to-military-time "12:02:54AM")))
-    ;(is (= "12:00:00" (convert-to-military-time "12:00:00PM")))
-    )
-
-      )
+    (is (= "01:45:12" (convert-to-military-time "01:45:12AM")))
+    (is (= "12:00:00" (convert-to-military-time "12:00:00PM")))
+    (is (= "13:02:56" (convert-to-military-time "01:02:56PM")))))
 
 (run-tests)
