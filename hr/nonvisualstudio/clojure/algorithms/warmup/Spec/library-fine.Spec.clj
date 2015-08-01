@@ -46,6 +46,6 @@
     (is (= 0 (fine-amount today oneDayAgo)))
     (is (= 0 (fine-amount today oneYearAgo)))
     (is (= 0 (fine-amount today oneMonthAgo)))
-    (is (= [0 0 0] (how-overdue [1 1 2015] [10 8 2014])))))
+    (is (= 0 (fine-amount [1 1 2015] [10 8 2014])))))
 
 (run-tests)
