@@ -37,3 +37,9 @@
     (>= n 0)
     n
     (* -1 n)))
+
+(defn int-division
+  [numerator denominator]
+  (->>
+    (/ numerator denominator)
+    int))
