@@ -1,4 +1,4 @@
-;(load-file "c:/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/implementation/ForCodeReview/chocolate-feast.Spec.clj")
+;(load-file "c:/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/implementation/Implementation/ForCodeReview/chocolate-feast.Spec.clj")
 
 (ns hr.clojure.algorithms.implementation.implementation.chocolate-feast.spec)
 
