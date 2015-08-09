@@ -1,4 +1,4 @@
 Install MinGW
 Add c:\MinGW\bin to path
 
-sample: gcc first.c -o first
+use powershell commandlet to run a REPL
