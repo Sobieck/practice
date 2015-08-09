@@ -1,5 +1,9 @@
+#include <string.h>
+
 double convert_to_fahrenheit(double degrees){
-  return 32.0;
+  return degrees * 9 / 5 + 32;
 }
 
-// Figure out how to return doubles. not as easy as ints.
+double convert_to_celsius(double fdegrees){
+  return (fdegrees - 32) * 5 / 9;
+}
