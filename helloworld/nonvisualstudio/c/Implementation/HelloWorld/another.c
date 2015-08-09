@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void sayHello(){
-  printf("hello world\nNOOOOO!");
+  printf("hello world\nNOOOOO!\nANOTHER!\n");
 }
