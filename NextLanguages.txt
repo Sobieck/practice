@@ -10,3 +10,5 @@ Others I'm interested in
 • Go 
 • oCaml - Mirage
 • Erlang 
+
+I mean, once you've programmed in Assembler, FORTRAN, C, Pascal, C++, Smalltalk, Lisp, Prolog, Erlang, and Forth, you've seen it all. Oh, I suppose you could toss in languages like Snobol, ML, Cobol, and XSLT (retch, puke). But most of their ideas were really covered in the previous list. - Uncle Bob - http://blog.8thlight.com/uncle-bob/2015/08/06/let-the-magic-die.html
