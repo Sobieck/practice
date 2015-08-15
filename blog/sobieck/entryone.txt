@@ -7,3 +7,4 @@ It was a little WordPress deal. With just a single blog about Implementing the S
 So, lessons learned. Blog posts will be in source control and names of websites will be very different from each other!
 
 Also, I will start posting blogs more often.
+ 
