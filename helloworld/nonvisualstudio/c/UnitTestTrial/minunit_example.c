@@ -12,6 +12,8 @@ static char * test_foo() {
 }
 
 static char * test_bar() {
+         
+
      mu_assert("error, bar != 5", bar == 3);
      return 0;
 }

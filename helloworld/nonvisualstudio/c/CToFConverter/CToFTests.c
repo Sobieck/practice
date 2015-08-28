@@ -8,7 +8,7 @@ int tests_run = 0;
 
 static char * convert_to_celsius_should_return_34_when_input_is_93_2(){
   double degrees = convert_to_celsius(93.2);
-  mu_assert("error, celsius conversion != 34", degrees == 34);
+  mu_assert("error, celsius conversion != 34", degrees == 32);
   return 0;
 }
 
