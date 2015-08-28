@@ -1,15 +1,26 @@
 #include "seatest.h"
-#include "MultiplesOf3And5.c"
+#include <stdbool.h>
 
-void test_one(){
-  int one = 1;
+bool is_divisible_by_3(int);
 
-  assert_int_equal(2, one);
+void five_should_not_be_divisible_by_3(){
+
+  bool result = is_divisible_by_3(5);
+
+  assert_false(result);
+}
+
+void six_should_be_divisible_by_3(){
+
+  bool result = is_divisible_by_3(6);
+
+  assert_true(result);
 }
 
 void run(){
   test_fixture_start();
-  run_test(test_one);
+  run_test(five_should_not_be_divisible_by_3);
+  run_test(six_should_be_divisible_by_3);
   test_fixture_end();
 }
 
