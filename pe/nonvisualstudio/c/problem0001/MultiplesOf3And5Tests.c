@@ -1,8 +1,6 @@
 #include "seatest.h"
 #include <stdbool.h>
 
-bool is_divisible_by_3(int);
-
 void five_should_not_be_divisible_by_3(){
 
   bool result = is_divisible_by_3(5);

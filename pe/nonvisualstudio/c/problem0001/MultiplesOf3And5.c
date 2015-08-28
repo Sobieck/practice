@@ -24,13 +24,13 @@ int sum_of_numbers_below(int number){
   int sum = 0;
 
   for (i = 0; i < number; i++) {
-    bool by5 = is_divisible_by_5(i);
-    bool by3 = is_divisible_by_3(i);
+    bool isDivisibleBy5 = is_divisible_by_5(i);
+    bool isDivisibleBy3 = is_divisible_by_3(i);
 
-    if(by5){
+    if(isDivisibleBy5){
       sum += i;
     }
-    else if(by3){
+    else if(isDivisibleBy3){
       sum += i;
     }
   }
