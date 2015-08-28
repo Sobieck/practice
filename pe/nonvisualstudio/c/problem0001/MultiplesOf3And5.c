@@ -10,6 +10,30 @@ bool is_divisible(int num, int denom){
   return false;
 }
 
+bool is_divisible_by_5(int number){
+  return is_divisible(number, 5);
+}
+
 bool is_divisible_by_3(int number){
   return is_divisible(number, 3);
+}
+
+int sum_of_numbers_below(int number){
+
+  int i = 0;
+  int sum = 0;
+
+  for (i = 0; i < number; i++) {
+    bool by5 = is_divisible_by_5(i);
+    bool by3 = is_divisible_by_3(i);
+
+    if(by5){
+      sum += i;
+    }
+    else if(by3){
+      sum += i;
+    }
+  }
+
+  return sum;
 }
