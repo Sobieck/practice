@@ -17,7 +17,7 @@ int sum_of_even_fibs_under(int upperbound){
   int currentFib = 1;
   int previousFib = 1;
 
-  while(currentFib <= upperbound){
+  while(currentFib < upperbound){
 
     bool isEven = is_even(currentFib);
 
