@@ -6,6 +6,7 @@ Function CompileRunAndRemoveCProgram()
   $a = read-host "Hit any Key to run again. Type 'EXIT' to exit program."
   IF ($a -ne 'EXIT')
   {
+    Clear-Host
     CompileRunAndRemoveCProgram
   }
   else

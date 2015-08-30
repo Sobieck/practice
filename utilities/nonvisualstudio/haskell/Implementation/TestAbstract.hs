@@ -1,5 +1,5 @@
 -- to use - in ghci call use the following path
--- c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\TestAbstract.hs
+-- c:\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\TestAbstract.hs
 -- import TestAbstract
 
 module TestAbstract where

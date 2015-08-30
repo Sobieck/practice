@@ -1,7 +1,7 @@
 {-
 ghci c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Spec\Problem0012.Spec.hs
  c:\Users\Thomas\Documents\GitHub\practice\pe\nonvisualstudio\haskell\Implementation\Problem0012.hs
- c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\TestAbstract.hs
+ c:\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\TestAbstract.hs
 -}
 -- :r :q :set +s for times
 
