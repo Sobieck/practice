@@ -5,8 +5,6 @@ module ExtraLongFactorialsTests where
 
   import ExtraLongFactorials
 
-  fun input = input
-
   testCases = TestList
     [
       TestCase $ easyAssertEqual "factorial" factorial 0 1,
