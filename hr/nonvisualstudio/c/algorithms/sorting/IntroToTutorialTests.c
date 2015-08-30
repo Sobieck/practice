@@ -59,6 +59,26 @@ void index_of_number_from_string_3__0_1_3_should_return_2(){
   assert_int_equal(2, result);
 }
 
+void index_of_number_from_string_neg3__neg10_neg9_neg3_should_return_2(){
+  long numberToFind = -3;
+  char array[] = "-10 -9 -3";
+  long numberOfLongsInArray = 3;
+
+  long result = index_of_number_from_string(numberToFind, array, numberOfLongsInArray);
+
+  assert_int_equal(2, result);
+}
+
+void sample_from_website(){
+  long numberToFind = 4;
+  char array[] = "1 4 5 7 9 12";
+  long numberOfLongsInArray = 6;
+
+  long result = index_of_number_from_string(numberToFind, array, numberOfLongsInArray);
+
+  assert_int_equal(1, result);
+}
+
 void run(){
   test_fixture_start();
 
@@ -69,6 +89,9 @@ void run(){
   run_test(index_of_number_from_string_0__0_should_return_0);
   run_test(index_of_number_from_string_1__0_1_should_return_1);
   run_test(index_of_number_from_string_3__0_1_3_should_return_2);
+
+  run_test(index_of_number_from_string_neg3__neg10_neg9_neg3_should_return_2);
+  run_test(sample_from_website);
 
   test_fixture_end();
 }
