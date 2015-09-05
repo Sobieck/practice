@@ -5,3 +5,25 @@ SELECT * FROM CITY;
 # FOR SELECT by Id
 
 SELECT * FROM CITY WHERE ID = 1661;
+
+# FOR JAPANESE CITIES DETAIL
+
+SELECT * FROM CITY WHERE CountryCode = 'JPN';
+
+# JAPANESE CITY NAMES
+
+SELECT Name FROM CITY WHERE CountryCode = 'JPN';
+
+# Weather Observation Station 1
+
+SELECT CITY, STATE FROM STATION
+
+# Weather Observation Station 3
+
+SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0 ORDER BY CITY;
+
+# Weather Observation Station 4
+
+SELECT (COUNT(CITY) - COUNT(DISTINCT CITY)) FROM STATION;
+
+# Weather Observation Station 5
