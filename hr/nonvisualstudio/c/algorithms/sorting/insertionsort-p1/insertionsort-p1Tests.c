@@ -55,6 +55,17 @@ void should_return_sorted_array_from_unsorted_3_long(){
   array_equal(size, expected, result);
 }
 
+void should_return_sorted_array_from_unsorted_4_long(){
+  int size = 4;
+  int array[] = { 1, 10, 13, 0};
+
+  int* result = insertion(size, array);
+
+  int expected[] = { 0, 1, 10, 13};
+
+  array_equal(size, expected, result);
+}
+
 void example_problem(){
   int size = 5;
   int array[] = { 2, 4, 6, 8, 3};
@@ -74,6 +85,7 @@ void run(){
 
   run_test(should_return_sorted_array_from_unsorted_2_long);
   run_test(should_return_sorted_array_from_unsorted_3_long);
+  run_test(should_return_sorted_array_from_unsorted_4_long);
 
   run_test(example_problem);
 

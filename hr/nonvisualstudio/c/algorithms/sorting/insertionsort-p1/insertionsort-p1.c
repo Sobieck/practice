@@ -12,27 +12,36 @@ void printArray(int arraySize, int * array){
 
 int * insertion(int arraySize, int * array){
 
-  printArray(arraySize, array);
-
   if(arraySize == 1){
+    printArray(arraySize, array);
     return array;
   }
 
   int i, numberToInsert, currentNumber;
-  i = arraySize - 1;
-  numberToInsert = array[i];
-  currentNumber = array[i - 1];
+  i = arraySize - 2;
+  numberToInsert = array[i + 1];
+  currentNumber = array[i];
 
   while(currentNumber > numberToInsert){
-
-    array[i] = currentNumber;
-
-    array[i - 1] = numberToInsert;
-    i--;
-    currentNumber = array[i];
-
+    array[i + 1] = currentNumber;
     printArray(arraySize, array);
+
+    if(i <= 0) {
+      currentNumber = numberToInsert - 1;
+    }
+    else{
+      i--;
+      currentNumber = array[i];
+    }
   }
+
+  if(arraySize > 2){
+    array[i + 1] = numberToInsert;
+  }else{
+    array[i] = numberToInsert;
+  }
+
+  printArray(arraySize, array);
 
   return array;
 }
