@@ -17,6 +17,7 @@ int * insertion(int arraySize, int * array){
     return array;
   }
 
+  bool done = false;
   int i, numberToInsert, currentNumber;
   i = arraySize - 2;
   numberToInsert = array[i + 1];
@@ -27,6 +28,10 @@ int * insertion(int arraySize, int * array){
     printArray(arraySize, array);
 
     if(i <= 0) {
+      array[0] = numberToInsert;
+      array[1] = currentNumber;
+
+      done = true;
       currentNumber = numberToInsert - 1;
     }
     else{
@@ -35,13 +40,23 @@ int * insertion(int arraySize, int * array){
     }
   }
 
-  if(arraySize > 2){
+  if(done == false){
     array[i + 1] = numberToInsert;
-  }else{
-    array[i] = numberToInsert;
   }
 
   printArray(arraySize, array);
 
   return array;
 }
+
+// int main(void) {
+//
+//  int _ar_size;
+//  scanf("%d", &_ar_size);
+//  int _ar[_ar_size], _ar_i;
+//  for(_ar_i = 0; _ar_i < _ar_size; _ar_i++) {
+//    scanf("%d", &_ar[_ar_i]);
+//  }
+//
+//  insertion(_ar_size, _ar);
+// }
