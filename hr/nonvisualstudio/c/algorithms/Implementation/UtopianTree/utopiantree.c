@@ -1,5 +1,3 @@
-
-
 long utopian_tree(int cycles){
   long tree_size = 1;
   int i = 0;
