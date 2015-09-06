@@ -174,13 +174,13 @@ void calculate_cuts_from_example_9(){
 void run(){
   test_fixture_start();
 
-  //run_test(create_matrix_1);
-  //run_test(create_matrix_2_should_sum_to_correct_values);
-  //run_test(create_matrix_2_should_put_down_proper_1s);
+  run_test(create_matrix_1);
+  run_test(create_matrix_2_should_sum_to_correct_values);
+  run_test(create_matrix_2_should_put_down_proper_1s);
 
-  //run_test(calculate_cuts_from_example);
-  //run_test(calculate_cuts_from_example_2);
-  //run_test(calculate_cuts_from_example_5);
+  run_test(calculate_cuts_from_example);
+  run_test(calculate_cuts_from_example_2);
+  run_test(calculate_cuts_from_example_5);
   run_test(calculate_cuts_from_example_9);
 
   test_fixture_end();

@@ -29,13 +29,13 @@ void sum_matrix(int verticies, int sums[verticies], int matrix[verticies][vertic
   }
 }
 
-void cut_edge(int verticies, int sums[verticies], int matrix[verticies][verticies], int i){
+bool cut_edge(int verticies, int sums[verticies], int matrix[verticies][verticies], int i){
   int j = 0;
   int smallest_index;
   bool found = false;
   //always cut top edge would work on examples
 
-  while(found == false){
+  while(found == false && j < verticies){
     if(matrix[i][j] == 1){
       found = true;
       smallest_index = j;
@@ -43,10 +43,15 @@ void cut_edge(int verticies, int sums[verticies], int matrix[verticies][verticie
     j++;
   }
 
-  int edge_to_cut = smallest_index;
+  if(found){
+    int edge_to_cut = smallest_index;
 
-  matrix[i][edge_to_cut] = 0;
-  matrix[edge_to_cut][i] = 0;
+    matrix[i][edge_to_cut] = 0;
+    printf("%d\n", edge_to_cut);
+    matrix[edge_to_cut][i] = 0;
+  }
+
+  return found;
 }
 
 int calculate_cuts(int edges, int verticies, int pairs[edges][2]){
@@ -63,13 +68,18 @@ int calculate_cuts(int edges, int verticies, int pairs[edges][2]){
 
   int i;
   bool has_even_edges = true;
+  bool cut_edges_last_round = true;
 
-  while(has_even_edges){
+  while(has_even_edges && cut_edges_last_round){
+    cut_edges_last_round = false;
+    printf("has even edge");
     for (i = 0; i < verticies; i++) {
       if(sums[i] % 2 == 0){
         cuts++;
 
-        cut_edge(verticies, sums, matrix, i);
+        if(cut_edge(verticies, sums, matrix, i)){
+          cut_edges_last_round = true;
+        }
         sum_matrix(verticies, sums, matrix);
       }
     }
@@ -79,7 +89,6 @@ int calculate_cuts(int edges, int verticies, int pairs[edges][2]){
 
     for (i = 0; i < verticies; i++) {
       if(sums[i] % 2 == 0){
-        printf("has even edge");
         has_even_edges = true;
       }
     }
