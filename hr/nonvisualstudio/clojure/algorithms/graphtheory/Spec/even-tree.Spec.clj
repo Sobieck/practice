@@ -1,4 +1,3 @@
-; In powershell c:\Users\Thomas\Documents\GitHub\practice\clojureREPLRunner.bat
 ;(load-file "c:/Users/Thomas/Documents/GitHub/practice/hr/nonvisualstudio/clojure/algorithms/graphtheory/Spec/even-tree.Spec.clj")
 
 
