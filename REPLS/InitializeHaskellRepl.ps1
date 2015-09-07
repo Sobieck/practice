@@ -10,7 +10,7 @@ IF($utilities -eq 'Y')
 
   IF($math -eq 'Y')
   {
-    $cmdPaths = $cmdPaths + " C:\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs"
+    $cmdPaths = $cmdPaths + " C:\GitHub\practice\utilities\nonvisualstudio\haskell\math\Solution.hs"
   }
 
   $primes = read-host "Primes? Y/N"

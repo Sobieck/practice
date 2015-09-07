@@ -1,16 +1,9 @@
-{-
-ghci c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Spec\Math.Spec.hs c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
--}
--- :r - reload
--- :q - quit
--- :set +s for times
-
 module MathTests where
 
   import Test.QuickCheck
   import Test.HUnit
   import System.IO
-
+  import TestAbstract
 
   import Math
 
@@ -22,11 +15,28 @@ module MathTests where
       TestCase $ assertEqual "powMod 45621 419039293 301230039 should return 6285651." 6285651 (powMod 45621 419039293 301230039)
     ]
 
+  factorialTestCases = TestList
+    [
+      TestCase $ easyAssertEqual "factorial" factorial 0 1,
+      TestCase $ easyAssertEqual "factorial" factorial 2 2,
+      TestCase $ easyAssertEqual "factorial" factorial 3 6,
+      TestCase $ easyAssertEqual "factorial" factorial 1 1,
+      TestCase $ easyAssertEqual "factorial" factorial 20 2432902008176640000,
+      TestCase $ easyAssertEqual "factorial" factorial 25 15511210043330985984000000
+    ]
 
+  roundFloatTestCases = TestList
+    [
+      TestCase $ easyAssertEqualTwoInputs "roundFloat" roundFloat 2.156486 4 2.1565,
+      TestCase $ easyAssertEqualTwoInputs "roundFloat" roundFloat 2.156486 0 2,
+      TestCase $ easyAssertEqualTwoInputs "roundFloat" roundFloat 2.156486 5 2.15649
+    ]
 
   testCases = TestList
     [
-      powModTests
+      powModTests,
+      factorialTestCases,
+      roundFloatTestCases
     ]
 
   qc_powMod_exponentOne :: Integer -> Integer -> Property

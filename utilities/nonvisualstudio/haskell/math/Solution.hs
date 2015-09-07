@@ -1,7 +1,3 @@
--- to use - in ghci call use the following path
--- c:\Users\Thomas\Documents\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\Math.hs
--- import Math
-
 module Math where
 
   import Data.Bits
@@ -16,3 +12,10 @@ module Math where
                      | otherwise               = currentResult
           nextExp   = shiftR currentExp 1
           nextBase  = (currentBase * currentBase) `mod` modulus
+
+  factorial 0 = 1
+  factorial n = factRecur n 1
+    where factRecur currentN currentProduct | currentN == 1 = currentProduct
+                                            | otherwise = factRecur (currentN - 1) (currentProduct * currentN)
+
+  roundFloat float decimals = (fromInteger $ round $ float * (10^decimals)) / (10.0^^decimals)
