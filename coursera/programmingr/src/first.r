@@ -41,3 +41,38 @@ matrixone <- function(){
 matrixonedim <- function(){
   dim(matrixone())
 }
+
+#yeah first class functions!
+matrixonefunctional <- function(func){
+  func(matrixone())
+}
+
+usingfunctionalmat1 <- function(){
+  matrixonefunctional(attributes)
+}
+
+initializewithitems <- function(){
+  matrix(1:6, nrow = 2, ncol = 3)
+}
+
+anotherinitialize <- function(){
+  m <- 1:10
+  dim(m) <- c(2,5)
+  m
+}
+
+columnbind <- function(){
+  x <- 1:3
+  y <- 10:12
+  cbind(x, y)
+}
+
+rowbind <- function(){
+  x <- 1:3
+  y <- 10:12
+  rbind(x, y)
+}
+
+alist <- function(){
+  list(1,"a", T, 1 + 4i)
+}
