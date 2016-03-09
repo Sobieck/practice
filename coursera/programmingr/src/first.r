@@ -113,3 +113,21 @@ numberofrowsofframe <- function(x) {
 numberofcolofframe <- function(x){
   ncol(x())
 }
+
+#names
+assignnames <- function() {
+  x <- 1:3
+  #no names by default
+  names(x) <- c("gidget", "zoe", "Lisa")
+  x
+}
+
+assignlistnames <- function() {
+  list(a = 1, gidget = 2, horis = 3)
+}
+
+assignmatrixnames <- function(){
+  m <- matrix(1:4, nrow = 2, ncol = 2)
+  dimnames(m) <- list(c("a", "b"), c("c","d"))
+  m
+}
