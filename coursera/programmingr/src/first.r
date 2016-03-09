@@ -76,3 +76,13 @@ rowbind <- function(){
 alist <- function(){
   list(1,"a", T, 1 + 4i)
 }
+
+#factors - enums essentially
+fact <- function(){
+  factor(c("yes", "yes","no","yes"))
+  ##unclass(factor) will show its underlying numeric values
+}
+
+changinglevel <- function(){
+  factor(c("yes", "yes","no","yes"), levels = c("yes", "no"))
+}
