@@ -86,3 +86,30 @@ fact <- function(){
 changinglevel <- function(){
   factor(c("yes", "yes","no","yes"), levels = c("yes", "no"))
 }
+
+#missing values
+
+avectorwithnaandnan <- function(){
+  c(1,2,3,NA,12,3, NaN)
+}
+
+isna <- function(){
+  is.na(avectorwithnaandnan())
+}
+
+isnan <- function(){
+  is.nan(avectorwithnaandnan())
+}
+
+#data frame
+aframe <- function() {
+  data.frame(foo = 1:4, bar = c(T,F,T,F))
+}
+
+numberofrowsofframe <- function(x) {
+  nrow(x())
+}
+
+numberofcolofframe <- function(x){
+  ncol(x())
+}
