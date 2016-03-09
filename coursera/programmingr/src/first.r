@@ -39,6 +39,5 @@ matrixone <- function(){
 }
 
 matrixonedim <- function(){
-  matrix <- matrixone()
-  dim(matrix)
+  dim(matrixone())
 }
