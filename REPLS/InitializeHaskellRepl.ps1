@@ -1,3 +1,5 @@
+$env:Path += ";C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.0.1\bin"
+
 $path = read-host "What is the path of your source files?"
 
 $cmdPaths = $path + "\Tests.hs " + $path + "\Solution.hs" + " C:\GitHub\practice\utilities\nonvisualstudio\haskell\Implementation\TestAbstract.hs"
