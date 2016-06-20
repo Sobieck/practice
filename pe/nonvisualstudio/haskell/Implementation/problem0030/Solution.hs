@@ -27,10 +27,14 @@ module Problem0030 where
   getLessThanNumber :: Composite -> Bool
   getLessThanNumber (_, _, _, isLessThan) = isLessThan
 
-  createCompositeFirst :: Int -> Composite
-  createCompositeFirst number = (number, 0, [], False)
+  createComposite :: Int -> Composite
+  createComposite number = (number, 0, valuesOfDigits number, False)
 
-
+  updateComposite :: Composite -> Int -> Composite
+  updateComposite oldComposite numberToAdd = (newOriginal, 0, newDigitsLeft, False)
+    where
+      newOriginal = getOriginalNumber oldComposite
+      newDigitsLeft = tail $ getDigitsLeft oldComposite
 
 -- max (exp + 1) * (9 ^ exp)
 --1. Figure out theoretical max

@@ -6,6 +6,9 @@ module Problem0030Tests where
 
   import Problem0030
 
+  absComposite :: Int -> Composite
+  absComposite x = createComposite $ abs x
+
   tests :: IO ()
   tests = hspec $ do
   describe "Problem0030.valuesOfDigits" $ do
@@ -59,12 +62,22 @@ module Problem0030Tests where
       it "returns False when given (0,0,[], False)" $ do
         getLessThanNumber (0,0,[], False) `shouldBe` False
 
-  describe "Problem0030.createCompositeFirst" $ do
+  describe "Problem0030.createComposite" $ do
     it "returns a composite with the number passed in as the OriginalNumber" $
-      property $ \x -> (abs x) == (getOriginalNumber $ createCompositeFirst $ abs x)
+      property $ \x -> (abs x) == (getOriginalNumber $ absComposite x :: Int)
 
-    it "return a composite with 0 as the SumOfPowers" $
-      property $ \x -> 0 == (getSumOfPowers $ createCompositeFirst $ abs x)
+    it "returns a composite with 0 as the SumOfPowers" $
+      property $ \x -> 0 == (getSumOfPowers $ absComposite x :: Int)
 
-    it "return a composite with false as the SumIsLessThanOrEqualToNumber" $
-      property $ \x -> False == (getLessThanNumber $ createCompositeFirst $ abs x)
+    it "returns a composite with false as the SumIsLessThanOrEqualToNumber" $
+      property $ \x -> False == (getLessThanNumber $ absComposite x :: Bool)
+
+    it "returns a composite with a DigitsLeft with the same number of of elements as the length of the number" $
+      property $ \x -> (length $ getDigitsLeft $ absComposite x) == (length $ show $ abs $ x :: Int)
+
+  describe "Problem0030.updateComposite" $ do
+    it "returns a composite with the same originalNumber" $
+      property $ \x -> (getOriginalNumber $ updateComposite (absComposite x) 0) == (abs x :: Int)
+
+    it "returns a DigitsLeft that is equal to the tail passed in" $
+      property $ \x -> (getDigitsLeft $ updateComposite (0, 0, x ++ [1], False) 0) == (tail $ x ++ [1] :: [Int])
