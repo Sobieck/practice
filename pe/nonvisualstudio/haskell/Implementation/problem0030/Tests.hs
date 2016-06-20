@@ -35,32 +35,39 @@ module Problem0030Tests where
 
   describe "Problem0030 when getting properties" $ do
     describe "getOriginalNumber" $ do
-      it "returns 12 when given (12,0,[],False)" $ do
-        getOriginalNumber (12,0,[],False) `shouldBe` 12
+      it "returns 12 when given (12,0,[],False, False)" $ do
+        getOriginalNumber (12,0,[],False, False) `shouldBe` 12
 
-      it "returns 1125 when given (1125,0,[],False)" $ do
-        getOriginalNumber (1125,0,[],False) `shouldBe` 1125
+      it "returns 1125 when given (1125,0,[],False, False)" $ do
+        getOriginalNumber (1125,0,[],False, False) `shouldBe` 1125
 
     describe "getSumOfPowers" $ do
-      it "returns 12 when given (0,12,[],False)" $ do
-        getSumOfPowers (0,12,[],False) `shouldBe` 12
+      it "returns 12 when given (0,12,[],False, False)" $ do
+        getSumOfPowers (0,12,[],False, False) `shouldBe` 12
 
-      it "returns 1125 when given (0,1125,[],False)" $ do
-        getSumOfPowers (0,1125,[],False) `shouldBe` 1125
+      it "returns 1125 when given (0,1125,[],False, False)" $ do
+        getSumOfPowers (0,1125,[],False, False) `shouldBe` 1125
 
     describe "getDigitsLeft" $ do
-      it "returns [1..100] when given (0,0,[1..100], False)" $ do
-        getDigitsLeft (0,0,[1..100], False) `shouldBe` [1..100]
+      it "returns [1..100] when given (0,0,[1..100], False, False)" $ do
+        getDigitsLeft (0,0,[1..100], False, False) `shouldBe` [1..100]
 
-      it "returns [1..10000] when given (0,0,[1..10000], False)" $ do
-        getDigitsLeft (0,0,[1..10000], False) `shouldBe` [1..10000]
+      it "returns [1..10000] when given (0,0,[1..10000], False,False)" $ do
+        getDigitsLeft (0,0,[1..10000], False, False) `shouldBe` [1..10000]
 
     describe "getLessThanNumber" $ do
-      it "returns True when given (0,0,[], True)" $ do
-        getLessThanNumber (0,0,[], True) `shouldBe` True
+      it "returns True when given (0,0,[], True, False)" $ do
+        getLessThanNumber (0,0,[], True, False) `shouldBe` True
 
-      it "returns False when given (0,0,[], False)" $ do
-        getLessThanNumber (0,0,[], False) `shouldBe` False
+      it "returns False when given (0,0,[], False, False)" $ do
+        getLessThanNumber (0,0,[], False, False) `shouldBe` False
+
+    describe "getIsSumEqualToOriginal" $ do
+      it "returns True when given (0,0,[], True, True)" $ do
+        getIsSumEqualToOriginal (0,0,[], False, True) `shouldBe` True
+
+      it "returns False when given (0,0,[], False, False)" $ do
+        getIsSumEqualToOriginal (0,0,[], False, False) `shouldBe` False
 
   describe "Problem0030.createComposite" $ do
     it "returns a composite with the number passed in as the OriginalNumber" $
@@ -75,9 +82,12 @@ module Problem0030Tests where
     it "returns a composite with a DigitsLeft with the same number of of elements as the length of the number" $
       property $ \x -> (length $ getDigitsLeft $ absComposite x) == (length $ show $ abs $ x :: Int)
 
+    it "returns a Composite with False as the SumIsEqualToOriginal" $
+      property $ \x -> False == (getIsSumEqualToOriginal $ absComposite x :: Bool)
+
   describe "Problem0030.updateComposite" $ do
     it "returns a composite with the same originalNumber" $
       property $ \x -> (getOriginalNumber $ updateComposite (absComposite x) 0) == (abs x :: Int)
 
     it "returns a DigitsLeft that is equal to the tail passed in" $
-      property $ \x -> (getDigitsLeft $ updateComposite (0, 0, x ++ [1], False) 0) == (tail $ x ++ [1] :: [Int])
+      property $ \x -> (getDigitsLeft $ updateComposite (0, 0, x ++ [1], False, False) 0) == (tail $ x ++ [1] :: [Int])

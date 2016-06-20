@@ -3,11 +3,12 @@ module Problem0030 where
   import Data.Char
   import Data.List(sort)
 
-  type Composite = (OriginalNumber, SumOfPowers, DigitsLeft, SumIsLessThanOrEqualToNumber)
+  type Composite = (OriginalNumber, SumOfPowers, DigitsLeft, SumIsLessThanOrEqualToNumber, SumIsEqualToOriginal)
   type OriginalNumber = Int
   type SumOfPowers = Int
   type DigitsLeft = [Int]
   type SumIsLessThanOrEqualToNumber = Bool
+  type SumIsEqualToOriginal = Bool
 
   valuesOfDigits :: Int -> [Int]
   valuesOfDigits number = reverse
@@ -16,22 +17,25 @@ module Problem0030 where
                           $ show number
 
   getOriginalNumber :: Composite -> Int
-  getOriginalNumber (original, _, _, _) = original
+  getOriginalNumber (original, _, _, _, _) = original
 
   getSumOfPowers :: Composite -> Int
-  getSumOfPowers (_, sumOfPowers, _, _) = sumOfPowers
+  getSumOfPowers (_, sumOfPowers, _, _, _) = sumOfPowers
 
   getDigitsLeft :: Composite -> [Int]
-  getDigitsLeft (_, _, digits, _) = digits
+  getDigitsLeft (_, _, digits, _, _) = digits
 
   getLessThanNumber :: Composite -> Bool
-  getLessThanNumber (_, _, _, isLessThan) = isLessThan
+  getLessThanNumber (_, _, _, isLessThan, _) = isLessThan
+
+  getIsSumEqualToOriginal :: Composite -> Bool
+  getIsSumEqualToOriginal (_,_,_,_,isEqual) = isEqual
 
   createComposite :: Int -> Composite
-  createComposite number = (number, 0, valuesOfDigits number, False)
+  createComposite number = (number, 0, valuesOfDigits number, False, False)
 
   updateComposite :: Composite -> Int -> Composite
-  updateComposite oldComposite numberToAdd = (newOriginal, 0, newDigitsLeft, False)
+  updateComposite oldComposite numberToAdd = (newOriginal, 0, newDigitsLeft, False, False)
     where
       newOriginal = getOriginalNumber oldComposite
       newDigitsLeft = tail $ getDigitsLeft oldComposite
