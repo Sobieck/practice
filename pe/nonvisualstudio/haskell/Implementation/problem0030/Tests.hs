@@ -28,4 +28,4 @@ module Problem0030Tests where
       property $ \x -> all (>=0) $ valuesOfDigits $ abs x
 
     it "returns the values in descending order" $
-      property $ \x -> (valuesOfDigits $ abs x) == (reverse $ sort $ valuesOfDigits $ abs x)
+      property $ \x -> (valuesOfDigits $ abs x) == (reverse $ sort $ valuesOfDigits $ abs x :: [Int])

@@ -4,12 +4,10 @@ module Problem0030 where
   import Data.List(sort)
 
   valuesOfDigits :: Int -> [Int]
-  valuesOfDigits number = valOfDigits (show number) []
-    where
-      valOfDigits :: String -> [Int] -> [Int]
-      valOfDigits "" result = reverse $ sort result
-      valOfDigits number result = valOfDigits (tail number) ((digitToInt (head number)) : result)
-
+  valuesOfDigits number = reverse
+                          $ sort
+                          $ map digitToInt
+                          $ show number
 
 -- max (exp + 1) * (9 ^ exp)
 --1. Figure out theoretical max
