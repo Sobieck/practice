@@ -91,3 +91,9 @@ module Problem0030Tests where
 
     it "returns a DigitsLeft that is equal to the tail passed in" $
       property $ \x -> (getDigitsLeft $ updateComposite (0, 0, x ++ [1], False, False) 0) == (tail $ x ++ [1] :: [Int])
+
+    it "returns a SumOfPowers equal the old one plus the new number passed in" $
+      property $ \x -> (getSumOfPowers $ updateComposite (0, (1 + (abs x)), [1], False, False) (1 + (abs x))) == ((1 + (abs x)) * 2)
+
+    it "returns a SumOfPowers equal the old one plus the new number passed in" $
+      property $ \x -> (getSumOfPowers $ updateComposite (0, 0, [1], False, False) (1 + (abs x))) == (1 + (abs x))

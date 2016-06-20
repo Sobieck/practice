@@ -35,10 +35,11 @@ module Problem0030 where
   createComposite number = (number, 0, valuesOfDigits number, False, False)
 
   updateComposite :: Composite -> Int -> Composite
-  updateComposite oldComposite numberToAdd = (newOriginal, 0, newDigitsLeft, False, False)
+  updateComposite oldComposite numberToAdd = (newOriginal, newSum, newDigitsLeft, False, False)
     where
       newOriginal = getOriginalNumber oldComposite
       newDigitsLeft = tail $ getDigitsLeft oldComposite
+      newSum = (getSumOfPowers oldComposite) + numberToAdd
 
 -- max (exp + 1) * (9 ^ exp)
 --1. Figure out theoretical max
