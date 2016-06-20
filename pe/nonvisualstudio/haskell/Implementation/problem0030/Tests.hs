@@ -9,20 +9,26 @@ module Problem0030Tests where
   absComposite :: Int -> Composite
   absComposite x = createComposite $ abs x
 
+  absPlusOne :: Int -> Int
+  absPlusOne x = (abs x) + 1
+
   tests :: IO ()
   tests = hspec $ do
   describe "Problem0030.valuesOfDigits" $ do
     it "returns [0] when given 0" $ do
-      valuesOfDigits 0 `shouldBe` ([0] :: [Int])
+      valuesOfDigits 1 `shouldBe` ([1] :: [Int])
 
     it "returns [1, 0] when given 10" $ do
-      valuesOfDigits 10 `shouldBe` ([1, 0] :: [Int])
+      valuesOfDigits 10 `shouldBe` ([1] :: [Int])
+
+    it "returns [1, 2] when given 10" $ do
+      valuesOfDigits 12 `shouldBe` ([2, 1] :: [Int])
 
     it "returns [8, 6, 2, 1, 0] when given 16082" $ do
-      valuesOfDigits 16082 `shouldBe` ([8, 6, 2, 1, 0] :: [Int])
+      valuesOfDigits 16082 `shouldBe` ([8, 6, 2, 1] :: [Int])
 
-    it "returns a list of numbers with the same number of of elements as the length of the number" $
-      property $ \x -> (length $ valuesOfDigits $ abs x) == (length $ show $ abs $ x :: Int)
+    it "returns a list of numbers with the same number of of elements as the length of the number or one less" $
+      property $ \x -> ((length $ valuesOfDigits $ abs x) == (length $ show $ abs $ x)) || ((length $ valuesOfDigits $ abs x) == ((length $ show $ abs $ x) - 1))
 
     it "returns a list of numbers that do not exceed the value of 9" $
       property $ \x -> all (<=9) $ valuesOfDigits $ abs x
@@ -79,8 +85,9 @@ module Problem0030Tests where
     it "returns a composite with false as the SumIsLessThanOrEqualToNumber" $
       property $ \x -> False == (getLessThanNumber $ absComposite x :: Bool)
 
-    it "returns a composite with a DigitsLeft with the same number of of elements as the length of the number" $
-      property $ \x -> (length $ getDigitsLeft $ absComposite x) == (length $ show $ abs $ x :: Int)
+    it "returns a list of numbers with the same number of of elements as the length of the number or oneless" $
+      property $ \x -> ((length $ valuesOfDigits $ abs x) == (length $ show $ abs $ x)) || ((length $ valuesOfDigits $ abs x) == ((length $ show $ abs $ x) - 1))
+
 
     it "returns a Composite with False as the SumIsEqualToOriginal" $
       property $ \x -> False == (getIsSumEqualToOriginal $ absComposite x :: Bool)
@@ -97,3 +104,35 @@ module Problem0030Tests where
 
     it "returns a SumOfPowers equal the old one plus the new number passed in" $
       property $ \x -> (getSumOfPowers $ updateComposite (0, 0, [1], False, False) (1 + (abs x))) == (1 + (abs x))
+
+    it "returns True for getLessThanNumber when Sum is Equal to original" $
+      property $ \x -> getLessThanNumber $ updateComposite (absPlusOne x, 0, [1], False, False) (absPlusOne x)
+
+    it "returns True for getLessThanNumber when Sum is less than the original" $
+      property $ \x -> getLessThanNumber $ updateComposite (((absPlusOne x) * 2), 0, [1], False, False) (absPlusOne x)
+
+    it "returns False when getLessThanNumber when Sum is greater than the original" $
+      property $ \x -> (getLessThanNumber $ updateComposite ((absPlusOne x), 0, [1], False, False) ((absPlusOne x) + 1)) == False
+
+    describe "when checking to see if the sumOfPowers is in fact equal to the original" $ do
+      it "returns False if the digitsLeft are not empty" $ do
+        (getIsSumEqualToOriginal (updateComposite (0, 0, [1..2], False, False) 0)) `shouldBe` False
+
+      it "returns True when there are no digits left and the SumOfPower and Original are the same" $
+        property $ \x -> getIsSumEqualToOriginal $ updateComposite ((absPlusOne x), 0, [1], False, False) (absPlusOne x)
+
+      it "returns False when the Sum is greater than the Original" $
+        property $ \x -> (getIsSumEqualToOriginal $ updateComposite ((absPlusOne x), (absPlusOne x), [1], False, False) (absPlusOne x)) == False
+
+      it "returns False when the Sum is less than the Original" $
+        property $ \x -> (getIsSumEqualToOriginal $ updateComposite (((absPlusOne x) + (absPlusOne x)), 0, [1], False, False) (absPlusOne x)) == False
+
+  describe "Problem0030.findPowerOfDigitsEqualsNumber" $ do
+    it "returns [1634, 8208, 9474] when given 4" $ do
+      (findPowerOfDigitsEqualsNumber 4) `shouldBe` [1634, 8208, 9474]
+
+    it "returns [153, 370, 371, 407] when given 3" $ do
+      (findPowerOfDigitsEqualsNumber 3) `shouldBe` [153, 370, 371, 407]
+
+    it "answer" $ do
+      (findPowerOfDigitsEqualsNumber 5) `shouldBe` [4150,4151,54748,92727,93084,194979]

@@ -13,6 +13,7 @@ module Problem0030 where
   valuesOfDigits :: Int -> [Int]
   valuesOfDigits number = reverse
                           $ sort
+                          $ filter (>0)
                           $ map digitToInt
                           $ show number
 
@@ -35,11 +36,37 @@ module Problem0030 where
   createComposite number = (number, 0, valuesOfDigits number, False, False)
 
   updateComposite :: Composite -> Int -> Composite
-  updateComposite oldComposite numberToAdd = (newOriginal, newSum, newDigitsLeft, False, False)
+  updateComposite oldComposite numberToAdd = (newOriginal, newSum, newDigitsLeft, isLessThanOrEqual, isEqual)
     where
       newOriginal = getOriginalNumber oldComposite
       newDigitsLeft = tail $ getDigitsLeft oldComposite
       newSum = (getSumOfPowers oldComposite) + numberToAdd
+      isLessThanOrEqual = newOriginal >= newSum
+      isEqual = (length newDigitsLeft == 0) && newOriginal == newSum
+
+  findPowerOfDigitsEqualsNumber :: Int -> [Int]
+  findPowerOfDigitsEqualsNumber power = filter (>1) (calcPower initialList 9)
+    where
+      maximumInt = (power + 1) * (9 ^ power)
+      initialList = map createComposite [1..maximumInt]
+      calcPower list 0 = map getOriginalNumber $ filter getIsSumEqualToOriginal list
+      calcPower list int = calcPower newList (int - 1)
+        where
+          currentNumberToAdd = int ^ power
+          newList = map updateCompositeIfNeedBe list -- we should delete all that are over at this point. But it isn't working for some reason. Still computes in under 9 seconds
+            where
+              updateCompositeIfNeedBe :: Composite -> Composite
+              updateCompositeIfNeedBe composite
+                | (length $ getDigitsLeft composite) == 0 = composite
+                | (head $ getDigitsLeft composite) == int = updateCompositeIfNeedBe $ updateComposite composite currentNumberToAdd
+                | otherwise = composite
+
+    -- recurse 9 - 0
+      -- calculate power of that number
+      -- update if list contains the current number
+      -- 0 is stopping condition
+      -- remove all SumIsLessThanOrEqualToNumber == False each iteration
+
 
 -- max (exp + 1) * (9 ^ exp)
 --1. Figure out theoretical max
