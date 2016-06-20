@@ -29,3 +29,42 @@ module Problem0030Tests where
 
     it "returns the values in descending order" $
       property $ \x -> (valuesOfDigits $ abs x) == (reverse $ sort $ valuesOfDigits $ abs x :: [Int])
+
+  describe "Problem0030 when getting properties" $ do
+    describe "getOriginalNumber" $ do
+      it "returns 12 when given (12,0,[],False)" $ do
+        getOriginalNumber (12,0,[],False) `shouldBe` 12
+
+      it "returns 1125 when given (1125,0,[],False)" $ do
+        getOriginalNumber (1125,0,[],False) `shouldBe` 1125
+
+    describe "getSumOfPowers" $ do
+      it "returns 12 when given (0,12,[],False)" $ do
+        getSumOfPowers (0,12,[],False) `shouldBe` 12
+
+      it "returns 1125 when given (0,1125,[],False)" $ do
+        getSumOfPowers (0,1125,[],False) `shouldBe` 1125
+
+    describe "getDigitsLeft" $ do
+      it "returns [1..100] when given (0,0,[1..100], False)" $ do
+        getDigitsLeft (0,0,[1..100], False) `shouldBe` [1..100]
+
+      it "returns [1..10000] when given (0,0,[1..10000], False)" $ do
+        getDigitsLeft (0,0,[1..10000], False) `shouldBe` [1..10000]
+
+    describe "getLessThanNumber" $ do
+      it "returns True when given (0,0,[], True)" $ do
+        getLessThanNumber (0,0,[], True) `shouldBe` True
+
+      it "returns False when given (0,0,[], False)" $ do
+        getLessThanNumber (0,0,[], False) `shouldBe` False
+
+  describe "Problem0030.createCompositeFirst" $ do
+    it "returns a composite with the number passed in as the OriginalNumber" $
+      property $ \x -> (abs x) == (getOriginalNumber $ createCompositeFirst $ abs x)
+
+    it "return a composite with 0 as the SumOfPowers" $
+      property $ \x -> 0 == (getSumOfPowers $ createCompositeFirst $ abs x)
+
+    it "return a composite with false as the SumIsLessThanOrEqualToNumber" $
+      property $ \x -> False == (getLessThanNumber $ createCompositeFirst $ abs x)
