@@ -33,7 +33,7 @@ module Problem0030 where
   getIsSumEqualToOriginal (_,_,_,_,isEqual) = isEqual
 
   createComposite :: Int -> Composite
-  createComposite number = (number, 0, valuesOfDigits number, False, False)
+  createComposite number = (number, 0, valuesOfDigits number, True, False)
 
   updateComposite :: Composite -> Int -> Composite
   updateComposite oldComposite numberToAdd = (newOriginal, newSum, newDigitsLeft, isLessThanOrEqual, isEqual)
@@ -53,25 +53,10 @@ module Problem0030 where
       calcPower list int = calcPower newList (int - 1)
         where
           currentNumberToAdd = int ^ power
-          newList = map updateCompositeIfNeedBe list -- we should delete all that are over at this point. But it isn't working for some reason. Still computes in under 9 seconds
+          newList = filter getLessThanNumber $ map updateCompositeIfNeedBe list
             where
               updateCompositeIfNeedBe :: Composite -> Composite
               updateCompositeIfNeedBe composite
                 | (length $ getDigitsLeft composite) == 0 = composite
                 | (head $ getDigitsLeft composite) == int = updateCompositeIfNeedBe $ updateComposite composite currentNumberToAdd
                 | otherwise = composite
-
-    -- recurse 9 - 0
-      -- calculate power of that number
-      -- update if list contains the current number
-      -- 0 is stopping condition
-      -- remove all SumIsLessThanOrEqualToNumber == False each iteration
-
-
--- max (exp + 1) * (9 ^ exp)
---1. Figure out theoretical max
---2. Splitter
---3. Sieve. Falsify all that have a number and are less than the highest input.
---    A. Sort by max number for each number. Maybe we need a tuple to keep track of original number.
---           a. Haskell type. Original number, Current sum, array of each original number sorted, array of --powers
---    B. Delete from array all that are false.

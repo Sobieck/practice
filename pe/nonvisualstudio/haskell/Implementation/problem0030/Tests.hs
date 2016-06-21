@@ -83,7 +83,7 @@ module Problem0030Tests where
       property $ \x -> 0 == (getSumOfPowers $ absComposite x :: Int)
 
     it "returns a composite with false as the SumIsLessThanOrEqualToNumber" $
-      property $ \x -> False == (getLessThanNumber $ absComposite x :: Bool)
+      property $ \x -> True == (getLessThanNumber $ absComposite x :: Bool)
 
     it "returns a list of numbers with the same number of of elements as the length of the number or oneless" $
       property $ \x -> ((length $ valuesOfDigits $ abs x) == (length $ show $ abs $ x)) || ((length $ valuesOfDigits $ abs x) == ((length $ show $ abs $ x) - 1))
