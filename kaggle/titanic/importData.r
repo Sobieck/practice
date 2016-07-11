@@ -34,3 +34,4 @@ propChildSurvivedTble <- prop.table(table(train$Child, train$Survived), 1)
 test$Survived <- 0
 test$Survived[test$Sex == "female"] <- 1
 # test[c("Sex","Survived")]
+# write.csv(test, file = "perdictions.csv")
