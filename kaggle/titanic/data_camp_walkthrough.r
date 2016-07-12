@@ -1,4 +1,4 @@
-# source("titanic/data_camp_walkthrough.r")
+# source("c:/github/practice/kaggle/titanic/data_camp_walkthrough.r")
 
 # Import the training set: train
 train_url <- "http://s3.amazonaws.com/assets.datacamp.com/course/Kaggle/train.csv"
@@ -10,7 +10,7 @@ test <-  read.csv(test_url)
 
 #str(train)
 
-# Survival rates in absolute numbers
+# Survival rates in absolute numbersq
 survived_table <- table(train$Survived)
 
 # Survival rates in proportions
