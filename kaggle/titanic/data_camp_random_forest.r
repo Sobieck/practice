@@ -37,7 +37,7 @@ cleanData <- function(data_set){
 
   #missing fare values -- IS NA
   missing_fare <- data_set[!complete.cases(data_set$Fare),]
-  data_set$Fare[missing_fare$PassengerId] <- median(data_set$Fare, na.rm = TRUE)
+  data_set$Fare[missing_fare$PassengerId] <- median(data_set$Fare, na.rcleanm = TRUE)
 
   # add titles and family_size
   data_set <- extractTitles(data_set)
