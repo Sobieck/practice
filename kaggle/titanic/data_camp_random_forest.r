@@ -2,6 +2,7 @@
 
 library(rpart)
 library(rattle)
+library(randomForest)
 
 # Import the training set: train
 train_url <- "C:/GitHub/practice/kaggle/titanic/data/train.csv"
@@ -57,3 +58,26 @@ cleanData <- function(data_set){
 }
 
 cleaned_data <- cleanData(all_data)
+
+# divide train and test to its old format.
+length_of_train <- nrow(train_to_clean)
+length_of_all_clean <- nrow(cleaned_data)
+
+length_of_test_data <- length_of_all_clean - length_of_train
+
+train <- head(cleaned_data, length_of_train)
+test <- tail(cleaned_data, length_of_test_data)
+
+# Set seed for reproducibility
+#set.seed(111)
+
+#as.factor because it is a categorization problem.
+rf1 <- randomForest(as.factor(Survived) ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked  + title, train, ntree=5000, importance=TRUE)
+
+varImpPlot(rf1)
+
+prediction <- predict(rf1, test)
+
+my_solution <- data.frame(PassengerId = test$PassengerId, Survived = prediction)
+
+write.csv(my_solution, "my_solution.csv", row.names = FALSE)
