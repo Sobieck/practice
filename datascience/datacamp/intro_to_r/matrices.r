@@ -1,4 +1,4 @@
-# source("C:/GitHub/practice/datascience/datacamp/into_to_r_matrices.r")
+# source("C:/GitHub/practice/datascience/datacamp/intro_to_r/matrices.r")
 
 matrix1 <- matrix(1:9, byrow = TRUE, nrow = 3)
 
