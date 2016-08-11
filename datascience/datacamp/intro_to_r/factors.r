@@ -28,3 +28,18 @@ factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c(female, male)
 
 summary(factor_survey_vector)
+
+
+# you can make statements about ordinal data... like one is greater than the other. 
+slow <- "slow"
+medium <- "fast"
+fast <- "insane"
+
+speed_vector <- c(medium, slow, slow, medium, fast)
+
+factor_speed_vector <- factor(speed_vector, order = TRUE, levels = c(slow, medium, fast))
+
+item2 <- factor_speed_vector[2]
+item5 <- factor_speed_vector[5]
+
+item2 > item5
