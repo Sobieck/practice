@@ -27,3 +27,9 @@ first_five_diameters <- planets_df[1:5,"diameter"]
 rings_vector <- planets_df$rings
 
 planet_data_with_rings <- planets_df[rings_vector,]
+
+planets_diameter_greater_than_earth <- subset(planets_df, diameter > 1)
+
+positions <- order(planets_df$diameter)
+
+sorted_planets <- planets_df[positions,]
