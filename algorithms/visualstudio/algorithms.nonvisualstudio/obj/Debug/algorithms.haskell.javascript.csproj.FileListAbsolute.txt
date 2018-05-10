@@ -1,5 +1,0 @@
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\bin\Debug\algorithms.haskell.javascript.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\bin\Debug\algorithms.haskell.javascript.pdb
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\obj\Debug\algorithms.haskell.javascript.csprojResolveAssemblyReference.cache
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\obj\Debug\algorithms.haskell.javascript.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript\obj\Debug\algorithms.haskell.javascript.pdb

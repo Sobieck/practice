@@ -1,8 +1,0 @@
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\bin\Debug\algorithms.haskell.javascript.clojure.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\bin\Debug\algorithms.haskell.javascript.clojure.pdb
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\bin\Debug\Clojure.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\bin\Debug\Microsoft.Dynamic.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\bin\Debug\Microsoft.Scripting.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\obj\Debug\algorithms.haskell.javascript.clojure.csprojResolveAssemblyReference.cache
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\obj\Debug\algorithms.haskell.javascript.clojure.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.haskell.javascript.clojure\obj\Debug\algorithms.haskell.javascript.clojure.pdb

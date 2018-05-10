@@ -1,5 +1,0 @@
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp\bin\Debug\algorithms.csharp.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp\bin\Debug\algorithms.csharp.pdb
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp\obj\Debug\algorithms.csharp.csprojResolveAssemblyReference.cache
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp\obj\Debug\algorithms.csharp.dll
-C:\Users\Thomas\Documents\GitHub\algorithms.practice\algorithms.practice\algorithms.csharp\obj\Debug\algorithms.csharp.pdb
