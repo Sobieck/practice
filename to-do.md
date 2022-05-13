@@ -1,2 +1,0 @@
-A Curious Moon
-Rust

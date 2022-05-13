@@ -1,4 +1,0 @@
-Install MinGW
-Add c:\MinGW\bin to path
-
-use powershell commandlet to run a REPL
